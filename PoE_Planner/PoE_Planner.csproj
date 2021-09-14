@@ -9,6 +9,7 @@
   <ItemGroup>
     <None Remove="Blueprint_Repository_inventory_icon.png" />
     <None Remove="expedition-bg.jpg" />
+    <None Remove="StashPanelGrid.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -20,6 +21,7 @@
   <ItemGroup>
     <Resource Include="Blueprint_Repository_inventory_icon.png" />
     <Resource Include="expedition-bg.jpg" />
+    <Resource Include="StashPanelGrid.png" />
   </ItemGroup>
 
 </Project>

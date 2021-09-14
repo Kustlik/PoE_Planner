@@ -5,12 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PoE_Planner"
         mc:Ignorable="d"
-        Title="PoE Planner" Height="1082" Width="1920" MinWidth="960" MinHeight="540" WindowStartupLocation="CenterScreen" VerticalAlignment="Center" HorizontalAlignment="Center" WindowState="Maximized" ResizeMode="NoResize" Icon="/Blueprint_Repository_inventory_icon.png">
+        Title="PoE Planner" Height="1031" Width="1824" MinWidth="960" MinHeight="540" WindowStartupLocation="CenterScreen" VerticalAlignment="Top" HorizontalAlignment="Center" WindowState="Maximized" ResizeMode="NoResize" Icon="/Blueprint_Repository_inventory_icon.png">
     <Window.Background>
         <ImageBrush ImageSource="/expedition-bg.jpg" Stretch="Uniform"/>
     </Window.Background>
-    <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
-        <Label Content="PoE Planner" HorizontalAlignment="Center" Margin="0,-486,0,0" VerticalAlignment="Top" Height="195" Width="700" FontWeight="Normal" FontFamily="Segoe UI Semibold" HorizontalContentAlignment="Center" VerticalContentAlignment="Top" FontSize="72">
+    <Grid HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,66,0,0">
+        <Label Content="PoE Planner" Margin="0,0,0,0" Width="700" FontWeight="Normal" FontFamily="Segoe UI Semibold" HorizontalContentAlignment="Center" VerticalContentAlignment="Top" FontSize="72" Height="106" HorizontalAlignment="Center" VerticalAlignment="Top">
             <Label.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#00000000" Offset="1"/>
@@ -18,5 +18,27 @@
                 </LinearGradientBrush>
             </Label.Foreground>
         </Label>
+        <Border BorderThickness="1" BorderBrush="Black" HorizontalAlignment="Left" Height="500" Margin="-324,145,0,0" VerticalAlignment="Top" Width="500">
+            <Border.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="Black" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+            <Border BorderThickness="1" BorderBrush="Black" HorizontalAlignment="Center" Height="480" VerticalAlignment="Center" Width="480">
+                <Border.Background>
+                    <ImageBrush ImageSource="/StashPanelGrid.png"/>
+                </Border.Background>
+            </Border>
+        </Border>
+        <Rectangle HorizontalAlignment="Left" Height="1" Margin="-324,145,0,0" Stroke="#FF5A3806" VerticalAlignment="Top" Width="500">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF5A3806" Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Button Content="Tab1" HorizontalAlignment="Left" Height="21" Margin="-324,124,0,0" VerticalAlignment="Top" Width="114" Background="#FF5A3806" BorderBrush="#FF5A3806" Foreground="#FFE9CF9F"/>
     </Grid>
 </Window>
