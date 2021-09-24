@@ -5,12 +5,438 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PoE_Planner"
         mc:Ignorable="d"
-        Title="PoE Planner" Height="1031" Width="1824" MinWidth="960" MinHeight="540" WindowStartupLocation="CenterScreen" VerticalAlignment="Top" HorizontalAlignment="Center" WindowState="Maximized" ResizeMode="NoResize" Icon="/Blueprint_Repository_inventory_icon.png">
+        Title="PoE Planner" Height="1031" Width="1824" MinWidth="960" MinHeight="540" WindowStartupLocation="CenterScreen" VerticalAlignment="Top" HorizontalAlignment="Center" WindowState="Maximized" ResizeMode="NoResize" Icon="/Blueprint_Repository_inventory_icon.png"
+    xmlns:theme="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero2">
+    <Window.Resources>
+        <Style x:Key="FocusVisual">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle Margin="2" StrokeDashArray="1 2" SnapsToDevicePixels="true" StrokeThickness="1" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="OptionMarkFocusVisual">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle Margin="14,0,0,0" StrokeDashArray="1 2" SnapsToDevicePixels="true" StrokeThickness="1" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <SolidColorBrush x:Key="OptionMark.Static.Background" Color="#FFFFFFFF"/>
+        <SolidColorBrush x:Key="OptionMark.Static.Border" Color="#FF707070"/>
+        <SolidColorBrush x:Key="OptionMark.Static.Glyph" Color="#FF212121"/>
+        <SolidColorBrush x:Key="OptionMark.MouseOver.Background" Color="#FFF3F9FF"/>
+        <SolidColorBrush x:Key="OptionMark.MouseOver.Border" Color="#FF5593FF"/>
+        <SolidColorBrush x:Key="OptionMark.MouseOver.Glyph" Color="#FF212121"/>
+        <SolidColorBrush x:Key="OptionMark.Pressed.Background" Color="#FFD9ECFF"/>
+        <SolidColorBrush x:Key="OptionMark.Pressed.Border" Color="#FF3C77DD"/>
+        <SolidColorBrush x:Key="OptionMark.Pressed.Glyph" Color="#FF212121"/>
+        <SolidColorBrush x:Key="OptionMark.Disabled.Background" Color="#FFE6E6E6"/>
+        <SolidColorBrush x:Key="OptionMark.Disabled.Border" Color="#FFBCBCBC"/>
+        <SolidColorBrush x:Key="OptionMark.Disabled.Glyph" Color="#FF707070"/>
+        <Style x:Key="PoECheckbox" TargetType="{x:Type CheckBox}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+            <Setter Property="Background" Value="{StaticResource OptionMark.Static.Background}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource OptionMark.Static.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type CheckBox}">
+                        <Grid x:Name="templateRoot" Background="Transparent" SnapsToDevicePixels="True">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Border x:Name="checkBoxBorder" Background="{TemplateBinding OpacityMask}" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding OpacityMask}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="1" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Visibility="Visible">
+                                <Grid x:Name="markGrid" Background="Black">
+                                    <Path x:Name="optionMark" Data="F1 M 9.97498,1.22334L 4.6983,9.09834L 4.52164,9.09834L 0,5.19331L 1.27664,3.52165L 4.255,6.08833L 8.33331,1.52588e-005L 9.97498,1.22334 Z " Fill="#FF5A3806" Margin="1" Opacity="0" Stretch="None" Stroke="Black"/>
+                                    <Rectangle x:Name="indeterminateMark" Fill="White" Margin="2" Opacity="0" Stroke="White"/>
+                                </Grid>
+                            </Border>
+                            <ContentPresenter x:Name="contentPresenter" Grid.Column="1" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="HasContent" Value="true">
+                                <Setter Property="FocusVisualStyle" Value="{StaticResource OptionMarkFocusVisual}"/>
+                                <Setter Property="Padding" Value="4,-1,0,0"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" TargetName="checkBoxBorder" Value="{StaticResource OptionMark.MouseOver.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="checkBoxBorder" Value="{StaticResource OptionMark.MouseOver.Border}"/>
+                                <Setter Property="Fill" TargetName="optionMark" Value="{StaticResource OptionMark.MouseOver.Glyph}"/>
+                                <Setter Property="Fill" TargetName="indeterminateMark" Value="{StaticResource OptionMark.MouseOver.Glyph}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="checkBoxBorder" Value="{StaticResource OptionMark.Disabled.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="checkBoxBorder" Value="{StaticResource OptionMark.Disabled.Border}"/>
+                                <Setter Property="Fill" TargetName="optionMark" Value="{StaticResource OptionMark.Disabled.Glyph}"/>
+                                <Setter Property="Fill" TargetName="indeterminateMark" Value="{StaticResource OptionMark.Disabled.Glyph}"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter Property="Background" TargetName="checkBoxBorder" Value="{StaticResource OptionMark.Pressed.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="checkBoxBorder" Value="{StaticResource OptionMark.Pressed.Border}"/>
+                                <Setter Property="Fill" TargetName="optionMark" Value="{StaticResource OptionMark.Pressed.Glyph}"/>
+                                <Setter Property="Fill" TargetName="indeterminateMark" Value="{StaticResource OptionMark.Pressed.Glyph}"/>
+                            </Trigger>
+                            <Trigger Property="IsChecked" Value="true">
+                                <Setter Property="Opacity" TargetName="optionMark" Value="0"/>
+                                <Setter Property="Opacity" TargetName="indeterminateMark" Value="1"/>
+                            </Trigger>
+                            <Trigger Property="IsChecked" Value="{x:Null}">
+                                <Setter Property="Opacity" TargetName="optionMark" Value="0"/>
+                                <Setter Property="Opacity" TargetName="indeterminateMark" Value="1"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="FocusVisual1">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle Margin="2" StrokeDashArray="1 2" SnapsToDevicePixels="true" StrokeThickness="1" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <SolidColorBrush x:Key="TextBox.Static.Background" Color="#FFFFFFFF"/>
+        <Style x:Key="ComboBoxEditableTextBox" TargetType="{x:Type TextBox}">
+            <Setter Property="OverridesDefaultStyle" Value="true"/>
+            <Setter Property="AllowDrop" Value="true"/>
+            <Setter Property="MinWidth" Value="0"/>
+            <Setter Property="MinHeight" Value="0"/>
+            <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+            <Setter Property="ScrollViewer.PanningMode" Value="VerticalFirst"/>
+            <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TextBox}">
+                        <ScrollViewer x:Name="PART_ContentHost" Background="Transparent" Focusable="false" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <LinearGradientBrush x:Key="ComboBox.Static.Background" EndPoint="0,1" StartPoint="0,0">
+            <GradientStop Color="#FFF0F0F0" Offset="0.0"/>
+            <GradientStop Color="#FFE5E5E5" Offset="1.0"/>
+        </LinearGradientBrush>
+        <SolidColorBrush x:Key="ComboBox.Static.Border" Color="#FFACACAC"/>
+        <SolidColorBrush x:Key="ComboBox.Static.Glyph" Color="#FF606060"/>
+        <SolidColorBrush x:Key="ComboBox.Static.Editable.Background" Color="#FFFFFFFF"/>
+        <SolidColorBrush x:Key="ComboBox.Static.Editable.Border" Color="#FFABADB3"/>
+        <SolidColorBrush x:Key="ComboBox.Static.Editable.Button.Background" Color="Transparent"/>
+        <SolidColorBrush x:Key="ComboBox.Static.Editable.Button.Border" Color="Transparent"/>
+        <LinearGradientBrush x:Key="ComboBox.MouseOver.Background" EndPoint="0,1" StartPoint="0,0">
+            <GradientStop Color="#FF3E444B" Offset="0.0"/>
+            <GradientStop Color="#FF3E444B" Offset="1.0"/>
+        </LinearGradientBrush>
+        <SolidColorBrush x:Key="ComboBox.MouseOver.Border" Color="#FF7EB4EA"/>
+        <SolidColorBrush x:Key="ComboBox.MouseOver.Glyph" Color="#FF000000"/>
+        <SolidColorBrush x:Key="ComboBox.MouseOver.Editable.Background" Color="#FFFFFFFF"/>
+        <SolidColorBrush x:Key="ComboBox.MouseOver.Editable.Border" Color="#FF7EB4EA"/>
+        <LinearGradientBrush x:Key="ComboBox.MouseOver.Editable.Button.Background" EndPoint="0,1" StartPoint="0,0">
+            <GradientStop Color="#FFEBF4FC" Offset="0.0"/>
+            <GradientStop Color="#FFDCECFC" Offset="1.0"/>
+        </LinearGradientBrush>
+        <SolidColorBrush x:Key="ComboBox.MouseOver.Editable.Button.Border" Color="#FF7EB4EA"/>
+        <LinearGradientBrush x:Key="ComboBox.Pressed.Background" EndPoint="0,1" StartPoint="0,0">
+            <GradientStop Color="#FF76787A" Offset="0.0"/>
+            <GradientStop Color="#FF76787A" Offset="1.0"/>
+        </LinearGradientBrush>
+        <SolidColorBrush x:Key="ComboBox.Pressed.Border" Color="#FF569DE5"/>
+        <SolidColorBrush x:Key="ComboBox.Pressed.Glyph" Color="#FF000000"/>
+        <SolidColorBrush x:Key="ComboBox.Pressed.Editable.Background" Color="#FFFFFFFF"/>
+        <SolidColorBrush x:Key="ComboBox.Pressed.Editable.Border" Color="#FF569DE5"/>
+        <LinearGradientBrush x:Key="ComboBox.Pressed.Editable.Button.Background" EndPoint="0,1" StartPoint="0,0">
+            <GradientStop Color="#FFDAEBFC" Offset="0.0"/>
+            <GradientStop Color="#FFC4E0FC" Offset="1.0"/>
+        </LinearGradientBrush>
+        <SolidColorBrush x:Key="ComboBox.Pressed.Editable.Button.Border" Color="#FF569DE5"/>
+        <SolidColorBrush x:Key="ComboBox.Disabled.Background" Color="#FFF0F0F0"/>
+        <SolidColorBrush x:Key="ComboBox.Disabled.Border" Color="#FFD9D9D9"/>
+        <SolidColorBrush x:Key="ComboBox.Disabled.Glyph" Color="#FFBFBFBF"/>
+        <SolidColorBrush x:Key="ComboBox.Disabled.Editable.Background" Color="#FFFFFFFF"/>
+        <SolidColorBrush x:Key="ComboBox.Disabled.Editable.Border" Color="#FFBFBFBF"/>
+        <SolidColorBrush x:Key="ComboBox.Disabled.Editable.Button.Background" Color="Transparent"/>
+        <SolidColorBrush x:Key="ComboBox.Disabled.Editable.Button.Border" Color="Transparent"/>
+        <Style x:Key="ComboBoxToggleButton" TargetType="{x:Type ToggleButton}">
+            <Setter Property="OverridesDefaultStyle" Value="true"/>
+            <Setter Property="IsTabStop" Value="false"/>
+            <Setter Property="Focusable" Value="false"/>
+            <Setter Property="ClickMode" Value="Press"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ToggleButton}">
+                        <Border x:Name="templateRoot" Background="#FF1E2124" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{StaticResource ComboBox.Static.Border}" SnapsToDevicePixels="true">
+                            <Border x:Name="splitBorder" BorderThickness="1" BorderBrush="Transparent" HorizontalAlignment="Right" Margin="0" SnapsToDevicePixels="true" Width="{DynamicResource {x:Static SystemParameters.VerticalScrollBarWidthKey}}">
+                                <Path x:Name="arrow" Data="F1 M 0,0 L 2.667,2.66665 L 5.3334,0 L 5.3334,-1.78168 L 2.6667,0.88501 L0,-1.78168 L0,0 Z" Fill="{StaticResource ComboBox.Static.Glyph}" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center"/>
+                            </Border>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <MultiDataTrigger>
+                                <MultiDataTrigger.Conditions>
+                                    <Condition Binding="{Binding IsEditable, RelativeSource={RelativeSource AncestorType={x:Type ComboBox}}}" Value="true"/>
+                                    <Condition Binding="{Binding IsMouseOver, RelativeSource={RelativeSource Self}}" Value="false"/>
+                                    <Condition Binding="{Binding IsPressed, RelativeSource={RelativeSource Self}}" Value="false"/>
+                                    <Condition Binding="{Binding IsEnabled, RelativeSource={RelativeSource Self}}" Value="true"/>
+                                </MultiDataTrigger.Conditions>
+                                <Setter Property="Background" TargetName="templateRoot" Value="{StaticResource ComboBox.Static.Editable.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="templateRoot" Value="{StaticResource ComboBox.Static.Editable.Border}"/>
+                                <Setter Property="Background" TargetName="splitBorder" Value="{StaticResource ComboBox.Static.Editable.Button.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="splitBorder" Value="{StaticResource ComboBox.Static.Editable.Button.Border}"/>
+                            </MultiDataTrigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Fill" TargetName="arrow" Value="{StaticResource ComboBox.MouseOver.Glyph}"/>
+                            </Trigger>
+                            <MultiDataTrigger>
+                                <MultiDataTrigger.Conditions>
+                                    <Condition Binding="{Binding IsMouseOver, RelativeSource={RelativeSource Self}}" Value="true"/>
+                                    <Condition Binding="{Binding IsEditable, RelativeSource={RelativeSource AncestorType={x:Type ComboBox}}}" Value="false"/>
+                                </MultiDataTrigger.Conditions>
+                                <Setter Property="Background" TargetName="templateRoot" Value="{StaticResource ComboBox.MouseOver.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="templateRoot" Value="{StaticResource ComboBox.MouseOver.Border}"/>
+                            </MultiDataTrigger>
+                            <MultiDataTrigger>
+                                <MultiDataTrigger.Conditions>
+                                    <Condition Binding="{Binding IsMouseOver, RelativeSource={RelativeSource Self}}" Value="true"/>
+                                    <Condition Binding="{Binding IsEditable, RelativeSource={RelativeSource AncestorType={x:Type ComboBox}}}" Value="true"/>
+                                </MultiDataTrigger.Conditions>
+                                <Setter Property="Background" TargetName="templateRoot" Value="{StaticResource ComboBox.MouseOver.Editable.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="templateRoot" Value="{StaticResource ComboBox.MouseOver.Editable.Border}"/>
+                                <Setter Property="Background" TargetName="splitBorder" Value="{StaticResource ComboBox.MouseOver.Editable.Button.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="splitBorder" Value="{StaticResource ComboBox.MouseOver.Editable.Button.Border}"/>
+                            </MultiDataTrigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter Property="Fill" TargetName="arrow" Value="{StaticResource ComboBox.Pressed.Glyph}"/>
+                            </Trigger>
+                            <MultiDataTrigger>
+                                <MultiDataTrigger.Conditions>
+                                    <Condition Binding="{Binding IsPressed, RelativeSource={RelativeSource Self}}" Value="true"/>
+                                    <Condition Binding="{Binding IsEditable, RelativeSource={RelativeSource AncestorType={x:Type ComboBox}}}" Value="false"/>
+                                </MultiDataTrigger.Conditions>
+                                <Setter Property="Background" TargetName="templateRoot" Value="{StaticResource ComboBox.Pressed.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="templateRoot" Value="{StaticResource ComboBox.Pressed.Border}"/>
+                            </MultiDataTrigger>
+                            <MultiDataTrigger>
+                                <MultiDataTrigger.Conditions>
+                                    <Condition Binding="{Binding IsPressed, RelativeSource={RelativeSource Self}}" Value="true"/>
+                                    <Condition Binding="{Binding IsEditable, RelativeSource={RelativeSource AncestorType={x:Type ComboBox}}}" Value="true"/>
+                                </MultiDataTrigger.Conditions>
+                                <Setter Property="Background" TargetName="templateRoot" Value="{StaticResource ComboBox.Pressed.Editable.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="templateRoot" Value="{StaticResource ComboBox.Pressed.Editable.Border}"/>
+                                <Setter Property="Background" TargetName="splitBorder" Value="{StaticResource ComboBox.Pressed.Editable.Button.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="splitBorder" Value="{StaticResource ComboBox.Pressed.Editable.Button.Border}"/>
+                            </MultiDataTrigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Fill" TargetName="arrow" Value="{StaticResource ComboBox.Disabled.Glyph}"/>
+                            </Trigger>
+                            <MultiDataTrigger>
+                                <MultiDataTrigger.Conditions>
+                                    <Condition Binding="{Binding IsEnabled, RelativeSource={RelativeSource Self}}" Value="false"/>
+                                    <Condition Binding="{Binding IsEditable, RelativeSource={RelativeSource AncestorType={x:Type ComboBox}}}" Value="false"/>
+                                </MultiDataTrigger.Conditions>
+                                <Setter Property="Background" TargetName="templateRoot" Value="{StaticResource ComboBox.Disabled.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="templateRoot" Value="{StaticResource ComboBox.Disabled.Border}"/>
+                            </MultiDataTrigger>
+                            <MultiDataTrigger>
+                                <MultiDataTrigger.Conditions>
+                                    <Condition Binding="{Binding IsEnabled, RelativeSource={RelativeSource Self}}" Value="false"/>
+                                    <Condition Binding="{Binding IsEditable, RelativeSource={RelativeSource AncestorType={x:Type ComboBox}}}" Value="true"/>
+                                </MultiDataTrigger.Conditions>
+                                <Setter Property="Background" TargetName="templateRoot" Value="{StaticResource ComboBox.Disabled.Editable.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="templateRoot" Value="{StaticResource ComboBox.Disabled.Editable.Border}"/>
+                                <Setter Property="Background" TargetName="splitBorder" Value="{StaticResource ComboBox.Disabled.Editable.Button.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="splitBorder" Value="{StaticResource ComboBox.Disabled.Editable.Button.Border}"/>
+                            </MultiDataTrigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <ControlTemplate x:Key="ComboBoxEditableTemplate" TargetType="{x:Type ComboBox}">
+            <Grid x:Name="templateRoot" SnapsToDevicePixels="true">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition MinWidth="{DynamicResource {x:Static SystemParameters.VerticalScrollBarWidthKey}}" Width="0"/>
+                </Grid.ColumnDefinitions>
+                <Popup x:Name="PART_Popup" AllowsTransparency="true" Grid.ColumnSpan="2" IsOpen="{Binding IsDropDownOpen, RelativeSource={RelativeSource TemplatedParent}}" Placement="Bottom" PopupAnimation="{DynamicResource {x:Static SystemParameters.ComboBoxPopupAnimationKey}}">
+                    <theme:SystemDropShadowChrome x:Name="shadow" Color="Transparent" MinWidth="{Binding ActualWidth, ElementName=templateRoot}" MaxHeight="{TemplateBinding MaxDropDownHeight}">
+                        <Border x:Name="dropDownBorder" Background="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" BorderThickness="1" BorderBrush="{DynamicResource {x:Static SystemColors.WindowFrameBrushKey}}">
+                            <ScrollViewer x:Name="DropDownScrollViewer">
+                                <Grid x:Name="grid" RenderOptions.ClearTypeHint="Enabled">
+                                    <Canvas x:Name="canvas" HorizontalAlignment="Left" Height="0" VerticalAlignment="Top" Width="0">
+                                        <Rectangle x:Name="opaqueRect" Fill="{Binding Background, ElementName=dropDownBorder}" Height="{Binding ActualHeight, ElementName=dropDownBorder}" Width="{Binding ActualWidth, ElementName=dropDownBorder}"/>
+                                    </Canvas>
+                                    <ItemsPresenter x:Name="ItemsPresenter" KeyboardNavigation.DirectionalNavigation="Contained" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                                </Grid>
+                            </ScrollViewer>
+                        </Border>
+                    </theme:SystemDropShadowChrome>
+                </Popup>
+                <ToggleButton x:Name="toggleButton" Background="{TemplateBinding Background}" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}" Grid.ColumnSpan="2" IsChecked="{Binding IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" Style="{StaticResource ComboBoxToggleButton}"/>
+                <Border x:Name="border" Background="{StaticResource TextBox.Static.Background}" Margin="{TemplateBinding BorderThickness}">
+                    <TextBox x:Name="PART_EditableTextBox" HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" IsReadOnly="{Binding IsReadOnly, RelativeSource={RelativeSource TemplatedParent}}" Margin="{TemplateBinding Padding}" Style="{StaticResource ComboBoxEditableTextBox}" VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                </Border>
+            </Grid>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsEnabled" Value="false">
+                    <Setter Property="Opacity" TargetName="border" Value="0.56"/>
+                </Trigger>
+                <Trigger Property="IsKeyboardFocusWithin" Value="true">
+                    <Setter Property="Foreground" Value="Black"/>
+                </Trigger>
+                <Trigger Property="HasDropShadow" SourceName="PART_Popup" Value="true">
+                    <Setter Property="Margin" TargetName="shadow" Value="0,0,5,5"/>
+                    <Setter Property="Color" TargetName="shadow" Value="#71000000"/>
+                </Trigger>
+                <Trigger Property="HasItems" Value="false">
+                    <Setter Property="Height" TargetName="dropDownBorder" Value="95"/>
+                </Trigger>
+                <MultiTrigger>
+                    <MultiTrigger.Conditions>
+                        <Condition Property="IsGrouping" Value="true"/>
+                        <Condition Property="VirtualizingPanel.IsVirtualizingWhenGrouping" Value="false"/>
+                    </MultiTrigger.Conditions>
+                    <Setter Property="ScrollViewer.CanContentScroll" Value="false"/>
+                </MultiTrigger>
+                <Trigger Property="ScrollViewer.CanContentScroll" SourceName="DropDownScrollViewer" Value="false">
+                    <Setter Property="Canvas.Top" TargetName="opaqueRect" Value="{Binding VerticalOffset, ElementName=DropDownScrollViewer}"/>
+                    <Setter Property="Canvas.Left" TargetName="opaqueRect" Value="{Binding HorizontalOffset, ElementName=DropDownScrollViewer}"/>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+        <ControlTemplate x:Key="ComboBoxTemplate" TargetType="{x:Type ComboBox}">
+            <Grid x:Name="templateRoot" SnapsToDevicePixels="true">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition MinWidth="{DynamicResource {x:Static SystemParameters.VerticalScrollBarWidthKey}}" Width="0"/>
+                </Grid.ColumnDefinitions>
+                <Popup x:Name="PART_Popup" AllowsTransparency="true" Grid.ColumnSpan="2" IsOpen="{Binding IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" Margin="1" Placement="Bottom" PopupAnimation="{DynamicResource {x:Static SystemParameters.ComboBoxPopupAnimationKey}}">
+                    <theme:SystemDropShadowChrome x:Name="shadow" Color="Transparent" MinWidth="{Binding ActualWidth, ElementName=templateRoot}" MaxHeight="{TemplateBinding MaxDropDownHeight}">
+                        <Border x:Name="dropDownBorder" Background="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" BorderThickness="1" BorderBrush="{DynamicResource {x:Static SystemColors.WindowFrameBrushKey}}">
+                            <ScrollViewer x:Name="DropDownScrollViewer">
+                                <Grid x:Name="grid" RenderOptions.ClearTypeHint="Enabled">
+                                    <Canvas x:Name="canvas" HorizontalAlignment="Left" Height="0" VerticalAlignment="Top" Width="0">
+                                        <Rectangle x:Name="opaqueRect" Fill="{Binding Background, ElementName=dropDownBorder}" Height="{Binding ActualHeight, ElementName=dropDownBorder}" Width="{Binding ActualWidth, ElementName=dropDownBorder}"/>
+                                    </Canvas>
+                                    <ItemsPresenter x:Name="ItemsPresenter" KeyboardNavigation.DirectionalNavigation="Contained" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                                </Grid>
+                            </ScrollViewer>
+                        </Border>
+                    </theme:SystemDropShadowChrome>
+                </Popup>
+                <ToggleButton x:Name="toggleButton" Background="{TemplateBinding Background}" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding Background}" Grid.ColumnSpan="2" IsChecked="{Binding IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" Style="{StaticResource ComboBoxToggleButton}" Checked="toggleButton_Checked"/>
+                <ContentPresenter x:Name="contentPresenter" ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}" Content="{TemplateBinding SelectionBoxItem}" ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}" ContentStringFormat="{TemplateBinding SelectionBoxItemStringFormat}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" IsHitTestVisible="false" Margin="{TemplateBinding Padding}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+            </Grid>
+            <ControlTemplate.Triggers>
+                <Trigger Property="HasDropShadow" SourceName="PART_Popup" Value="true">
+                    <Setter Property="Margin" TargetName="shadow" Value="0,0,5,5"/>
+                    <Setter Property="Color" TargetName="shadow" Value="#71000000"/>
+                </Trigger>
+                <Trigger Property="HasItems" Value="false">
+                    <Setter Property="Height" TargetName="dropDownBorder" Value="95"/>
+                </Trigger>
+                <MultiTrigger>
+                    <MultiTrigger.Conditions>
+                        <Condition Property="IsGrouping" Value="true"/>
+                        <Condition Property="VirtualizingPanel.IsVirtualizingWhenGrouping" Value="false"/>
+                    </MultiTrigger.Conditions>
+                    <Setter Property="ScrollViewer.CanContentScroll" Value="false"/>
+                </MultiTrigger>
+                <Trigger Property="ScrollViewer.CanContentScroll" SourceName="DropDownScrollViewer" Value="false">
+                    <Setter Property="Canvas.Top" TargetName="opaqueRect" Value="{Binding VerticalOffset, ElementName=DropDownScrollViewer}"/>
+                    <Setter Property="Canvas.Left" TargetName="opaqueRect" Value="{Binding HorizontalOffset, ElementName=DropDownScrollViewer}"/>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+        <Style x:Key="PoEComboBox" TargetType="{x:Type ComboBox}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual1}"/>
+            <Setter Property="Background" Value="{StaticResource ComboBox.Static.Background}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource ComboBox.Static.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.WindowTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto"/>
+            <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto"/>
+            <Setter Property="Padding" Value="6,3,5,3"/>
+            <Setter Property="ScrollViewer.CanContentScroll" Value="true"/>
+            <Setter Property="ScrollViewer.PanningMode" Value="Both"/>
+            <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
+            <Setter Property="Template" Value="{StaticResource ComboBoxTemplate}"/>
+            <Style.Triggers>
+                <Trigger Property="IsEditable" Value="true">
+                    <Setter Property="IsTabStop" Value="false"/>
+                    <Setter Property="Padding" Value="2"/>
+                    <Setter Property="Template" Value="{StaticResource ComboBoxEditableTemplate}"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="FocusVisual2">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle Margin="2" StrokeDashArray="1 2" SnapsToDevicePixels="true" StrokeThickness="1" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <SolidColorBrush x:Key="Button.Static.Background" Color="#FFDDDDDD"/>
+        <SolidColorBrush x:Key="Button.Static.Border" Color="#FF707070"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#FF896632"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Border" Color="#FF3C7FB1"/>
+        <SolidColorBrush x:Key="Button.Pressed.Background" Color="#FFB19A78"/>
+        <SolidColorBrush x:Key="Button.Pressed.Border" Color="#FF2C628B"/>
+        <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4"/>
+        <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5"/>
+        <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF838383"/>
+        <Style x:Key="PoeButtonSimulation" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual2}"/>
+            <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" Background="{TemplateBinding Background}" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}" SnapsToDevicePixels="true">
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.MouseOver.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.MouseOver.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Pressed.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Pressed.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
+                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
     <Window.Background>
         <ImageBrush ImageSource="/expedition-bg.jpg" Stretch="Uniform"/>
     </Window.Background>
     <Grid HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,66,0,0">
-        <Label Content="PoE Planner" Margin="0,0,0,0" Width="700" FontWeight="Normal" FontFamily="Segoe UI Semibold" HorizontalContentAlignment="Center" VerticalContentAlignment="Top" FontSize="72" Height="106" HorizontalAlignment="Center" VerticalAlignment="Top">
+        <Label Content="PoE Trade Planner" Margin="0,0,0,0" Width="700" FontWeight="Normal" FontFamily="Segoe UI Semibold" HorizontalContentAlignment="Center" VerticalContentAlignment="Top" FontSize="72" Height="106" HorizontalAlignment="Center" VerticalAlignment="Top">
             <Label.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#00000000" Offset="1"/>
@@ -18,20 +444,20 @@
                 </LinearGradientBrush>
             </Label.Foreground>
         </Label>
-        <Border BorderThickness="1" BorderBrush="Black" HorizontalAlignment="Left" Height="500" Margin="-324,145,0,0" VerticalAlignment="Top" Width="500">
+        <Border BorderThickness="1" BorderBrush="Black" HorizontalAlignment="Left" Height="598" Margin="-31,164,0,0" VerticalAlignment="Top" Width="500">
             <Border.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black"/>
                     <GradientStop Color="Black" Offset="1"/>
                 </LinearGradientBrush>
             </Border.Background>
-            <Border BorderThickness="1" BorderBrush="Black" HorizontalAlignment="Center" Height="480" VerticalAlignment="Center" Width="480">
+            <Border BorderThickness="1" BorderBrush="Black" HorizontalAlignment="Center" Height="480" VerticalAlignment="Top" Width="480" Margin="0,9,0,0">
                 <Border.Background>
                     <ImageBrush ImageSource="/StashPanelGrid.png"/>
                 </Border.Background>
             </Border>
         </Border>
-        <Rectangle HorizontalAlignment="Left" Height="1" Margin="-324,145,0,0" Stroke="#FF5A3806" VerticalAlignment="Top" Width="500">
+        <Rectangle HorizontalAlignment="Left" Height="1" Margin="-31,164,0,0" Stroke="#FF5A3806" VerticalAlignment="Top" Width="500">
             <Rectangle.Fill>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black"/>
@@ -39,6 +465,496 @@
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
-        <Button Content="Tab1" HorizontalAlignment="Left" Height="21" Margin="-324,124,0,0" VerticalAlignment="Top" Width="114" Background="#FF5A3806" BorderBrush="#FF5A3806" Foreground="#FFE9CF9F"/>
+        <Button Content="Tab1" HorizontalAlignment="Left" Height="21" Margin="-31,143,0,0" VerticalAlignment="Top" Width="114" Background="#FF5A3806" BorderBrush="#FF5A3806" Foreground="#FFE9CF9F" FontFamily="Fontin"/>
+        <Border BorderThickness="1" BorderBrush="Black" HorizontalAlignment="Left" Height="560" Margin="514,164,0,0" VerticalAlignment="Top" Width="813">
+            <Border.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="Black" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+            <Button Content="Value" HorizontalAlignment="Left" Height="25" Margin="526,279,0,0" VerticalAlignment="Top" Width="133" Background="#FF0076FF" Foreground="#FFFFF8E1" FontFamily="Fontin SmallCaps" Cursor="Hand"/>
+        </Border>
+        <Border BorderThickness="1" BorderBrush="#FF0E0F10" HorizontalAlignment="Left" Height="197" Margin="1257,241,0,0" VerticalAlignment="Top" Width="49" Background="#FF0E0F10"/>
+        <Border BorderThickness="1" BorderBrush="#FF0E0F10" HorizontalAlignment="Left" Height="197" Margin="1203,241,0,0" VerticalAlignment="Top" Width="49" Background="#FF0E0F10"/>
+        <Border BorderThickness="1" BorderBrush="#FF0E0F10" HorizontalAlignment="Left" Height="197" Margin="1149,241,0,0" VerticalAlignment="Top" Width="49" Background="#FF0E0F10"/>
+        <Border BorderThickness="1" BorderBrush="#FF0E0F10" HorizontalAlignment="Left" Height="197" Margin="1095,241,0,0" VerticalAlignment="Top" Width="49" Background="#FF0E0F10"/>
+        <Border BorderThickness="1" BorderBrush="#FF0E0F10" HorizontalAlignment="Left" Height="197" Margin="1041,241,0,0" VerticalAlignment="Top" Width="49" Background="#FF0E0F10"/>
+        <Rectangle HorizontalAlignment="Left" Height="1" Margin="514,164,0,0" Stroke="#FF5A3806" VerticalAlignment="Top" Width="813">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF5A3806" Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <TextBox HorizontalAlignment="Left" Height="28" Margin="178,664,0,0" Text="Enter Account Name..." TextWrapping="Wrap" VerticalAlignment="Top" Width="278" BorderBrush="#FF1E2124" Foreground="#FF8A9999" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="#FF1E2124" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="16" Cursor="Hand"/>
+        <TextBox HorizontalAlignment="Left" Height="28" Margin="-19,664,0,0" Text="Account" TextWrapping="Wrap" VerticalAlignment="Top" Width="192" BorderBrush="#FF0E0F10" Foreground="#FFFFF8E1" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="#FF0E0F10" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="18" Cursor="Arrow" Padding="4,0,0,0" Focusable="False" IsHitTestVisible="False"/>
+        <Rectangle HorizontalAlignment="Left" Height="2" Margin="-33,677,0,0" Stroke="#FF5A3806" VerticalAlignment="Top" Width="28" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF5A3806" Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <TextBox HorizontalAlignment="Left" Height="28" Margin="624,211,0,0" Text="Category Name" TextWrapping="Wrap" VerticalAlignment="Top" Width="412" BorderBrush="#FF1E2124" Foreground="#FF8A9999" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="#FF1E2124" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="16" Cursor="Hand"/>
+        <TextBox HorizontalAlignment="Left" Height="28" Margin="564,211,0,0" Text="Base" TextWrapping="Wrap" VerticalAlignment="Top" Width="55" BorderBrush="#FF0E0F10" Foreground="#FFFFF8E1" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="#FF0E0F10" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="18" Cursor="Arrow" Padding="4,0,0,0" Focusable="False" IsHitTestVisible="False"/>
+        <Rectangle HorizontalAlignment="Left" Height="2" Margin="550,224,0,0" Stroke="#FF5A3806" VerticalAlignment="Top" Width="28" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF5A3806" Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <TextBox HorizontalAlignment="Left" Height="28" Margin="530,178,0,0" Text="Stat Filters" TextWrapping="Wrap" VerticalAlignment="Top" Width="192" BorderBrush="Black" Foreground="#FFFFF8E1" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="Black" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="18" Cursor="Arrow" Padding="4,0,0,0" Focusable="False" IsHitTestVisible="False"/>
+        <Rectangle HorizontalAlignment="Left" Height="2" Margin="530,206,0,0" Stroke="#FF465260" VerticalAlignment="Top" Width="506" RenderTransformOrigin="0.5,0.5" Fill="#FF465260">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <TextBox HorizontalAlignment="Left" Height="28" Margin="1041,178,0,0" Text="Best Combinations" TextWrapping="Wrap" VerticalAlignment="Top" Width="201" BorderBrush="Black" Foreground="#FFFFF8E1" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="Black" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="18" Cursor="Arrow" Padding="4,0,0,0" Focusable="False" IsHitTestVisible="False"/>
+        <Rectangle HorizontalAlignment="Left" Height="2" Margin="1041,206,0,0" Stroke="#FF0076FF" VerticalAlignment="Top" Width="265" RenderTransformOrigin="0.5,0.5" Fill="#FF0076FF">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <TextBox HorizontalAlignment="Left" Height="28" Margin="1041,211,0,0" Text="Top1" TextWrapping="Wrap" VerticalAlignment="Top" Width="49" BorderBrush="Black" Foreground="#FFFFF8E1" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="Black" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="18" Cursor="Arrow" Padding="4,0,0,0" Focusable="False" IsHitTestVisible="False" TextChanged="TextBox_TextChanged"/>
+        <Rectangle HorizontalAlignment="Left" Height="2" Margin="1041,239,0,0" Stroke="#FF0076FF" VerticalAlignment="Top" Width="49" RenderTransformOrigin="0.5,0.5" Fill="#FF0076FF">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <TextBox HorizontalAlignment="Left" Height="28" Margin="1095,211,0,0" Text="Top2" TextWrapping="Wrap" VerticalAlignment="Top" Width="49" BorderBrush="Black" Foreground="#FFFFF8E1" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="Black" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="18" Cursor="Arrow" Padding="4,0,0,0" Focusable="False" IsHitTestVisible="False" TextChanged="TextBox_TextChanged"/>
+        <Rectangle HorizontalAlignment="Left" Height="2" Margin="1095,239,0,0" Stroke="#FF0076FF" VerticalAlignment="Top" Width="49" RenderTransformOrigin="0.5,0.5" Fill="#FF0076FF">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <TextBox HorizontalAlignment="Left" Height="28" Margin="1149,211,0,0" Text="Top3" TextWrapping="Wrap" VerticalAlignment="Top" Width="49" BorderBrush="Black" Foreground="#FFFFF8E1" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="Black" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="18" Cursor="Arrow" Padding="4,0,0,0" Focusable="False" IsHitTestVisible="False" TextChanged="TextBox_TextChanged"/>
+        <Rectangle HorizontalAlignment="Left" Height="2" Margin="1149,239,0,0" Stroke="#FF0076FF" VerticalAlignment="Top" Width="49" RenderTransformOrigin="0.5,0.5" Fill="#FF0076FF">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <TextBox HorizontalAlignment="Left" Height="28" Margin="1203,211,0,0" Text="Top4" TextWrapping="Wrap" VerticalAlignment="Top" Width="49" BorderBrush="Black" Foreground="#FFFFF8E1" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="Black" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="18" Cursor="Arrow" Padding="4,0,0,0" Focusable="False" IsHitTestVisible="False" TextChanged="TextBox_TextChanged"/>
+        <Rectangle HorizontalAlignment="Left" Height="2" Margin="1203,239,0,0" Stroke="#FF0076FF" VerticalAlignment="Top" Width="49" RenderTransformOrigin="0.5,0.5" Fill="#FF0076FF">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <TextBox HorizontalAlignment="Left" Height="28" Margin="1257,211,0,0" Text="Top5" TextWrapping="Wrap" VerticalAlignment="Top" Width="49" BorderBrush="Black" Foreground="#FFFFF8E1" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="Black" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="18" Cursor="Arrow" Padding="4,0,0,0" Focusable="False" IsHitTestVisible="False" TextChanged="TextBox_TextChanged"/>
+        <Rectangle HorizontalAlignment="Left" Height="2" Margin="1257,239,0,0" Stroke="#FF0076FF" VerticalAlignment="Top" Width="49" RenderTransformOrigin="0.5,0.5" Fill="#FF0076FF">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <TextBox HorizontalAlignment="Left" Height="28" Margin="944,245,0,0" Text="Max" TextWrapping="Wrap" VerticalAlignment="Top" Width="71" BorderBrush="#FF1E2124" Foreground="#FF8A9999" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="#FF1E2124" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="16" Cursor="Hand"/>
+        <TextBox HorizontalAlignment="Left" Height="28" Margin="564,245,0,0" Text="Prefix1" TextWrapping="Wrap" VerticalAlignment="Top" Width="299" BorderBrush="#FF0E0F10" Foreground="#FFFFF8E1" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="#FF0E0F10" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="18" Cursor="Arrow" Padding="4,0,0,0" Focusable="False" IsHitTestVisible="False"/>
+        <Rectangle HorizontalAlignment="Left" Height="2" Margin="550,258,0,0" Stroke="#FF5A3806" VerticalAlignment="Top" Width="28" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF5A3806" Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <TextBox HorizontalAlignment="Left" Height="28" Margin="868,245,0,0" Text="Min" TextWrapping="Wrap" VerticalAlignment="Top" Width="71" BorderBrush="#FF1E2124" Foreground="#FF8A9999" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="#FF1E2124" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="16" Cursor="Hand"/>
+        <TextBox HorizontalAlignment="Left" Height="28" Margin="1020,244,0,0" Text="P" TextWrapping="Wrap" VerticalAlignment="Top" Width="16" BorderBrush="Black" Foreground="Red" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="Black" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="18" Cursor="Arrow" Padding="0,0,0,0" Focusable="False" IsHitTestVisible="False"/>
+        <TextBox HorizontalAlignment="Left" Height="28" Margin="944,278,0,0" Text="Max" TextWrapping="Wrap" VerticalAlignment="Top" Width="71" BorderBrush="#FF1E2124" Foreground="#FF8A9999" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="#FF1E2124" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="16" Cursor="Hand"/>
+        <TextBox HorizontalAlignment="Left" Height="28" Margin="564,278,0,0" Text="Prefix2" TextWrapping="Wrap" VerticalAlignment="Top" Width="299" BorderBrush="#FF0E0F10" Foreground="#FFFFF8E1" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="#FF0E0F10" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="18" Cursor="Arrow" Padding="4,0,0,0" Focusable="False" IsHitTestVisible="False"/>
+        <Rectangle HorizontalAlignment="Left" Height="2" Margin="550,291,0,0" Stroke="#FF5A3806" VerticalAlignment="Top" Width="28" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF5A3806" Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <TextBox HorizontalAlignment="Left" Height="28" Margin="868,278,0,0" Text="Min" TextWrapping="Wrap" VerticalAlignment="Top" Width="71" BorderBrush="#FF1E2124" Foreground="#FF8A9999" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="#FF1E2124" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="16" Cursor="Hand"/>
+        <TextBox HorizontalAlignment="Left" Height="28" Margin="1020,277,0,0" Text="P" TextWrapping="Wrap" VerticalAlignment="Top" Width="16" BorderBrush="Black" Foreground="Red" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="Black" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="18" Cursor="Arrow" Padding="0,0,0,0" Focusable="False" IsHitTestVisible="False"/>
+        <TextBox HorizontalAlignment="Left" Height="28" Margin="944,311,0,0" Text="Max" TextWrapping="Wrap" VerticalAlignment="Top" Width="71" BorderBrush="#FF1E2124" Foreground="#FF8A9999" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="#FF1E2124" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="16" Cursor="Hand"/>
+        <TextBox HorizontalAlignment="Left" Height="28" Margin="564,311,0,0" Text="Prefix3" TextWrapping="Wrap" VerticalAlignment="Top" Width="299" BorderBrush="#FF0E0F10" Foreground="#FFFFF8E1" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="#FF0E0F10" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="18" Cursor="Arrow" Padding="4,0,0,0" Focusable="False" IsHitTestVisible="False"/>
+        <Rectangle HorizontalAlignment="Left" Height="2" Margin="550,324,0,0" Stroke="#FF5A3806" VerticalAlignment="Top" Width="28" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF5A3806" Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <TextBox HorizontalAlignment="Left" Height="28" Margin="868,311,0,0" Text="Min" TextWrapping="Wrap" VerticalAlignment="Top" Width="71" BorderBrush="#FF1E2124" Foreground="#FF8A9999" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="#FF1E2124" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="16" Cursor="Hand"/>
+        <TextBox HorizontalAlignment="Left" Height="28" Margin="1020,310,0,0" Text="P" TextWrapping="Wrap" VerticalAlignment="Top" Width="16" BorderBrush="Black" Foreground="Red" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="Black" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="18" Cursor="Arrow" Padding="0,0,0,0" Focusable="False" IsHitTestVisible="False"/>
+        <TextBox HorizontalAlignment="Left" Height="28" Margin="944,344,0,0" Text="Max" TextWrapping="Wrap" VerticalAlignment="Top" Width="71" BorderBrush="#FF1E2124" Foreground="#FF8A9999" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="#FF1E2124" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="16" Cursor="Hand"/>
+        <TextBox HorizontalAlignment="Left" Height="28" Margin="564,344,0,0" Text="Sufix1" TextWrapping="Wrap" VerticalAlignment="Top" Width="299" BorderBrush="#FF0E0F10" Foreground="#FFFFF8E1" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="#FF0E0F10" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="18" Cursor="Arrow" Padding="4,0,0,0" Focusable="False" IsHitTestVisible="False"/>
+        <Rectangle HorizontalAlignment="Left" Height="2" Margin="550,357,0,0" Stroke="#FF5A3806" VerticalAlignment="Top" Width="28" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF5A3806" Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <TextBox HorizontalAlignment="Left" Height="28" Margin="868,344,0,0" Text="Min" TextWrapping="Wrap" VerticalAlignment="Top" Width="71" BorderBrush="#FF1E2124" Foreground="#FF8A9999" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="#FF1E2124" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="16" Cursor="Hand"/>
+        <TextBox HorizontalAlignment="Left" Height="28" Margin="1020,343,0,0" Text="S" TextWrapping="Wrap" VerticalAlignment="Top" Width="16" BorderBrush="Black" Foreground="#FF008CFF" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="Black" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="18" Cursor="Arrow" Padding="0,0,0,0" Focusable="False" IsHitTestVisible="False"/>
+        <TextBox HorizontalAlignment="Left" Height="28" Margin="944,377,0,0" Text="Max" TextWrapping="Wrap" VerticalAlignment="Top" Width="71" BorderBrush="#FF1E2124" Foreground="#FF8A9999" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="#FF1E2124" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="16" Cursor="Hand"/>
+        <TextBox HorizontalAlignment="Left" Height="28" Margin="564,377,0,0" Text="Sufix2" TextWrapping="Wrap" VerticalAlignment="Top" Width="299" BorderBrush="#FF0E0F10" Foreground="#FFFFF8E1" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="#FF0E0F10" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="18" Cursor="Arrow" Padding="4,0,0,0" Focusable="False" IsHitTestVisible="False"/>
+        <Rectangle HorizontalAlignment="Left" Height="2" Margin="550,390,0,0" Stroke="#FF5A3806" VerticalAlignment="Top" Width="28" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF5A3806" Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <TextBox HorizontalAlignment="Left" Height="28" Margin="868,377,0,0" Text="Min" TextWrapping="Wrap" VerticalAlignment="Top" Width="71" BorderBrush="#FF1E2124" Foreground="#FF8A9999" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="#FF1E2124" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="16" Cursor="Hand"/>
+        <TextBox HorizontalAlignment="Left" Height="28" Margin="1020,376,0,0" Text="S" TextWrapping="Wrap" VerticalAlignment="Top" Width="16" BorderBrush="Black" Foreground="#FF008CFF" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="Black" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="18" Cursor="Arrow" Padding="0,0,0,0" Focusable="False" IsHitTestVisible="False"/>
+        <TextBox HorizontalAlignment="Left" Height="28" Margin="944,410,0,0" Text="Max" TextWrapping="Wrap" VerticalAlignment="Top" Width="71" BorderBrush="#FF1E2124" Foreground="#FF8A9999" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="#FF1E2124" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="16" Cursor="Hand"/>
+        <TextBox HorizontalAlignment="Left" Height="28" Margin="564,410,0,0" Text="Sufix3" TextWrapping="Wrap" VerticalAlignment="Top" Width="299" BorderBrush="#FF0E0F10" Foreground="#FFFFF8E1" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="#FF0E0F10" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="18" Cursor="Arrow" Padding="4,0,0,0" Focusable="False" IsHitTestVisible="False"/>
+        <Rectangle HorizontalAlignment="Left" Height="2" Margin="550,423,0,0" Stroke="#FF5A3806" VerticalAlignment="Top" Width="28" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF5A3806" Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <TextBox HorizontalAlignment="Left" Height="28" Margin="868,410,0,0" Text="Min" TextWrapping="Wrap" VerticalAlignment="Top" Width="71" BorderBrush="#FF1E2124" Foreground="#FF8A9999" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="#FF1E2124" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="16" Cursor="Hand"/>
+        <TextBox HorizontalAlignment="Left" Height="28" Margin="1020,409,0,0" Text="S" TextWrapping="Wrap" VerticalAlignment="Top" Width="16" BorderBrush="Black" Foreground="#FF008CFF" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="Black" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="18" Cursor="Arrow" Padding="0,0,0,0" Focusable="False" IsHitTestVisible="False"/>
+        <Border BorderThickness="1" BorderBrush="#FF0076FF" HorizontalAlignment="Left" Height="20" Margin="1056,249,0,0" VerticalAlignment="Top" Width="20"/>
+        <Border BorderThickness="1" BorderBrush="#FF0076FF" HorizontalAlignment="Left" Height="20" Margin="1164,249,0,0" VerticalAlignment="Top" Width="20"/>
+        <Border BorderThickness="1" BorderBrush="#FF0076FF" HorizontalAlignment="Left" Height="20" Margin="1110,249,0,0" VerticalAlignment="Top" Width="20"/>
+        <Border BorderThickness="1" BorderBrush="#FF0076FF" HorizontalAlignment="Left" Height="20" Margin="1218,249,0,0" VerticalAlignment="Top" Width="20"/>
+        <Border BorderThickness="1" BorderBrush="#FF0076FF" HorizontalAlignment="Left" Height="20" Margin="1272,249,0,0" VerticalAlignment="Top" Width="20"/>
+        <Border BorderThickness="1" HorizontalAlignment="Left" Height="16" Margin="1058,251,0,0" VerticalAlignment="Top" Width="16"/>
+        <Border BorderThickness="1" HorizontalAlignment="Left" Height="16" Margin="1112,251,0,0" VerticalAlignment="Top" Width="16"/>
+        <Border BorderThickness="1" HorizontalAlignment="Left" Height="16" Margin="1166,251,0,0" VerticalAlignment="Top" Width="16"/>
+        <Border BorderThickness="1" HorizontalAlignment="Left" Height="16" Margin="1220,251,0,0" VerticalAlignment="Top" Width="16"/>
+        <Border BorderThickness="1" HorizontalAlignment="Left" Height="16" Margin="1274,251,0,0" VerticalAlignment="Top" Width="16"/>
+        <Border BorderThickness="1" BorderBrush="#FF0076FF" HorizontalAlignment="Left" Height="20" Margin="1056,282,0,0" VerticalAlignment="Top" Width="20"/>
+        <Border BorderThickness="1" BorderBrush="#FF0076FF" HorizontalAlignment="Left" Height="20" Margin="1164,282,0,0" VerticalAlignment="Top" Width="20"/>
+        <Border BorderThickness="1" BorderBrush="#FF0076FF" HorizontalAlignment="Left" Height="20" Margin="1110,282,0,0" VerticalAlignment="Top" Width="20"/>
+        <Border BorderThickness="1" BorderBrush="#FF0076FF" HorizontalAlignment="Left" Height="20" Margin="1218,282,0,0" VerticalAlignment="Top" Width="20"/>
+        <Border BorderThickness="1" BorderBrush="#FF0076FF" HorizontalAlignment="Left" Height="20" Margin="1272,282,0,0" VerticalAlignment="Top" Width="20"/>
+        <Border BorderThickness="1" HorizontalAlignment="Left" Height="16" Margin="1058,284,0,0" VerticalAlignment="Top" Width="16"/>
+        <Border BorderThickness="1" HorizontalAlignment="Left" Height="16" Margin="1112,284,0,0" VerticalAlignment="Top" Width="16"/>
+        <Border BorderThickness="1" HorizontalAlignment="Left" Height="16" Margin="1166,284,0,0" VerticalAlignment="Top" Width="16"/>
+        <Border BorderThickness="1" HorizontalAlignment="Left" Height="16" Margin="1220,284,0,0" VerticalAlignment="Top" Width="16"/>
+        <Border BorderThickness="1" HorizontalAlignment="Left" Height="16" Margin="1274,284,0,0" VerticalAlignment="Top" Width="16"/>
+        <Border BorderThickness="1" BorderBrush="#FF0076FF" HorizontalAlignment="Left" Height="20" Margin="1056,315,0,0" VerticalAlignment="Top" Width="20"/>
+        <Border BorderThickness="1" BorderBrush="#FF0076FF" HorizontalAlignment="Left" Height="20" Margin="1164,315,0,0" VerticalAlignment="Top" Width="20"/>
+        <Border BorderThickness="1" BorderBrush="#FF0076FF" HorizontalAlignment="Left" Height="20" Margin="1110,315,0,0" VerticalAlignment="Top" Width="20"/>
+        <Border BorderThickness="1" BorderBrush="#FF0076FF" HorizontalAlignment="Left" Height="20" Margin="1218,315,0,0" VerticalAlignment="Top" Width="20"/>
+        <Border BorderThickness="1" BorderBrush="#FF0076FF" HorizontalAlignment="Left" Height="20" Margin="1272,315,0,0" VerticalAlignment="Top" Width="20"/>
+        <Border BorderThickness="1" HorizontalAlignment="Left" Height="16" Margin="1058,317,0,0" VerticalAlignment="Top" Width="16"/>
+        <Border BorderThickness="1" HorizontalAlignment="Left" Height="16" Margin="1112,317,0,0" VerticalAlignment="Top" Width="16"/>
+        <Border BorderThickness="1" HorizontalAlignment="Left" Height="16" Margin="1166,317,0,0" VerticalAlignment="Top" Width="16"/>
+        <Border BorderThickness="1" HorizontalAlignment="Left" Height="16" Margin="1220,317,0,0" VerticalAlignment="Top" Width="16"/>
+        <Border BorderThickness="1" HorizontalAlignment="Left" Height="16" Margin="1274,317,0,0" VerticalAlignment="Top" Width="16"/>
+        <Border BorderThickness="1" BorderBrush="#FF0076FF" HorizontalAlignment="Left" Height="20" Margin="1056,348,0,0" VerticalAlignment="Top" Width="20"/>
+        <Border BorderThickness="1" BorderBrush="#FF0076FF" HorizontalAlignment="Left" Height="20" Margin="1164,348,0,0" VerticalAlignment="Top" Width="20"/>
+        <Border BorderThickness="1" BorderBrush="#FF0076FF" HorizontalAlignment="Left" Height="20" Margin="1110,348,0,0" VerticalAlignment="Top" Width="20"/>
+        <Border BorderThickness="1" BorderBrush="#FF0076FF" HorizontalAlignment="Left" Height="20" Margin="1218,348,0,0" VerticalAlignment="Top" Width="20"/>
+        <Border BorderThickness="1" BorderBrush="#FF0076FF" HorizontalAlignment="Left" Height="20" Margin="1272,348,0,0" VerticalAlignment="Top" Width="20"/>
+        <Border BorderThickness="1" HorizontalAlignment="Left" Height="16" Margin="1058,350,0,0" VerticalAlignment="Top" Width="16"/>
+        <Border BorderThickness="1" HorizontalAlignment="Left" Height="16" Margin="1112,350,0,0" VerticalAlignment="Top" Width="16"/>
+        <Border BorderThickness="1" HorizontalAlignment="Left" Height="16" Margin="1166,350,0,0" VerticalAlignment="Top" Width="16"/>
+        <Border BorderThickness="1" HorizontalAlignment="Left" Height="16" Margin="1220,350,0,0" VerticalAlignment="Top" Width="16"/>
+        <Border BorderThickness="1" HorizontalAlignment="Left" Height="16" Margin="1274,350,0,0" VerticalAlignment="Top" Width="16"/>
+        <Border BorderThickness="1" BorderBrush="#FF0076FF" HorizontalAlignment="Left" Height="20" Margin="1056,381,0,0" VerticalAlignment="Top" Width="20"/>
+        <Border BorderThickness="1" BorderBrush="#FF0076FF" HorizontalAlignment="Left" Height="20" Margin="1164,381,0,0" VerticalAlignment="Top" Width="20"/>
+        <Border BorderThickness="1" BorderBrush="#FF0076FF" HorizontalAlignment="Left" Height="20" Margin="1110,381,0,0" VerticalAlignment="Top" Width="20"/>
+        <Border BorderThickness="1" BorderBrush="#FF0076FF" HorizontalAlignment="Left" Height="20" Margin="1218,381,0,0" VerticalAlignment="Top" Width="20"/>
+        <Border BorderThickness="1" BorderBrush="#FF0076FF" HorizontalAlignment="Left" Height="20" Margin="1272,381,0,0" VerticalAlignment="Top" Width="20"/>
+        <Border BorderThickness="1" HorizontalAlignment="Left" Height="16" Margin="1058,383,0,0" VerticalAlignment="Top" Width="16"/>
+        <Border BorderThickness="1" HorizontalAlignment="Left" Height="16" Margin="1112,383,0,0" VerticalAlignment="Top" Width="16"/>
+        <Border BorderThickness="1" HorizontalAlignment="Left" Height="16" Margin="1166,383,0,0" VerticalAlignment="Top" Width="16"/>
+        <Border BorderThickness="1" HorizontalAlignment="Left" Height="16" Margin="1220,383,0,0" VerticalAlignment="Top" Width="16"/>
+        <Border BorderThickness="1" HorizontalAlignment="Left" Height="16" Margin="1274,383,0,0" VerticalAlignment="Top" Width="16"/>
+        <Border BorderThickness="1" BorderBrush="#FF0076FF" HorizontalAlignment="Left" Height="20" Margin="1056,414,0,0" VerticalAlignment="Top" Width="20"/>
+        <Border BorderThickness="1" BorderBrush="#FF0076FF" HorizontalAlignment="Left" Height="20" Margin="1164,414,0,0" VerticalAlignment="Top" Width="20"/>
+        <Border BorderThickness="1" BorderBrush="#FF0076FF" HorizontalAlignment="Left" Height="20" Margin="1110,414,0,0" VerticalAlignment="Top" Width="20"/>
+        <Border BorderThickness="1" BorderBrush="#FF0076FF" HorizontalAlignment="Left" Height="20" Margin="1218,414,0,0" VerticalAlignment="Top" Width="20"/>
+        <Border BorderThickness="1" BorderBrush="#FF0076FF" HorizontalAlignment="Left" Height="20" Margin="1272,414,0,0" VerticalAlignment="Top" Width="20"/>
+        <Border BorderThickness="1" HorizontalAlignment="Left" Height="16" Margin="1058,416,0,0" VerticalAlignment="Top" Width="16"/>
+        <Border BorderThickness="1" HorizontalAlignment="Left" Height="16" Margin="1112,416,0,0" VerticalAlignment="Top" Width="16"/>
+        <Border BorderThickness="1" HorizontalAlignment="Left" Height="16" Margin="1166,416,0,0" VerticalAlignment="Top" Width="16"/>
+        <Border BorderThickness="1" HorizontalAlignment="Left" Height="16" Margin="1220,416,0,0" VerticalAlignment="Top" Width="16"/>
+        <Border BorderThickness="1" HorizontalAlignment="Left" Height="16" Margin="1274,416,0,0" VerticalAlignment="Top" Width="16"/>
+        <Button Content="Amount" HorizontalAlignment="Left" Height="25" Margin="1176,444,0,0" VerticalAlignment="Top" Width="130" Background="#FF0076FF" Foreground="#FFFFF8E1" FontFamily="Fontin SmallCaps" Cursor="Hand"/>
+        <CheckBox Style="{DynamicResource PoECheckbox}" Content="" HorizontalAlignment="Left" Height="28" Margin="536,410,0,0" VerticalAlignment="Top" Width="20" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" OpacityMask="#FF5A3806" Padding="0,0,0,0" BorderThickness="2,2,2,2" RenderTransformOrigin="0.5,0.5" IsChecked="True">
+            <CheckBox.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </CheckBox.Background>
+            <CheckBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="0.9"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </CheckBox.RenderTransform>
+        </CheckBox>
+        <Button Style="{DynamicResource PoeButtonSimulation}" Content="Simulate" HorizontalAlignment="Left" Height="25" Margin="538,444,0,0" VerticalAlignment="Top" Width="476" Background="#FF5A3806" Foreground="#FFFFF8E1" FontFamily="Fontin SmallCaps" Cursor="Hand" FontSize="16" Click="Simulation_Button"/>
+        <CheckBox Style="{DynamicResource PoECheckbox}" Content="" HorizontalAlignment="Left" Height="28" Margin="536,377,0,0" VerticalAlignment="Top" Width="20" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" OpacityMask="#FF5A3806" Padding="0,0,0,0" BorderThickness="2,2,2,2" RenderTransformOrigin="0.5,0.5" IsChecked="True">
+            <CheckBox.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </CheckBox.Background>
+            <CheckBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="0.9"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </CheckBox.RenderTransform>
+        </CheckBox>
+        <CheckBox Style="{DynamicResource PoECheckbox}" Content="" HorizontalAlignment="Left" Height="28" Margin="536,344,0,0" VerticalAlignment="Top" Width="20" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" OpacityMask="#FF5A3806" Padding="0,0,0,0" BorderThickness="2,2,2,2" RenderTransformOrigin="0.5,0.5" IsChecked="True">
+            <CheckBox.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </CheckBox.Background>
+            <CheckBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="0.9"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </CheckBox.RenderTransform>
+        </CheckBox>
+        <CheckBox Style="{DynamicResource PoECheckbox}" Content="" HorizontalAlignment="Left" Height="28" Margin="536,311,0,0" VerticalAlignment="Top" Width="20" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" OpacityMask="#FF5A3806" Padding="0,0,0,0" BorderThickness="2,2,2,2" RenderTransformOrigin="0.5,0.5" IsChecked="True">
+            <CheckBox.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </CheckBox.Background>
+            <CheckBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="0.9"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </CheckBox.RenderTransform>
+        </CheckBox>
+        <CheckBox Style="{DynamicResource PoECheckbox}" Content="" HorizontalAlignment="Left" Height="28" Margin="536,278,0,0" VerticalAlignment="Top" Width="20" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" OpacityMask="#FF5A3806" Padding="0,0,0,0" BorderThickness="2,2,2,2" RenderTransformOrigin="0.5,0.5" IsChecked="True">
+            <CheckBox.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </CheckBox.Background>
+            <CheckBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="0.9"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </CheckBox.RenderTransform>
+        </CheckBox>
+        <CheckBox Style="{DynamicResource PoECheckbox}" Content="" HorizontalAlignment="Left" Height="28" Margin="536,245,0,0" VerticalAlignment="Top" Width="20" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" OpacityMask="#FF5A3806" Padding="0,0,0,0" BorderThickness="2,2,2,2" RenderTransformOrigin="0.5,0.5" IsChecked="True">
+            <CheckBox.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </CheckBox.Background>
+            <CheckBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="0.9"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </CheckBox.RenderTransform>
+        </CheckBox>
+        <CheckBox Style="{DynamicResource PoECheckbox}" Content="" HorizontalAlignment="Left" Height="28" Margin="536,211,0,0" VerticalAlignment="Top" Width="20" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" OpacityMask="#FF5A3806" Padding="0,0,0,0" BorderThickness="2,2,2,2" RenderTransformOrigin="0.5,0.5" IsChecked="True">
+            <CheckBox.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </CheckBox.Background>
+            <CheckBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="0.9"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </CheckBox.RenderTransform>
+        </CheckBox>
+        <TextBox HorizontalAlignment="Left" Height="28" Margin="-19,697,0,0" Text="League" TextWrapping="Wrap" VerticalAlignment="Top" Width="192" BorderBrush="#FF0E0F10" Foreground="#FFFFF8E1" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="#FF0E0F10" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="18" Cursor="Arrow" Padding="4,0,0,0" Focusable="False" IsHitTestVisible="False"/>
+        <Rectangle HorizontalAlignment="Left" Height="2" Margin="-33,710,0,0" Stroke="#FF5A3806" VerticalAlignment="Top" Width="28" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF5A3806" Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <TextBox HorizontalAlignment="Left" Height="28" Margin="-19,730,0,0" Text="Character" TextWrapping="Wrap" VerticalAlignment="Top" Width="192" BorderBrush="#FF0E0F10" Foreground="#FFFFF8E1" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="#FF0E0F10" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="18" Cursor="Arrow" Padding="4,0,0,0" Focusable="False" IsHitTestVisible="False"/>
+        <Rectangle HorizontalAlignment="Left" Height="2" Margin="-33,743,0,0" Stroke="#FF5A3806" VerticalAlignment="Top" Width="28" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF5A3806" Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <ComboBox Style="{DynamicResource PoEComboBox}" HorizontalAlignment="Left" Height="28" Margin="178,697,0,0" VerticalAlignment="Top" Width="278" SelectionChanged="ComboBox_SelectionChanged" FontFamily="Fontin SmallCaps" Background="#FF1E2124" BorderBrush="#FF1E2124" SelectedIndex="0" Foreground="#FFE2E2E2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="18" IsSynchronizedWithCurrentItem="True">
+            <ComboBoxItem Content="Expedition" Background="#FF1E2124" BorderBrush="#FF1E2124"/>
+            <ComboBoxItem Content="Hardcore Expedition" Background="#FF1E2124" BorderBrush="#FF1E2124"/>
+            <ComboBoxItem Content="Standard" Background="#FF1E2124" BorderBrush="#FF1E2124"/>
+            <ComboBoxItem Content="Hardcore" Background="#FF1E2124" BorderBrush="#FF1E2124"/>
+        </ComboBox>
+        <ComboBox Style="{DynamicResource PoEComboBox}" HorizontalAlignment="Left" Height="28" Margin="178,730,0,0" VerticalAlignment="Top" Width="278" SelectionChanged="ComboBox_SelectionChanged" FontFamily="Fontin SmallCaps" Background="#FF1E2124" BorderBrush="#FF1E2124" SelectedIndex="0" Foreground="#FFE2E2E2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="18">
+            <ComboBoxItem Content="Character1"/>
+        </ComboBox>
+        <TextBox HorizontalAlignment="Left" Height="28" Margin="1041,474,0,0" Text="Minimum Sellers" TextWrapping="Wrap" VerticalAlignment="Top" Width="189" BorderBrush="#FF0E0F10" Foreground="#FFFFF8E1" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="#FF0E0F10" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="18" Cursor="Arrow" Padding="4,0,0,0" Focusable="False" IsHitTestVisible="False" TextChanged="TextBox_TextChanged_1"/>
+        <Rectangle HorizontalAlignment="Left" Height="2" Margin="1028,487,0,0" Stroke="#FF5A3806" VerticalAlignment="Top" Width="28" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF5A3806" Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <TextBox HorizontalAlignment="Left" Height="28" Margin="1235,474,0,0" Text="0" TextWrapping="Wrap" VerticalAlignment="Top" Width="71" BorderBrush="#FF1E2124" Foreground="#FFE2E2E2" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="#FF1E2124" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="16" Cursor="Hand"/>
     </Grid>
 </Window>

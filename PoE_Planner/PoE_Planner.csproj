@@ -13,6 +13,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Flurl" Version="3.0.2" />
+    <PackageReference Include="Flurl.Http" Version="3.2.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Reference Include="Microsoft.VisualStudio.Windows.Forms">
       <HintPath>..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Microsoft.VisualStudio.Windows.Forms.dll</HintPath>
     </Reference>
@@ -22,6 +28,10 @@
     <Resource Include="Blueprint_Repository_inventory_icon.png" />
     <Resource Include="expedition-bg.jpg" />
     <Resource Include="StashPanelGrid.png" />
+    <Resource Include="Fonts\Fontin-Bold.ttf" />
+    <Resource Include="Fonts\Fontin-Italic.ttf" />
+	<Resource Include="Fonts\Fontin-Regular.ttf" />
+    <Resource Include="Fonts\Fontin-SmallCaps.ttf" />
   </ItemGroup>
 
 </Project>

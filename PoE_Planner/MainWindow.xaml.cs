@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Newtonsoft.Json;
+using Flurl.Http;
 
 namespace PoE_Planner
 {
@@ -20,8 +22,44 @@ namespace PoE_Planner
         public MainWindow()
         {
             InitializeComponent();
+        }
 
-            
+        private static async Task Button_Click(object sender, RoutedEventArgs e)
+        {
+            var stashes = await "http://www.pathofexile.com/api/public-stash-tabs"
+            .GetAsync()
+            .ReceiveJson<List<Post>>();
+
+            Console.WriteLine(stashes);
+        }
+
+        private async void Simulation_Button(object sender, RoutedEventArgs e)
+        {
+            var stashes = await "http://www.pathofexile.com/api/public-stash-tabs"
+            .GetAsync()
+            .ReceiveJson<Post[]>();
+
+            Console.WriteLine(stashes);
+        }
+
+        private void TextBox_TextChanged(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ComboBox_SelectionChanged(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void TextBox_TextChanged_1(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void toggleButton_Checked(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
