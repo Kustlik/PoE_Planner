@@ -444,14 +444,14 @@
                 </LinearGradientBrush>
             </Label.Foreground>
         </Label>
-        <Border BorderThickness="1" BorderBrush="Black" HorizontalAlignment="Left" Height="598" Margin="-31,164,0,0" VerticalAlignment="Top" Width="500">
+        <Border BorderThickness="1" BorderBrush="Black" HorizontalAlignment="Left" Height="574" Margin="-31,164,0,0" VerticalAlignment="Top" Width="440">
             <Border.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black"/>
                     <GradientStop Color="Black" Offset="1"/>
                 </LinearGradientBrush>
             </Border.Background>
-            <Border BorderThickness="1" BorderBrush="Black" HorizontalAlignment="Center" Height="480" VerticalAlignment="Top" Width="480" Margin="0,9,0,0">
+            <Border BorderThickness="1" BorderBrush="Black" HorizontalAlignment="Center" Height="420" VerticalAlignment="Top" Width="420" Margin="0,9,0,0">
                 <Border.Background>
                     <ImageBrush ImageSource="/StashPanelGrid.png"/>
                 </Border.Background>
@@ -473,7 +473,6 @@
                     <GradientStop Color="Black" Offset="1"/>
                 </LinearGradientBrush>
             </Border.Background>
-            <Button Content="Value" HorizontalAlignment="Left" Height="25" Margin="526,279,0,0" VerticalAlignment="Top" Width="133" Background="#FF0076FF" Foreground="#FFFFF8E1" FontFamily="Fontin SmallCaps" Cursor="Hand"/>
         </Border>
         <Border BorderThickness="1" BorderBrush="#FF0E0F10" HorizontalAlignment="Left" Height="197" Margin="1257,241,0,0" VerticalAlignment="Top" Width="49" Background="#FF0E0F10"/>
         <Border BorderThickness="1" BorderBrush="#FF0E0F10" HorizontalAlignment="Left" Height="197" Margin="1203,241,0,0" VerticalAlignment="Top" Width="49" Background="#FF0E0F10"/>
@@ -488,9 +487,9 @@
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
-        <TextBox HorizontalAlignment="Left" Height="28" Margin="178,664,0,0" Text="Enter Account Name..." TextWrapping="Wrap" VerticalAlignment="Top" Width="278" BorderBrush="#FF1E2124" Foreground="#FF8A9999" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="#FF1E2124" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="16" Cursor="Hand"/>
-        <TextBox HorizontalAlignment="Left" Height="28" Margin="-19,664,0,0" Text="Account" TextWrapping="Wrap" VerticalAlignment="Top" Width="192" BorderBrush="#FF0E0F10" Foreground="#FFFFF8E1" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="#FF0E0F10" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="18" Cursor="Arrow" Padding="4,0,0,0" Focusable="False" IsHitTestVisible="False"/>
-        <Rectangle HorizontalAlignment="Left" Height="2" Margin="-33,677,0,0" Stroke="#FF5A3806" VerticalAlignment="Top" Width="28" RenderTransformOrigin="0.5,0.5">
+        <TextBox Name="SessionIDTextBox" HorizontalAlignment="Left" Height="28" Margin="179,602,0,0" Text="Enter Your SessionID..." TextWrapping="Wrap" VerticalAlignment="Top" Width="219" BorderBrush="#FF1E2124" Foreground="#FF8A9999" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="#FF1E2124" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="14" Cursor="Hand" KeyDown="SessionID_KeyDown" LostFocus="SessionIDTextBox_LostFocus" GotFocus="SessionIDTextBox_GotFocus"/>
+        <TextBox HorizontalAlignment="Left" Height="28" Margin="-18,602,0,0" Text="SessionID" TextWrapping="Wrap" VerticalAlignment="Top" Width="192" BorderBrush="#FF0E0F10" Foreground="#FFFFF8E1" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="#FF0E0F10" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="18" Cursor="Arrow" Padding="4,0,0,0" Focusable="False" IsHitTestVisible="False" TextChanged="TextBox_TextChanged_3"/>
+        <Rectangle HorizontalAlignment="Left" Height="2" Margin="-33,616,0,0" Stroke="#FF5A3806" VerticalAlignment="Top" Width="28" RenderTransformOrigin="0.5,0.5">
             <Rectangle.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -895,8 +894,8 @@
                 </TransformGroup>
             </CheckBox.RenderTransform>
         </CheckBox>
-        <TextBox HorizontalAlignment="Left" Height="28" Margin="-19,697,0,0" Text="League" TextWrapping="Wrap" VerticalAlignment="Top" Width="192" BorderBrush="#FF0E0F10" Foreground="#FFFFF8E1" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="#FF0E0F10" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="18" Cursor="Arrow" Padding="4,0,0,0" Focusable="False" IsHitTestVisible="False"/>
-        <Rectangle HorizontalAlignment="Left" Height="2" Margin="-33,710,0,0" Stroke="#FF5A3806" VerticalAlignment="Top" Width="28" RenderTransformOrigin="0.5,0.5">
+        <TextBox HorizontalAlignment="Left" Height="28" Margin="-18,635,0,0" Text="Account" TextWrapping="Wrap" VerticalAlignment="Top" Width="192" BorderBrush="#FF0E0F10" Foreground="#FFFFF8E1" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="#FF0E0F10" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="18" Cursor="Arrow" Padding="4,0,0,0" Focusable="False" IsHitTestVisible="False"/>
+        <Rectangle HorizontalAlignment="Left" Height="2" Margin="-34,648,0,0" Stroke="#FF5A3806" VerticalAlignment="Top" Width="28" RenderTransformOrigin="0.5,0.5">
             <Rectangle.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -912,31 +911,11 @@
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
-        <TextBox HorizontalAlignment="Left" Height="28" Margin="-19,730,0,0" Text="Character" TextWrapping="Wrap" VerticalAlignment="Top" Width="192" BorderBrush="#FF0E0F10" Foreground="#FFFFF8E1" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="#FF0E0F10" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="18" Cursor="Arrow" Padding="4,0,0,0" Focusable="False" IsHitTestVisible="False"/>
-        <Rectangle HorizontalAlignment="Left" Height="2" Margin="-33,743,0,0" Stroke="#FF5A3806" VerticalAlignment="Top" Width="28" RenderTransformOrigin="0.5,0.5">
-            <Rectangle.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="90"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Rectangle.RenderTransform>
-            <Rectangle.Fill>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="Black"/>
-                    <GradientStop Color="#FF5A3806" Offset="1"/>
-                </LinearGradientBrush>
-            </Rectangle.Fill>
-        </Rectangle>
-        <ComboBox Style="{DynamicResource PoEComboBox}" HorizontalAlignment="Left" Height="28" Margin="178,697,0,0" VerticalAlignment="Top" Width="278" SelectionChanged="ComboBox_SelectionChanged" FontFamily="Fontin SmallCaps" Background="#FF1E2124" BorderBrush="#FF1E2124" SelectedIndex="0" Foreground="#FFE2E2E2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="18" IsSynchronizedWithCurrentItem="True">
+        <ComboBox Style="{DynamicResource PoEComboBox}" HorizontalAlignment="Left" Height="28" Margin="179,668,0,0" VerticalAlignment="Top" Width="219" SelectionChanged="ComboBox_SelectionChanged" FontFamily="Fontin SmallCaps" Background="#FF1E2124" BorderBrush="#FF1E2124" SelectedIndex="0" Foreground="#FFE2E2E2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="18" IsSynchronizedWithCurrentItem="True">
             <ComboBoxItem Content="Expedition" Background="#FF1E2124" BorderBrush="#FF1E2124"/>
             <ComboBoxItem Content="Hardcore Expedition" Background="#FF1E2124" BorderBrush="#FF1E2124"/>
             <ComboBoxItem Content="Standard" Background="#FF1E2124" BorderBrush="#FF1E2124"/>
             <ComboBoxItem Content="Hardcore" Background="#FF1E2124" BorderBrush="#FF1E2124"/>
-        </ComboBox>
-        <ComboBox Style="{DynamicResource PoEComboBox}" HorizontalAlignment="Left" Height="28" Margin="178,730,0,0" VerticalAlignment="Top" Width="278" SelectionChanged="ComboBox_SelectionChanged" FontFamily="Fontin SmallCaps" Background="#FF1E2124" BorderBrush="#FF1E2124" SelectedIndex="0" Foreground="#FFE2E2E2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="18">
-            <ComboBoxItem Content="Character1"/>
         </ComboBox>
         <TextBox HorizontalAlignment="Left" Height="28" Margin="1041,474,0,0" Text="Minimum Sellers" TextWrapping="Wrap" VerticalAlignment="Top" Width="189" BorderBrush="#FF0E0F10" Foreground="#FFFFF8E1" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="#FF0E0F10" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="18" Cursor="Arrow" Padding="4,0,0,0" Focusable="False" IsHitTestVisible="False" TextChanged="TextBox_TextChanged_1"/>
         <Rectangle HorizontalAlignment="Left" Height="2" Margin="1028,487,0,0" Stroke="#FF5A3806" VerticalAlignment="Top" Width="28" RenderTransformOrigin="0.5,0.5">
@@ -956,5 +935,26 @@
             </Rectangle.Fill>
         </Rectangle>
         <TextBox HorizontalAlignment="Left" Height="28" Margin="1235,474,0,0" Text="0" TextWrapping="Wrap" VerticalAlignment="Top" Width="71" BorderBrush="#FF1E2124" Foreground="#FFE2E2E2" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="#FF1E2124" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="16" Cursor="Hand"/>
+        <TextBox Name="ResultTextBox" HorizontalAlignment="Left" Margin="537,515,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="745" Height="177" TextChanged="TextBox_TextChanged_2"/>
+        <Button Content="Value" HorizontalAlignment="Left" Height="25" Margin="1041,445,0,0" VerticalAlignment="Top" Width="130" Background="#FF0076FF" Foreground="#FFFFF8E1" FontFamily="Fontin SmallCaps" Cursor="Hand"/>
+        <Button Name="ConnectButton" Style="{DynamicResource PoeButtonSimulation}" Content="Connect" HorizontalAlignment="Left" Margin="179,701,0,36" Width="219" Background="#FF5A3806" Foreground="#FFFFF8E1" FontFamily="Fontin SmallCaps" Cursor="Hand" FontSize="16" Click="Connect_Button"/>
+        <TextBox HorizontalAlignment="Left" Height="28" Margin="-18,668,0,0" Text="League" TextWrapping="Wrap" VerticalAlignment="Top" Width="192" BorderBrush="#FF0E0F10" Foreground="#FFFFF8E1" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="#FF0E0F10" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="18" Cursor="Arrow" Padding="4,0,0,0" Focusable="False" IsHitTestVisible="False"/>
+        <Rectangle HorizontalAlignment="Left" Height="2" Margin="-33,681,0,0" Stroke="#FF5A3806" VerticalAlignment="Top" Width="28" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF5A3806" Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <TextBox x:Name="SessionIDTextBox_Copy" HorizontalAlignment="Left" Height="28" Margin="179,635,0,0" Text="Enter Your Account..." TextWrapping="Wrap" VerticalAlignment="Top" Width="219" BorderBrush="#FF1E2124" Foreground="#FF8A9999" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="#FF1E2124" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="16" Cursor="Hand" KeyDown="SessionID_KeyDown" LostFocus="SessionIDTextBox_LostFocus" GotFocus="SessionIDTextBox_GotFocus"/>
     </Grid>
 </Window>
