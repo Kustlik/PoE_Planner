@@ -16,6 +16,7 @@ using Newtonsoft.Json;
 using Flurl.Http;
 using System.Net;
 using System.Drawing;
+using System.Text.RegularExpressions;
 
 namespace PoE_Planner
 {
@@ -30,38 +31,51 @@ namespace PoE_Planner
         {
             try
             {
-                var myStashes = await "https://www.pathofexile.com/character-window/get-stash-items?league=Expedition&accountName=Ikestius&tabs=1,21&tabIndex=1,21"
+                var myStashes = await AppendConnectHttp(LeagueComboBox.Text, AccountTextBox.Text)
                 .WithCookie("POESESSID", SessionIDTextBox.Text) // SESSIONID dc9c724aaf50aa41790959af043c7c9e
                 .GetAsync()
                 .ReceiveJson<ProfileStashes>();
 
-                var numTabs = myStashes.NumTabs;
-                ResultTextBox.Text = numTabs.ToString();
+                var itemIcon = myStashes.Items[38].Icon;
+                ResultTextBox.Text = itemIcon.ToString();
+
+                System.Windows.Controls.Image myImage = new System.Windows.Controls.Image();
+                BitmapImage bitmap = new BitmapImage();
+                bitmap.BeginInit();
+                bitmap.UriSource = new Uri(itemIcon, UriKind.Absolute);
+                bitmap.EndInit();
+
+                StashWindow.Child = myImage;
+                myImage.Source = bitmap;
+                myImage.HorizontalAlignment = HorizontalAlignment.Left;
+                myImage.VerticalAlignment = VerticalAlignment.Top;
+                myImage.Width = 70;
+                myImage.Height = 105;
+                myImage.Margin = new Thickness(0, 0, 0, 0);
             }
             catch(FlurlHttpException)
             {
-                SessionIDTextBox.Text = "Enter Your SessionID...";
+                SessionIDTextBox.Text = InsertStartText(SessionIDTextBox);
+                AccountTextBox.Text = InsertStartText(AccountTextBox);
                 SessionIDTextBox.Foreground = (SolidColorBrush)new BrushConverter().ConvertFrom("#FF8A9999");
             }
         }
-
-        private async void Simulation_Button(object sender, RoutedEventArgs e)
+        //                <Image HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="100" Source="/Blueprint_Repository_inventory_icon.png" Margin="-1,-1,0,0"/>
+        private string AppendConnectHttp(string league, string account)
         {
-            var stashes = await "http://www.pathofexile.com/api/public-stash-tabs"
-            .GetAsync()
-            .ReceiveJson<Post>();
+            StringBuilder sb = new StringBuilder();
+            sb.Append("https://www.pathofexile.com/character-window/get-stash-items?league=");
+            sb.Append(league);
+            sb.Append("&accountName=");
+            sb.Append(account);
+            sb.Append("&tabs=1,0&tabIndex=0");
 
-            System.Windows.Forms.WebBrowser webBrowser = new System.Windows.Forms.WebBrowser();
+            return sb.ToString();
+        }
 
+        private void Simulation_Button(object sender, RoutedEventArgs e)
+        {
 
-
-            var myStashes = await "https://www.pathofexile.com/character-window/get-stash-items?league=Expedition&accountName=Ikestius&tabs=1,21&tabIndex=1,21"
-                .WithCookie("POESESSID", "dc9c724aaf50aa41790959af043c7c9e")
-                .GetAsync()
-                .ReceiveJson<ProfileStashes>();
-
-            var numTabs = myStashes.NumTabs;
-            ResultTextBox.Text = numTabs.ToString();
         }
 
         private async Task<string> ReturnCurrentChangeId()
@@ -74,32 +88,68 @@ namespace PoE_Planner
             return currentChangeId.ToString();
         }
 
-        private void SessionIDTextBox_GotFocus(object sender, RoutedEventArgs e)
+        private void TextBox_GotFocus(object sender, RoutedEventArgs e)
         {
             TextBox focusedTextBox = (TextBox)sender;
-            if (focusedTextBox.Text == "Enter Your SessionID...")
+            if (focusedTextBox.Text == InsertStartText(focusedTextBox))
             {
                 focusedTextBox.Text = "";
                 focusedTextBox.Foreground = new SolidColorBrush(Colors.White);
             }
         }
 
-        private void SessionID_KeyDown(object sender, KeyEventArgs e)
+        private void TextBox_KeyDown(object sender, KeyEventArgs e)
         {
+            TextBox focusedTextBox = (TextBox)sender;
             if (e.Key == Key.Enter || e.Key == Key.Escape)
             {
                 Keyboard.ClearFocus();
-                FocusManager.SetFocusedElement(FocusManager.GetFocusScope(SessionIDTextBox), null);
+                FocusManager.SetFocusedElement(FocusManager.GetFocusScope(focusedTextBox), null);
             }
         }
 
-        private void SessionIDTextBox_LostFocus(object sender, RoutedEventArgs e)
+        private void NumberValidationTextBox(object sender, TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex("[^0-9.,-]+");
+            e.Handled = regex.IsMatch(e.Text);
+        }
+
+        private void TextBox_LostFocus(object sender, RoutedEventArgs e)
         {
             TextBox focusedTextBox = (TextBox)sender;
             if (focusedTextBox.Text == "")
             {
-                focusedTextBox.Text = "Enter Your SessionID...";
+                focusedTextBox.Text = InsertStartText(focusedTextBox);
                 focusedTextBox.Foreground = (SolidColorBrush) new BrushConverter().ConvertFrom("#FF8A9999");
+            }
+        }
+
+        private string InsertStartText(TextBox currentTextBox)
+        {
+            switch (currentTextBox.Name)
+            {
+                case "SessionIDTextBox":
+                    return "Enter Your SessionID...";
+
+                case "AccountTextBox":
+                    return "Enter Your Account...";
+
+                case "CategoryTextBox":
+                    return "Category Name";
+
+                default:
+                    if (currentTextBox.Name.EndsWith("MinTextBox"))
+                    {
+                        return "Min";
+                    }
+                    else if (currentTextBox.Name.EndsWith("MaxTextBox"))
+                    {
+                        return "Max";
+                    }
+                    else
+                    {
+                        return "Wrong Name";
+                    }
             }
         }
 

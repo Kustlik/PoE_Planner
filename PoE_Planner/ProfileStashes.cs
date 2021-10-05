@@ -10,5 +10,6 @@ namespace PoE_Planner
     public class ProfileStashes
     {
         public int NumTabs { get; set; }
+        public List<Item> Items { get; set; }
     }
 }
