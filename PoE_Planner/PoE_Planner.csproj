@@ -36,4 +36,8 @@
     <Resource Include="Fonts\Fontin-SmallCaps.ttf" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Preview\" />
+  </ItemGroup>
+
 </Project>
