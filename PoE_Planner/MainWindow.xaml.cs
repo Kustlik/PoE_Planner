@@ -36,22 +36,7 @@ namespace PoE_Planner
                 .GetAsync()
                 .ReceiveJson<ProfileStashes>();
 
-                var itemIcon = myStashes.Items[38].Icon;
-                ResultTextBox.Text = itemIcon.ToString();
-
-                System.Windows.Controls.Image myImage = new System.Windows.Controls.Image();
-                BitmapImage bitmap = new BitmapImage();
-                bitmap.BeginInit();
-                bitmap.UriSource = new Uri(itemIcon, UriKind.Absolute);
-                bitmap.EndInit();
-
-                StashWindow.Child = myImage;
-                myImage.Source = bitmap;
-                myImage.HorizontalAlignment = HorizontalAlignment.Left;
-                myImage.VerticalAlignment = VerticalAlignment.Top;
-                myImage.Width = 70;
-                myImage.Height = 105;
-                myImage.Margin = new Thickness(0, 0, 0, 0);
+                InstantiateItems(myStashes.Items);
             }
             catch(FlurlHttpException)
             {
@@ -60,6 +45,43 @@ namespace PoE_Planner
                 SessionIDTextBox.Foreground = (SolidColorBrush)new BrushConverter().ConvertFrom("#FF8A9999");
             }
         }
+
+        private void InstantiateItems(List<Item> items)
+        {
+            foreach (Item item in items)
+            {
+                ResultTextBox.Text = ResultTextBox.Text + " " + item.Name.ToString();
+                System.Windows.Controls.Image itemIcon = new System.Windows.Controls.Image();
+
+                BitmapImage bitmap = new BitmapImage();
+                bitmap.BeginInit();
+                bitmap.UriSource = new Uri(item.Icon, UriKind.Absolute);
+                bitmap.EndInit();
+
+                itemIcon.Source = bitmap;
+                AllocateItemInStash(item, itemIcon);
+            }
+        }
+
+        private void AllocateItemInStash(Item item, System.Windows.Controls.Image itemIcon)
+        {
+            int sizePerCubeUnit = 35;
+
+            StashCanvas.Children.Add(itemIcon);
+
+            itemIcon.HorizontalAlignment = HorizontalAlignment.Left;
+            itemIcon.VerticalAlignment = VerticalAlignment.Top;
+
+            itemIcon.Width = sizePerCubeUnit * item.W;
+            itemIcon.Height = sizePerCubeUnit * item.H;
+
+            var itemXAllocation = item.X * sizePerCubeUnit;
+            var itemYAllocation = item.Y * sizePerCubeUnit;
+
+            Canvas.SetLeft(itemIcon, itemXAllocation);
+            Canvas.SetTop(itemIcon, itemYAllocation);
+        }
+
         //                <Image HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="100" Source="/Blueprint_Repository_inventory_icon.png" Margin="-1,-1,0,0"/>
         private string AppendConnectHttp(string league, string account)
         {
@@ -78,7 +100,7 @@ namespace PoE_Planner
 
         }
 
-        private async Task<string> ReturnCurrentChangeId()
+        private static async Task<string> ReturnCurrentChangeId()
         {
             var poeNinjaApi = "https://poe.ninja/api/Data/GetStats";
             var poeNinjaPost = await poeNinjaApi.GetAsync().ReceiveJson<PoeNinjaPost>();
@@ -108,12 +130,6 @@ namespace PoE_Planner
             }
         }
 
-        private void NumberValidationTextBox(object sender, TextCompositionEventArgs e)
-        {
-            Regex regex = new Regex("[^0-9.,-]+");
-            e.Handled = regex.IsMatch(e.Text);
-        }
-
         private void TextBox_LostFocus(object sender, RoutedEventArgs e)
         {
             TextBox focusedTextBox = (TextBox)sender;
@@ -122,6 +138,12 @@ namespace PoE_Planner
                 focusedTextBox.Text = InsertStartText(focusedTextBox);
                 focusedTextBox.Foreground = (SolidColorBrush) new BrushConverter().ConvertFrom("#FF8A9999");
             }
+        }
+        
+        private void NumberValidationTextBox(object sender, TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex("[^0-9.,-]+");
+            e.Handled = regex.IsMatch(e.Text);
         }
 
         private string InsertStartText(TextBox currentTextBox)
