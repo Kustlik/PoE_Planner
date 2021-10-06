@@ -455,6 +455,9 @@
                 <Border.Background>
                     <ImageBrush ImageSource="/StashPanelGrid.png"/>
                 </Border.Background>
+                <Canvas x:Name="StashCanvas">
+                    <Image Height="100" Width="100" Canvas.Left="4" Canvas.Top="9"/>
+                </Canvas>
             </Border>
         </Border>
         <Rectangle HorizontalAlignment="Left" Height="1" Margin="-31,164,0,0" Stroke="#FF5A3806" VerticalAlignment="Top" Width="440">
@@ -956,5 +959,6 @@
             </Rectangle.Fill>
         </Rectangle>
         <TextBox x:Name="AccountTextBox" HorizontalAlignment="Left" Height="28" Margin="179,635,0,0" Text="Enter Your Account..." TextWrapping="Wrap" VerticalAlignment="Top" Width="219" BorderBrush="#FF1E2124" Foreground="#FF8A9999" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="#FF1E2124" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="16" Cursor="Hand"  KeyDown="TextBox_KeyDown" LostFocus="TextBox_LostFocus" GotFocus="TextBox_GotFocus"/>
+        <Image HorizontalAlignment="Left" Height="35" Margin="447,245,0,0" VerticalAlignment="Top" Width="35"/>
     </Grid>
 </Window>
