@@ -17,11 +17,16 @@ using Flurl.Http;
 using System.Net;
 using System.Drawing;
 using System.Text.RegularExpressions;
+using System.IO;
 
 namespace PoE_Planner
 {
     public partial class MainWindow : Window
     {
+        private string GetStartupPath() { return Environment.CurrentDirectory; }
+        private string GetStashContentJsonPath() { return GetStartupPath() + @"\StashContent.json"; }
+        private ProfileStashes CurrentStash { get; set; }
+
         public MainWindow()
         {
             InitializeComponent();
@@ -29,14 +34,19 @@ namespace PoE_Planner
 
         private async void Connect_Button(object sender, RoutedEventArgs e)
         {
+            string startupPath = Environment.CurrentDirectory;
+
             try
             {
-                var myStashes = await AppendConnectHttp(LeagueComboBox.Text, AccountTextBox.Text)
+                CurrentStash = await AppendConnectHttp(LeagueComboBox.Text, AccountTextBox.Text)
                 .WithCookie("POESESSID", SessionIDTextBox.Text) // SESSIONID dc9c724aaf50aa41790959af043c7c9e
                 .GetAsync()
                 .ReceiveJson<ProfileStashes>();
 
-                InstantiateItems(myStashes.Items);
+                // string json = JsonConvert.SerializeObject(myStashes);
+                // File.WriteAllText(GetStashContentJsonPath(), json);
+
+                InstantiateItems(CurrentStash.Items);
             }
             catch(FlurlHttpException)
             {
@@ -50,7 +60,6 @@ namespace PoE_Planner
         {
             foreach (Item item in items)
             {
-                ResultTextBox.Text = ResultTextBox.Text + " " + item.Name.ToString();
                 System.Windows.Controls.Image itemIcon = new System.Windows.Controls.Image();
 
                 BitmapImage bitmap = new BitmapImage();
@@ -67,6 +76,8 @@ namespace PoE_Planner
         {
             int sizePerCubeUnit = 35;
 
+            itemIcon.Name = "Item" + item.Id.ToString();
+            itemIcon.IsHitTestVisible = false;
             StashCanvas.Children.Add(itemIcon);
 
             itemIcon.HorizontalAlignment = HorizontalAlignment.Left;
@@ -93,6 +104,44 @@ namespace PoE_Planner
             sb.Append("&tabs=1,0&tabIndex=0");
 
             return sb.ToString();
+        }
+
+        private void Cell_MouseEnter(object sender, MouseEventArgs e)
+        {
+            var highlightColor = (SolidColorBrush)new BrushConverter().ConvertFrom("#4C0076FF");
+            var disabledColor = (SolidColorBrush)new BrushConverter().ConvertFrom("#000076FF");
+
+            var currentCell = (System.Windows.Shapes.Rectangle)sender;
+            var position = GetCellPosition(currentCell);
+
+            if (CurrentStash != null)
+            {
+                var item = CurrentStash.Items.FirstOrDefault(i => i.X == position.Item1 && i.Y == position.Item2);
+
+                if (item != null)
+                {
+                    currentCell.Fill = highlightColor;
+                    ResultTextBox.Text = "item found";
+                }
+                else
+                {
+                    ResultTextBox.Text = "item not found";
+                }
+            }
+        }
+
+        private (int, int) GetCellPosition(System.Windows.Shapes.Rectangle cell) 
+        {
+            var splittedCellName = cell.Name.Split(new char[] { 'x', 'y' });
+            var xPos = Int32.Parse(splittedCellName[1]);
+            var yPos = Int32.Parse(splittedCellName[2]);
+
+            return (xPos, yPos);
+        }
+
+        private void Cell_MouseLeave(object sender, MouseEventArgs e)
+        {
+
         }
 
         private void Simulation_Button(object sender, RoutedEventArgs e)
