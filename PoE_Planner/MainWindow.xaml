@@ -455,8 +455,192 @@
                 <Border.Background>
                     <ImageBrush ImageSource="/StashPanelGrid.png"/>
                 </Border.Background>
-                <Canvas x:Name="StashCanvas">
-                    <Image Height="100" Width="100" Canvas.Left="4" Canvas.Top="9"/>
+                <Canvas x:Name="StashCanvas" Margin="-1,-1,-1,-1">
+                    <Grid x:Name="HighlightGrid" Height="420" Width="420">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="35"/>
+                            <RowDefinition Height="35"/>
+                            <RowDefinition Height="35"/>
+                            <RowDefinition Height="35"/>
+                            <RowDefinition Height="35"/>
+                            <RowDefinition Height="35"/>
+                            <RowDefinition Height="35"/>
+                            <RowDefinition Height="35"/>
+                            <RowDefinition Height="35"/>
+                            <RowDefinition Height="35"/>
+                            <RowDefinition Height="35"/>
+                            <RowDefinition Height="35"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="35*"/>
+                            <ColumnDefinition Width="35*"/>
+                            <ColumnDefinition Width="35*"/>
+                            <ColumnDefinition Width="35*"/>
+                            <ColumnDefinition Width="35*"/>
+                            <ColumnDefinition Width="35*"/>
+                            <ColumnDefinition Width="35*"/>
+                            <ColumnDefinition Width="35*"/>
+                            <ColumnDefinition Width="35*"/>
+                            <ColumnDefinition Width="35*"/>
+                            <ColumnDefinition Width="35*"/>
+                            <ColumnDefinition Width="35*"/>
+                        </Grid.ColumnDefinitions>
+                        <Rectangle x:Name="Cellx0y0" Fill="#000076FF" Grid.Column="0" Grid.Row="0" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx1y0" Fill="#000076FF" Grid.Column="1" Grid.Row="0" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx2y0" Fill="#000076FF" Grid.Column="2" Grid.Row="0" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx3y0" Fill="#000076FF" Grid.Column="3" Grid.Row="0" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx4y0" Fill="#000076FF" Grid.Column="4" Grid.Row="0" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx5y0" Fill="#000076FF" Grid.Column="5" Grid.Row="0" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx6y0" Fill="#000076FF" Grid.Column="6" Grid.Row="0" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx7y0" Fill="#000076FF" Grid.Column="7" Grid.Row="0" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx8y0" Fill="#000076FF" Grid.Column="8" Grid.Row="0" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx9y0" Fill="#000076FF" Grid.Column="9" Grid.Row="0" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx10y0" Fill="#000076FF" Grid.Column="10" Grid.Row="0" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx11y0" Fill="#000076FF" Grid.Column="11" Grid.Row="0" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+
+                        <Rectangle x:Name="Cellx0y1" Fill="#000076FF" Grid.Column="0" Grid.Row="1" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx1y1" Fill="#000076FF" Grid.Column="1" Grid.Row="1" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx2y1" Fill="#000076FF" Grid.Column="2" Grid.Row="1" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx3y1" Fill="#000076FF" Grid.Column="3" Grid.Row="1" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx4y1" Fill="#000076FF" Grid.Column="4" Grid.Row="1" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx5y1" Fill="#000076FF" Grid.Column="5" Grid.Row="1" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx6y1" Fill="#000076FF" Grid.Column="6" Grid.Row="1" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx7y1" Fill="#000076FF" Grid.Column="7" Grid.Row="1" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx8y1" Fill="#000076FF" Grid.Column="8" Grid.Row="1" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx9y1" Fill="#000076FF" Grid.Column="9" Grid.Row="1" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx10y1" Fill="#000076FF" Grid.Column="10" Grid.Row="1" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx11y1" Fill="#000076FF" Grid.Column="11" Grid.Row="1" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+
+                        <Rectangle x:Name="Cellx0y2" Fill="#000076FF" Grid.Column="0" Grid.Row="2" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx1y2" Fill="#000076FF" Grid.Column="1" Grid.Row="2" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx2y2" Fill="#000076FF" Grid.Column="2" Grid.Row="2" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx3y2" Fill="#000076FF" Grid.Column="3" Grid.Row="2" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx4y2" Fill="#000076FF" Grid.Column="4" Grid.Row="2" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx5y2" Fill="#000076FF" Grid.Column="5" Grid.Row="2" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx6y2" Fill="#000076FF" Grid.Column="6" Grid.Row="2" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx7y2" Fill="#000076FF" Grid.Column="7" Grid.Row="2" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx8y2" Fill="#000076FF" Grid.Column="8" Grid.Row="2" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx9y2" Fill="#000076FF" Grid.Column="9" Grid.Row="2" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx10y2" Fill="#000076FF" Grid.Column="10" Grid.Row="2" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx11y2" Fill="#000076FF" Grid.Column="11" Grid.Row="2" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+
+                        <Rectangle x:Name="Cellx0y3" Fill="#000076FF" Grid.Column="0" Grid.Row="3" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx1y3" Fill="#000076FF" Grid.Column="1" Grid.Row="3" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx2y3" Fill="#000076FF" Grid.Column="2" Grid.Row="3" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx3y3" Fill="#000076FF" Grid.Column="3" Grid.Row="3" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx4y3" Fill="#000076FF" Grid.Column="4" Grid.Row="3" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx5y3" Fill="#000076FF" Grid.Column="5" Grid.Row="3" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx6y3" Fill="#000076FF" Grid.Column="6" Grid.Row="3" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx7y3" Fill="#000076FF" Grid.Column="7" Grid.Row="3" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx8y3" Fill="#000076FF" Grid.Column="8" Grid.Row="3" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx9y3" Fill="#000076FF" Grid.Column="9" Grid.Row="3" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx10y3" Fill="#000076FF" Grid.Column="10" Grid.Row="3" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx11y3" Fill="#000076FF" Grid.Column="11" Grid.Row="3" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+
+                        <Rectangle x:Name="Cellx0y4" Fill="#000076FF" Grid.Column="0" Grid.Row="4" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx1y4" Fill="#000076FF" Grid.Column="1" Grid.Row="4" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx2y4" Fill="#000076FF" Grid.Column="2" Grid.Row="4" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx3y4" Fill="#000076FF" Grid.Column="3" Grid.Row="4" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx4y4" Fill="#000076FF" Grid.Column="4" Grid.Row="4" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx5y4" Fill="#000076FF" Grid.Column="5" Grid.Row="4" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx6y4" Fill="#000076FF" Grid.Column="6" Grid.Row="4" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx7y4" Fill="#000076FF" Grid.Column="7" Grid.Row="4" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx8y4" Fill="#000076FF" Grid.Column="8" Grid.Row="4" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx9y4" Fill="#000076FF" Grid.Column="9" Grid.Row="4" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx10y4" Fill="#000076FF" Grid.Column="10" Grid.Row="4" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx11y4" Fill="#000076FF" Grid.Column="11" Grid.Row="4" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+
+                        <Rectangle x:Name="Cellx0y5" Fill="#000076FF" Grid.Column="0" Grid.Row="5" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx1y5" Fill="#000076FF" Grid.Column="1" Grid.Row="5" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx2y5" Fill="#000076FF" Grid.Column="2" Grid.Row="5" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx3y5" Fill="#000076FF" Grid.Column="3" Grid.Row="5" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx4y5" Fill="#000076FF" Grid.Column="4" Grid.Row="5" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx5y5" Fill="#000076FF" Grid.Column="5" Grid.Row="5" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx6y5" Fill="#000076FF" Grid.Column="6" Grid.Row="5" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx7y5" Fill="#000076FF" Grid.Column="7" Grid.Row="5" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx8y5" Fill="#000076FF" Grid.Column="8" Grid.Row="5" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx9y5" Fill="#000076FF" Grid.Column="9" Grid.Row="5" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx10y5" Fill="#000076FF" Grid.Column="10" Grid.Row="5" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx11y5" Fill="#000076FF" Grid.Column="11" Grid.Row="5" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+
+                        <Rectangle x:Name="Cellx0y6" Fill="#000076FF" Grid.Column="0" Grid.Row="6" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx1y6" Fill="#000076FF" Grid.Column="1" Grid.Row="6" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx2y6" Fill="#000076FF" Grid.Column="2" Grid.Row="6" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx3y6" Fill="#000076FF" Grid.Column="3" Grid.Row="6" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx4y6" Fill="#000076FF" Grid.Column="4" Grid.Row="6" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx5y6" Fill="#000076FF" Grid.Column="5" Grid.Row="6" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx6y6" Fill="#000076FF" Grid.Column="6" Grid.Row="6" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx7y6" Fill="#000076FF" Grid.Column="7" Grid.Row="6" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx8y6" Fill="#000076FF" Grid.Column="8" Grid.Row="6" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx9y6" Fill="#000076FF" Grid.Column="9" Grid.Row="6" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx10y6" Fill="#000076FF" Grid.Column="10" Grid.Row="6" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx11y6" Fill="#000076FF" Grid.Column="11" Grid.Row="6" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+
+                        <Rectangle x:Name="Cellx0y7" Fill="#000076FF" Grid.Column="0" Grid.Row="7" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx1y7" Fill="#000076FF" Grid.Column="1" Grid.Row="7" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx2y7" Fill="#000076FF" Grid.Column="2" Grid.Row="7" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx3y7" Fill="#000076FF" Grid.Column="3" Grid.Row="7" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx4y7" Fill="#000076FF" Grid.Column="4" Grid.Row="7" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx5y7" Fill="#000076FF" Grid.Column="5" Grid.Row="7" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx6y7" Fill="#000076FF" Grid.Column="6" Grid.Row="7" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx7y7" Fill="#000076FF" Grid.Column="7" Grid.Row="7" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx8y7" Fill="#000076FF" Grid.Column="8" Grid.Row="7" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx9y7" Fill="#000076FF" Grid.Column="9" Grid.Row="7" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx10y7" Fill="#000076FF" Grid.Column="10" Grid.Row="7" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx11y7" Fill="#000076FF" Grid.Column="11" Grid.Row="7" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+
+                        <Rectangle x:Name="Cellx0y8" Fill="#000076FF" Grid.Column="0" Grid.Row="8" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx1y8" Fill="#000076FF" Grid.Column="1" Grid.Row="8" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx2y8" Fill="#000076FF" Grid.Column="2" Grid.Row="8" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx3y8" Fill="#000076FF" Grid.Column="3" Grid.Row="8" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx4y8" Fill="#000076FF" Grid.Column="4" Grid.Row="8" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx5y8" Fill="#000076FF" Grid.Column="5" Grid.Row="8" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx6y8" Fill="#000076FF" Grid.Column="6" Grid.Row="8" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx7y8" Fill="#000076FF" Grid.Column="7" Grid.Row="8" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx8y8" Fill="#000076FF" Grid.Column="8" Grid.Row="8" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx9y8" Fill="#000076FF" Grid.Column="9" Grid.Row="8" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx10y8" Fill="#000076FF" Grid.Column="10" Grid.Row="8" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx11y8" Fill="#000076FF" Grid.Column="11" Grid.Row="8" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+
+                        <Rectangle x:Name="Cellx0y9" Fill="#000076FF" Grid.Column="0" Grid.Row="9" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx1y9" Fill="#000076FF" Grid.Column="1" Grid.Row="9" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx2y9" Fill="#000076FF" Grid.Column="2" Grid.Row="9" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx3y9" Fill="#000076FF" Grid.Column="3" Grid.Row="9" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx4y9" Fill="#000076FF" Grid.Column="4" Grid.Row="9" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx5y9" Fill="#000076FF" Grid.Column="5" Grid.Row="9" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx6y9" Fill="#000076FF" Grid.Column="6" Grid.Row="9" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx7y9" Fill="#000076FF" Grid.Column="7" Grid.Row="9" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx8y9" Fill="#000076FF" Grid.Column="8" Grid.Row="9" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx9y9" Fill="#000076FF" Grid.Column="9" Grid.Row="9" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx10y9" Fill="#000076FF" Grid.Column="10" Grid.Row="9" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx11y9" Fill="#000076FF" Grid.Column="11" Grid.Row="9" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+
+                        <Rectangle x:Name="Cellx0y10" Fill="#000076FF" Grid.Column="0" Grid.Row="10" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx1y10" Fill="#000076FF" Grid.Column="1" Grid.Row="10" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx2y10" Fill="#000076FF" Grid.Column="2" Grid.Row="10" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx3y10" Fill="#000076FF" Grid.Column="3" Grid.Row="10" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx4y10" Fill="#000076FF" Grid.Column="4" Grid.Row="10" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx5y10" Fill="#000076FF" Grid.Column="5" Grid.Row="10" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx6y10" Fill="#000076FF" Grid.Column="6" Grid.Row="10" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx7y10" Fill="#000076FF" Grid.Column="7" Grid.Row="10" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx8y10" Fill="#000076FF" Grid.Column="8" Grid.Row="10" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx9y10" Fill="#000076FF" Grid.Column="9" Grid.Row="10" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx10y10" Fill="#000076FF" Grid.Column="10" Grid.Row="10" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx11y10" Fill="#000076FF" Grid.Column="11" Grid.Row="10" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+
+                        <Rectangle x:Name="Cellx0y11" Fill="#000076FF" Grid.Column="0" Grid.Row="11" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx1y11" Fill="#000076FF" Grid.Column="1" Grid.Row="11" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx2y11" Fill="#000076FF" Grid.Column="2" Grid.Row="11" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx3y11" Fill="#000076FF" Grid.Column="3" Grid.Row="11" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx4y11" Fill="#000076FF" Grid.Column="4" Grid.Row="11" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx5y11" Fill="#000076FF" Grid.Column="5" Grid.Row="11" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx6y11" Fill="#000076FF" Grid.Column="6" Grid.Row="11" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx7y11" Fill="#000076FF" Grid.Column="7" Grid.Row="11" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx8y11" Fill="#000076FF" Grid.Column="8" Grid.Row="11" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx9y11" Fill="#000076FF" Grid.Column="9" Grid.Row="11" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx10y11" Fill="#000076FF" Grid.Column="10" Grid.Row="11" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                        <Rectangle x:Name="Cellx11y11" Fill="#000076FF" Grid.Column="11" Grid.Row="11" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
+                    </Grid>
                 </Canvas>
             </Border>
         </Border>
@@ -959,6 +1143,5 @@
             </Rectangle.Fill>
         </Rectangle>
         <TextBox x:Name="AccountTextBox" HorizontalAlignment="Left" Height="28" Margin="179,635,0,0" Text="Enter Your Account..." TextWrapping="Wrap" VerticalAlignment="Top" Width="219" BorderBrush="#FF1E2124" Foreground="#FF8A9999" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="#FF1E2124" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="16" Cursor="Hand"  KeyDown="TextBox_KeyDown" LostFocus="TextBox_LostFocus" GotFocus="TextBox_GotFocus"/>
-        <Image HorizontalAlignment="Left" Height="35" Margin="447,245,0,0" VerticalAlignment="Top" Width="35"/>
     </Grid>
 </Window>
