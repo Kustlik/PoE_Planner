@@ -23,7 +23,7 @@ namespace PoE_Planner
 {
     public partial class MainWindow : Window
     {
-        private string GetStartupPath() { return Environment.CurrentDirectory; }
+        private static string GetStartupPath() { return Environment.CurrentDirectory; }
         private string GetStashContentJsonPath() { return GetStartupPath() + @"\StashContent.json"; }
         private ProfileStashes CurrentStash { get; set; }
 
@@ -34,8 +34,6 @@ namespace PoE_Planner
 
         private async void Connect_Button(object sender, RoutedEventArgs e)
         {
-            string startupPath = Environment.CurrentDirectory;
-
             try
             {
                 CurrentStash = await AppendConnectHttp(LeagueComboBox.Text, AccountTextBox.Text)
@@ -56,13 +54,24 @@ namespace PoE_Planner
             }
         }
 
+        private void GenerateToolTipBox()
+        {
+            System.Windows.Shapes.Rectangle leftHeader = new();
+
+        }
+
+        private void GenerateTooltipText()
+        {
+
+        }
+
         private void InstantiateItems(List<Item> items)
         {
             foreach (Item item in items)
             {
-                System.Windows.Controls.Image itemIcon = new System.Windows.Controls.Image();
+                System.Windows.Controls.Image itemIcon = new();
 
-                BitmapImage bitmap = new BitmapImage();
+                BitmapImage bitmap = new();
                 bitmap.BeginInit();
                 bitmap.UriSource = new Uri(item.Icon, UriKind.Absolute);
                 bitmap.EndInit();
@@ -93,7 +102,6 @@ namespace PoE_Planner
             Canvas.SetTop(itemIcon, itemYAllocation);
         }
 
-        //                <Image HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="100" Source="/Blueprint_Repository_inventory_icon.png" Margin="-1,-1,0,0"/>
         private string AppendConnectHttp(string league, string account)
         {
             StringBuilder sb = new StringBuilder();
@@ -108,40 +116,65 @@ namespace PoE_Planner
 
         private void Cell_MouseEnter(object sender, MouseEventArgs e)
         {
-            var highlightColor = (SolidColorBrush)new BrushConverter().ConvertFrom("#4C0076FF");
-            var disabledColor = (SolidColorBrush)new BrushConverter().ConvertFrom("#000076FF");
-
             var currentCell = (System.Windows.Shapes.Rectangle)sender;
-            var position = GetCellPosition(currentCell);
 
             if (CurrentStash != null)
             {
-                var item = CurrentStash.Items.FirstOrDefault(i => i.X == position.Item1 && i.Y == position.Item2);
+                HighlightItem(currentCell, true);
+            }
+        }
 
-                if (item != null)
-                {
-                    currentCell.Fill = highlightColor;
-                    ResultTextBox.Text = "item found";
-                }
-                else
-                {
-                    ResultTextBox.Text = "item not found";
-                }
+        private void Cell_MouseLeave(object sender, MouseEventArgs e)
+        {
+            var currentCell = (System.Windows.Shapes.Rectangle)sender;
+
+            if (CurrentStash != null)
+            {
+                HighlightItem(currentCell, false);
             }
         }
 
         private (int, int) GetCellPosition(System.Windows.Shapes.Rectangle cell) 
         {
             var splittedCellName = cell.Name.Split(new char[] { 'x', 'y' });
-            var xPos = Int32.Parse(splittedCellName[1]);
-            var yPos = Int32.Parse(splittedCellName[2]);
+            var xPos = int.Parse(splittedCellName[1]);
+            var yPos = int.Parse(splittedCellName[2]);
 
             return (xPos, yPos);
         }
 
-        private void Cell_MouseLeave(object sender, MouseEventArgs e)
+        private void HighlightItem(System.Windows.Shapes.Rectangle currentCell, bool highlight)
         {
+            var position = GetCellPosition(currentCell);
 
+            var item = CurrentStash.Items.FirstOrDefault
+                (i => i.X <= position.Item1 && position.Item1 < i.X + i.W &&
+                      i.Y <= position.Item2 && position.Item2 < i.Y + i.H);
+
+            if (item != null)
+            {
+                HighlightAllItemCells(item, highlight);
+                ResultTextBox.Text = "item found";
+            }
+            else
+            {
+                ResultTextBox.Text = "item not found";
+            }
+        }
+
+        private void HighlightAllItemCells(Item item, bool highlight)
+        {
+            var highlightColor = (SolidColorBrush)new BrushConverter().ConvertFrom("#4C0076FF");
+            var disabledColor = (SolidColorBrush)new BrushConverter().ConvertFrom("#000076FF");
+
+            for(int x = item.X; x < item.X + item.W; x++)
+            {
+                for (int y = item.Y; y < item.Y + item.H; y++)
+                {
+                    var currentCell = (System.Windows.Shapes.Rectangle)FindName("Cellx" + x + "y" + y);
+                    currentCell.Fill = highlight ? highlightColor : disabledColor;
+                }
+            }
         }
 
         private void Simulation_Button(object sender, RoutedEventArgs e)

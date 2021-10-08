@@ -10,6 +10,9 @@
   <ItemGroup>
     <None Remove="Blueprint_Repository_inventory_icon.png" />
     <None Remove="expedition-bg.jpg" />
+    <None Remove="header-double-rare-left.png" />
+    <None Remove="header-double-rare-middle.png" />
+    <None Remove="header-double-rare-right.png" />
     <None Remove="StashPanelGrid.png" />
   </ItemGroup>
 
@@ -29,6 +32,9 @@
   <ItemGroup>
     <Resource Include="Blueprint_Repository_inventory_icon.png" />
     <Resource Include="expedition-bg.jpg" />
+    <Resource Include="header-double-rare-left.png" />
+    <Resource Include="header-double-rare-middle.png" />
+    <Resource Include="header-double-rare-right.png" />
     <Resource Include="StashPanelGrid.png" />
     <Resource Include="Fonts\Fontin-Bold.ttf" />
     <Resource Include="Fonts\Fontin-Italic.ttf" />

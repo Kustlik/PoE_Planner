@@ -1143,5 +1143,20 @@
             </Rectangle.Fill>
         </Rectangle>
         <TextBox x:Name="AccountTextBox" HorizontalAlignment="Left" Height="28" Margin="179,635,0,0" Text="Enter Your Account..." TextWrapping="Wrap" VerticalAlignment="Top" Width="219" BorderBrush="#FF1E2124" Foreground="#FF8A9999" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="#FF1E2124" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="16" Cursor="Hand"  KeyDown="TextBox_KeyDown" LostFocus="TextBox_LostFocus" GotFocus="TextBox_GotFocus"/>
+        <TextBlock HorizontalAlignment="Left" Margin="41,174,0,0" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Height="34" Width="152" FontFamily="Fontin SmallCaps" Foreground="#FFFFFF77" Padding="0,3,0,0">
+            <TextBlock.Background>
+                <ImageBrush ImageSource="/header-double-rare-middle.png" ViewportUnits="Absolute" Viewport="0,0,28,34" TileMode="Tile"/>
+            </TextBlock.Background><Run Text="Dusk Bane"/><LineBreak/><Run Language="pl-pl" Text="Twin Claw"/><LineBreak/><Run Language="pl-pl"/></TextBlock>
+        <Rectangle HorizontalAlignment="Left" Height="34" Margin="193,174,0,0" VerticalAlignment="Top" Width="27">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="/header-double-rare-right.png" Stretch="UniformToFill" TileMode="Tile"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle HorizontalAlignment="Left" Height="34" Margin="14,174,0,0" VerticalAlignment="Top" Width="27">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="/header-double-rare-left.png" Stretch="UniformToFill" TileMode="Tile"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle HorizontalAlignment="Left" Height="94" Margin="14,208,0,0" VerticalAlignment="Top" Width="206" Fill="#BF000000"/>
     </Grid>
 </Window>
