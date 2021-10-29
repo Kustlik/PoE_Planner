@@ -54,17 +54,6 @@ namespace PoE_Planner
             }
         }
 
-        private void GenerateToolTipBox()
-        {
-            System.Windows.Shapes.Rectangle leftHeader = new();
-
-        }
-
-        private void GenerateTooltipText()
-        {
-
-        }
-
         private void InstantiateItems(List<Item> items)
         {
             foreach (Item item in items)
@@ -154,11 +143,7 @@ namespace PoE_Planner
             if (item != null)
             {
                 HighlightAllItemCells(item, highlight);
-                ResultTextBox.Text = "item found";
-            }
-            else
-            {
-                ResultTextBox.Text = "item not found";
+                Tooltip.ShowTooltip(item, TooltipWindow);
             }
         }
 

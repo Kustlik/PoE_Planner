@@ -436,6 +436,436 @@
         <ImageBrush ImageSource="/expedition-bg.jpg" Stretch="Uniform"/>
     </Window.Background>
     <Grid HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,66,0,0">
+        <Border BorderThickness="1" BorderBrush="Black" HorizontalAlignment="Left" Height="560" Margin="514,164,0,0" VerticalAlignment="Top" Width="813">
+            <Border.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="Black" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+        </Border>
+        <Border BorderThickness="1" BorderBrush="#FF0E0F10" HorizontalAlignment="Left" Height="197" Margin="1257,241,0,0" VerticalAlignment="Top" Width="49" Background="#FF0E0F10"/>
+        <Border BorderThickness="1" BorderBrush="#FF0E0F10" HorizontalAlignment="Left" Height="197" Margin="1203,241,0,0" VerticalAlignment="Top" Width="49" Background="#FF0E0F10"/>
+        <Border BorderThickness="1" BorderBrush="#FF0E0F10" HorizontalAlignment="Left" Height="197" Margin="1149,241,0,0" VerticalAlignment="Top" Width="49" Background="#FF0E0F10"/>
+        <Border BorderThickness="1" BorderBrush="#FF0E0F10" HorizontalAlignment="Left" Height="197" Margin="1095,241,0,0" VerticalAlignment="Top" Width="49" Background="#FF0E0F10"/>
+        <Border BorderThickness="1" BorderBrush="#FF0E0F10" HorizontalAlignment="Left" Height="197" Margin="1041,241,0,0" VerticalAlignment="Top" Width="49" Background="#FF0E0F10"/>
+        <Rectangle HorizontalAlignment="Left" Height="1" Margin="514,164,0,0" Stroke="#FF5A3806" VerticalAlignment="Top" Width="813">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF5A3806" Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <TextBox x:Name="CategoryTextBox" HorizontalAlignment="Left" Height="28" Margin="624,211,0,0" Text="Category Name" TextWrapping="Wrap" VerticalAlignment="Top" Width="412" BorderBrush="#FF1E2124" Foreground="#FF8A9999" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="#FF1E2124" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="16" Cursor="Hand" KeyDown="TextBox_KeyDown" LostFocus="TextBox_LostFocus" GotFocus="TextBox_GotFocus"/>
+        <TextBox HorizontalAlignment="Left" Height="28" Margin="564,211,0,0" Text="Base" TextWrapping="Wrap" VerticalAlignment="Top" Width="55" BorderBrush="#FF0E0F10" Foreground="#FFFFF8E1" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="#FF0E0F10" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="18" Cursor="Arrow" Padding="4,0,0,0" Focusable="False" IsHitTestVisible="False"/>
+        <Rectangle HorizontalAlignment="Left" Height="2" Margin="550,224,0,0" Stroke="#FF5A3806" VerticalAlignment="Top" Width="28" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF5A3806" Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <TextBox HorizontalAlignment="Left" Height="28" Margin="530,178,0,0" Text="Stat Filters" TextWrapping="Wrap" VerticalAlignment="Top" Width="192" BorderBrush="Black" Foreground="#FFFFF8E1" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="Black" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="18" Cursor="Arrow" Padding="4,0,0,0" Focusable="False" IsHitTestVisible="False"/>
+        <Rectangle HorizontalAlignment="Left" Height="2" Margin="530,206,0,0" Stroke="#FF465260" VerticalAlignment="Top" Width="506" RenderTransformOrigin="0.5,0.5" Fill="#FF465260">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <TextBox HorizontalAlignment="Left" Height="28" Margin="1041,178,0,0" Text="Best Combinations" TextWrapping="Wrap" VerticalAlignment="Top" Width="201" BorderBrush="Black" Foreground="#FFFFF8E1" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="Black" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="18" Cursor="Arrow" Padding="4,0,0,0" Focusable="False" IsHitTestVisible="False"/>
+        <Rectangle HorizontalAlignment="Left" Height="2" Margin="1041,206,0,0" Stroke="#FF0076FF" VerticalAlignment="Top" Width="265" RenderTransformOrigin="0.5,0.5" Fill="#FF0076FF">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <TextBox HorizontalAlignment="Left" Height="28" Margin="1041,211,0,0" Text="Top1" TextWrapping="Wrap" VerticalAlignment="Top" Width="49" BorderBrush="Black" Foreground="#FFFFF8E1" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="Black" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="18" Cursor="Arrow" Padding="4,0,0,0" Focusable="False" IsHitTestVisible="False" TextChanged="TextBox_TextChanged"/>
+        <Rectangle HorizontalAlignment="Left" Height="2" Margin="1041,239,0,0" Stroke="#FF0076FF" VerticalAlignment="Top" Width="49" RenderTransformOrigin="0.5,0.5" Fill="#FF0076FF">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <TextBox HorizontalAlignment="Left" Height="28" Margin="1095,211,0,0" Text="Top2" TextWrapping="Wrap" VerticalAlignment="Top" Width="49" BorderBrush="Black" Foreground="#FFFFF8E1" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="Black" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="18" Cursor="Arrow" Padding="4,0,0,0" Focusable="False" IsHitTestVisible="False" TextChanged="TextBox_TextChanged"/>
+        <Rectangle HorizontalAlignment="Left" Height="2" Margin="1095,239,0,0" Stroke="#FF0076FF" VerticalAlignment="Top" Width="49" RenderTransformOrigin="0.5,0.5" Fill="#FF0076FF">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <TextBox HorizontalAlignment="Left" Height="28" Margin="1149,211,0,0" Text="Top3" TextWrapping="Wrap" VerticalAlignment="Top" Width="49" BorderBrush="Black" Foreground="#FFFFF8E1" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="Black" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="18" Cursor="Arrow" Padding="4,0,0,0" Focusable="False" IsHitTestVisible="False" TextChanged="TextBox_TextChanged"/>
+        <Rectangle HorizontalAlignment="Left" Height="2" Margin="1149,239,0,0" Stroke="#FF0076FF" VerticalAlignment="Top" Width="49" RenderTransformOrigin="0.5,0.5" Fill="#FF0076FF">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <TextBox HorizontalAlignment="Left" Height="28" Margin="1203,211,0,0" Text="Top4" TextWrapping="Wrap" VerticalAlignment="Top" Width="49" BorderBrush="Black" Foreground="#FFFFF8E1" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="Black" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="18" Cursor="Arrow" Padding="4,0,0,0" Focusable="False" IsHitTestVisible="False" TextChanged="TextBox_TextChanged"/>
+        <Rectangle HorizontalAlignment="Left" Height="2" Margin="1203,239,0,0" Stroke="#FF0076FF" VerticalAlignment="Top" Width="49" RenderTransformOrigin="0.5,0.5" Fill="#FF0076FF">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <TextBox HorizontalAlignment="Left" Height="28" Margin="1257,211,0,0" Text="Top5" TextWrapping="Wrap" VerticalAlignment="Top" Width="49" BorderBrush="Black" Foreground="#FFFFF8E1" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="Black" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="18" Cursor="Arrow" Padding="4,0,0,0" Focusable="False" IsHitTestVisible="False" TextChanged="TextBox_TextChanged"/>
+        <Rectangle HorizontalAlignment="Left" Height="2" Margin="1257,239,0,0" Stroke="#FF0076FF" VerticalAlignment="Top" Width="49" RenderTransformOrigin="0.5,0.5" Fill="#FF0076FF">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <TextBox x:Name="Prefix1MaxTextBox" HorizontalAlignment="Left" Height="28" Margin="944,245,0,0" Text="Max" TextWrapping="Wrap" VerticalAlignment="Top" Width="71" BorderBrush="#FF1E2124" Foreground="#FF8A9999" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="#FF1E2124" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="16" Cursor="Hand"  KeyDown="TextBox_KeyDown" LostFocus="TextBox_LostFocus" GotFocus="TextBox_GotFocus" PreviewTextInput="NumberValidationTextBox"/>
+        <TextBox HorizontalAlignment="Left" Height="28" Margin="564,245,0,0" Text="Prefix1" TextWrapping="Wrap" VerticalAlignment="Top" Width="299" BorderBrush="#FF0E0F10" Foreground="#FFFFF8E1" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="#FF0E0F10" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="18" Cursor="Arrow" Padding="4,0,0,0" Focusable="False" IsHitTestVisible="False"/>
+        <Rectangle HorizontalAlignment="Left" Height="2" Margin="550,258,0,0" Stroke="#FF5A3806" VerticalAlignment="Top" Width="28" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF5A3806" Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <TextBox x:Name="Prefix1MinTextBox" HorizontalAlignment="Left" Height="28" Margin="868,245,0,0" Text="Min" TextWrapping="Wrap" VerticalAlignment="Top" Width="71" BorderBrush="#FF1E2124" Foreground="#FF8A9999" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="#FF1E2124" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="16" Cursor="Hand" KeyDown="TextBox_KeyDown" LostFocus="TextBox_LostFocus" GotFocus="TextBox_GotFocus" PreviewTextInput="NumberValidationTextBox"/>
+        <TextBox HorizontalAlignment="Left" Height="28" Margin="1020,244,0,0" Text="P" TextWrapping="Wrap" VerticalAlignment="Top" Width="16" BorderBrush="Black" Foreground="Red" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="Black" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="18" Cursor="Arrow" Padding="0,0,0,0" Focusable="False" IsHitTestVisible="False"/>
+        <TextBox x:Name="Prefix2MaxTextBox" HorizontalAlignment="Left" Height="28" Margin="944,278,0,0" Text="Max" TextWrapping="Wrap" VerticalAlignment="Top" Width="71" BorderBrush="#FF1E2124" Foreground="#FF8A9999" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="#FF1E2124" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="16" Cursor="Hand"  KeyDown="TextBox_KeyDown" LostFocus="TextBox_LostFocus" GotFocus="TextBox_GotFocus" PreviewTextInput="NumberValidationTextBox" />
+        <TextBox HorizontalAlignment="Left" Height="28" Margin="564,278,0,0" Text="Prefix2" TextWrapping="Wrap" VerticalAlignment="Top" Width="299" BorderBrush="#FF0E0F10" Foreground="#FFFFF8E1" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="#FF0E0F10" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="18" Cursor="Arrow" Padding="4,0,0,0" Focusable="False" IsHitTestVisible="False"/>
+        <Rectangle HorizontalAlignment="Left" Height="2" Margin="550,291,0,0" Stroke="#FF5A3806" VerticalAlignment="Top" Width="28" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF5A3806" Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <TextBox x:Name="Prefix2MinTextBox" HorizontalAlignment="Left" Height="28" Margin="868,278,0,0" Text="Min" TextWrapping="Wrap" VerticalAlignment="Top" Width="71" BorderBrush="#FF1E2124" Foreground="#FF8A9999" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="#FF1E2124" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="16" Cursor="Hand" KeyDown="TextBox_KeyDown" LostFocus="TextBox_LostFocus" GotFocus="TextBox_GotFocus" PreviewTextInput="NumberValidationTextBox"/>
+        <TextBox HorizontalAlignment="Left" Height="28" Margin="1020,277,0,0" Text="P" TextWrapping="Wrap" VerticalAlignment="Top" Width="16" BorderBrush="Black" Foreground="Red" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="Black" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="18" Cursor="Arrow" Padding="0,0,0,0" Focusable="False" IsHitTestVisible="False"/>
+        <TextBox x:Name="Prefix3MaxTextBox" HorizontalAlignment="Left" Height="28" Margin="944,311,0,0" Text="Max" TextWrapping="Wrap" VerticalAlignment="Top" Width="71" BorderBrush="#FF1E2124" Foreground="#FF8A9999" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="#FF1E2124" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="16" Cursor="Hand" KeyDown="TextBox_KeyDown" LostFocus="TextBox_LostFocus" GotFocus="TextBox_GotFocus" PreviewTextInput="NumberValidationTextBox"/>
+        <TextBox HorizontalAlignment="Left" Height="28" Margin="564,311,0,0" Text="Prefix3" TextWrapping="Wrap" VerticalAlignment="Top" Width="299" BorderBrush="#FF0E0F10" Foreground="#FFFFF8E1" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="#FF0E0F10" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="18" Cursor="Arrow" Padding="4,0,0,0" Focusable="False" IsHitTestVisible="False"/>
+        <Rectangle HorizontalAlignment="Left" Height="2" Margin="550,324,0,0" Stroke="#FF5A3806" VerticalAlignment="Top" Width="28" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF5A3806" Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <TextBox x:Name="Prefix3MinTextBox" HorizontalAlignment="Left" Height="28" Margin="868,311,0,0" Text="Min" TextWrapping="Wrap" VerticalAlignment="Top" Width="71" BorderBrush="#FF1E2124" Foreground="#FF8A9999" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="#FF1E2124" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="16" Cursor="Hand" KeyDown="TextBox_KeyDown" LostFocus="TextBox_LostFocus" GotFocus="TextBox_GotFocus" PreviewTextInput="NumberValidationTextBox"/>
+        <TextBox HorizontalAlignment="Left" Height="28" Margin="1020,310,0,0" Text="P" TextWrapping="Wrap" VerticalAlignment="Top" Width="16" BorderBrush="Black" Foreground="Red" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="Black" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="18" Cursor="Arrow" Padding="0,0,0,0" Focusable="False" IsHitTestVisible="False"/>
+        <TextBox x:Name="Sufix1MaxTextBox" HorizontalAlignment="Left" Height="28" Margin="944,344,0,0" Text="Max" TextWrapping="Wrap" VerticalAlignment="Top" Width="71" BorderBrush="#FF1E2124" Foreground="#FF8A9999" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="#FF1E2124" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="16" Cursor="Hand" KeyDown="TextBox_KeyDown" LostFocus="TextBox_LostFocus" GotFocus="TextBox_GotFocus" PreviewTextInput="NumberValidationTextBox"/>
+        <TextBox HorizontalAlignment="Left" Height="28" Margin="564,344,0,0" Text="Sufix1" TextWrapping="Wrap" VerticalAlignment="Top" Width="299" BorderBrush="#FF0E0F10" Foreground="#FFFFF8E1" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="#FF0E0F10" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="18" Cursor="Arrow" Padding="4,0,0,0" Focusable="False" IsHitTestVisible="False"/>
+        <Rectangle HorizontalAlignment="Left" Height="2" Margin="550,357,0,0" Stroke="#FF5A3806" VerticalAlignment="Top" Width="28" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF5A3806" Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <TextBox x:Name="Sufix1MinTextBox" HorizontalAlignment="Left" Height="28" Margin="868,344,0,0" Text="Min" TextWrapping="Wrap" VerticalAlignment="Top" Width="71" BorderBrush="#FF1E2124" Foreground="#FF8A9999" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="#FF1E2124" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="16" Cursor="Hand" KeyDown="TextBox_KeyDown" LostFocus="TextBox_LostFocus" GotFocus="TextBox_GotFocus" PreviewTextInput="NumberValidationTextBox"/>
+        <TextBox HorizontalAlignment="Left" Height="28" Margin="1020,343,0,0" Text="S" TextWrapping="Wrap" VerticalAlignment="Top" Width="16" BorderBrush="Black" Foreground="#FF008CFF" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="Black" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="18" Cursor="Arrow" Padding="0,0,0,0" Focusable="False" IsHitTestVisible="False"/>
+        <TextBox x:Name="Sufix2MaxTextBox" HorizontalAlignment="Left" Height="28" Margin="944,377,0,0" Text="Max" TextWrapping="Wrap" VerticalAlignment="Top" Width="71" BorderBrush="#FF1E2124" Foreground="#FF8A9999" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="#FF1E2124" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="16" Cursor="Hand" KeyDown="TextBox_KeyDown" LostFocus="TextBox_LostFocus" GotFocus="TextBox_GotFocus" PreviewTextInput="NumberValidationTextBox"/>
+        <TextBox HorizontalAlignment="Left" Height="28" Margin="564,377,0,0" Text="Sufix2" TextWrapping="Wrap" VerticalAlignment="Top" Width="299" BorderBrush="#FF0E0F10" Foreground="#FFFFF8E1" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="#FF0E0F10" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="18" Cursor="Arrow" Padding="4,0,0,0" Focusable="False" IsHitTestVisible="False"/>
+        <Rectangle HorizontalAlignment="Left" Height="2" Margin="550,390,0,0" Stroke="#FF5A3806" VerticalAlignment="Top" Width="28" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF5A3806" Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <TextBox x:Name="Sufix2MinTextBox" HorizontalAlignment="Left" Height="28" Margin="868,377,0,0" Text="Min" TextWrapping="Wrap" VerticalAlignment="Top" Width="71" BorderBrush="#FF1E2124" Foreground="#FF8A9999" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="#FF1E2124" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="16" Cursor="Hand" KeyDown="TextBox_KeyDown" LostFocus="TextBox_LostFocus" GotFocus="TextBox_GotFocus" PreviewTextInput="NumberValidationTextBox"/>
+        <TextBox HorizontalAlignment="Left" Height="28" Margin="1020,376,0,0" Text="S" TextWrapping="Wrap" VerticalAlignment="Top" Width="16" BorderBrush="Black" Foreground="#FF008CFF" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="Black" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="18" Cursor="Arrow" Padding="0,0,0,0" Focusable="False" IsHitTestVisible="False"/>
+        <TextBox x:Name="Sufix3MaxTextBox" HorizontalAlignment="Left" Height="28" Margin="944,410,0,0" Text="Max" TextWrapping="Wrap" VerticalAlignment="Top" Width="71" BorderBrush="#FF1E2124" Foreground="#FF8A9999" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="#FF1E2124" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="16" Cursor="Hand" KeyDown="TextBox_KeyDown" LostFocus="TextBox_LostFocus" GotFocus="TextBox_GotFocus" PreviewTextInput="NumberValidationTextBox"/>
+        <TextBox HorizontalAlignment="Left" Height="28" Margin="564,410,0,0" Text="Sufix3" TextWrapping="Wrap" VerticalAlignment="Top" Width="299" BorderBrush="#FF0E0F10" Foreground="#FFFFF8E1" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="#FF0E0F10" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="18" Cursor="Arrow" Padding="4,0,0,0" Focusable="False" IsHitTestVisible="False"/>
+        <Rectangle HorizontalAlignment="Left" Height="2" Margin="550,423,0,0" Stroke="#FF5A3806" VerticalAlignment="Top" Width="28" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF5A3806" Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <TextBox x:Name="Sufix3MinTextBox" HorizontalAlignment="Left" Height="28" Margin="868,410,0,0" Text="Min" TextWrapping="Wrap" VerticalAlignment="Top" Width="71" BorderBrush="#FF1E2124" Foreground="#FF8A9999" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="#FF1E2124" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="16" Cursor="Hand" KeyDown="TextBox_KeyDown" LostFocus="TextBox_LostFocus" GotFocus="TextBox_GotFocus" PreviewTextInput="NumberValidationTextBox"/>
+        <TextBox HorizontalAlignment="Left" Height="28" Margin="1020,409,0,0" Text="S" TextWrapping="Wrap" VerticalAlignment="Top" Width="16" BorderBrush="Black" Foreground="#FF008CFF" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="Black" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="18" Cursor="Arrow" Padding="0,0,0,0" Focusable="False" IsHitTestVisible="False"/>
+        <Border BorderThickness="1" BorderBrush="#FF0076FF" HorizontalAlignment="Left" Height="20" Margin="1056,249,0,0" VerticalAlignment="Top" Width="20"/>
+        <Border BorderThickness="1" BorderBrush="#FF0076FF" HorizontalAlignment="Left" Height="20" Margin="1164,249,0,0" VerticalAlignment="Top" Width="20"/>
+        <Border BorderThickness="1" BorderBrush="#FF0076FF" HorizontalAlignment="Left" Height="20" Margin="1110,249,0,0" VerticalAlignment="Top" Width="20"/>
+        <Border BorderThickness="1" BorderBrush="#FF0076FF" HorizontalAlignment="Left" Height="20" Margin="1218,249,0,0" VerticalAlignment="Top" Width="20"/>
+        <Border BorderThickness="1" BorderBrush="#FF0076FF" HorizontalAlignment="Left" Height="20" Margin="1272,249,0,0" VerticalAlignment="Top" Width="20"/>
+        <Border BorderThickness="1" HorizontalAlignment="Left" Height="16" Margin="1058,251,0,0" VerticalAlignment="Top" Width="16"/>
+        <Border BorderThickness="1" HorizontalAlignment="Left" Height="16" Margin="1112,251,0,0" VerticalAlignment="Top" Width="16"/>
+        <Border BorderThickness="1" HorizontalAlignment="Left" Height="16" Margin="1166,251,0,0" VerticalAlignment="Top" Width="16"/>
+        <Border BorderThickness="1" HorizontalAlignment="Left" Height="16" Margin="1220,251,0,0" VerticalAlignment="Top" Width="16"/>
+        <Border BorderThickness="1" HorizontalAlignment="Left" Height="16" Margin="1274,251,0,0" VerticalAlignment="Top" Width="16"/>
+        <Border BorderThickness="1" BorderBrush="#FF0076FF" HorizontalAlignment="Left" Height="20" Margin="1056,282,0,0" VerticalAlignment="Top" Width="20"/>
+        <Border BorderThickness="1" BorderBrush="#FF0076FF" HorizontalAlignment="Left" Height="20" Margin="1164,282,0,0" VerticalAlignment="Top" Width="20"/>
+        <Border BorderThickness="1" BorderBrush="#FF0076FF" HorizontalAlignment="Left" Height="20" Margin="1110,282,0,0" VerticalAlignment="Top" Width="20"/>
+        <Border BorderThickness="1" BorderBrush="#FF0076FF" HorizontalAlignment="Left" Height="20" Margin="1218,282,0,0" VerticalAlignment="Top" Width="20"/>
+        <Border BorderThickness="1" BorderBrush="#FF0076FF" HorizontalAlignment="Left" Height="20" Margin="1272,282,0,0" VerticalAlignment="Top" Width="20"/>
+        <Border BorderThickness="1" HorizontalAlignment="Left" Height="16" Margin="1058,284,0,0" VerticalAlignment="Top" Width="16"/>
+        <Border BorderThickness="1" HorizontalAlignment="Left" Height="16" Margin="1112,284,0,0" VerticalAlignment="Top" Width="16"/>
+        <Border BorderThickness="1" HorizontalAlignment="Left" Height="16" Margin="1166,284,0,0" VerticalAlignment="Top" Width="16"/>
+        <Border BorderThickness="1" HorizontalAlignment="Left" Height="16" Margin="1220,284,0,0" VerticalAlignment="Top" Width="16"/>
+        <Border BorderThickness="1" HorizontalAlignment="Left" Height="16" Margin="1274,284,0,0" VerticalAlignment="Top" Width="16"/>
+        <Border BorderThickness="1" BorderBrush="#FF0076FF" HorizontalAlignment="Left" Height="20" Margin="1056,315,0,0" VerticalAlignment="Top" Width="20"/>
+        <Border BorderThickness="1" BorderBrush="#FF0076FF" HorizontalAlignment="Left" Height="20" Margin="1164,315,0,0" VerticalAlignment="Top" Width="20"/>
+        <Border BorderThickness="1" BorderBrush="#FF0076FF" HorizontalAlignment="Left" Height="20" Margin="1110,315,0,0" VerticalAlignment="Top" Width="20"/>
+        <Border BorderThickness="1" BorderBrush="#FF0076FF" HorizontalAlignment="Left" Height="20" Margin="1218,315,0,0" VerticalAlignment="Top" Width="20"/>
+        <Border BorderThickness="1" BorderBrush="#FF0076FF" HorizontalAlignment="Left" Height="20" Margin="1272,315,0,0" VerticalAlignment="Top" Width="20"/>
+        <Border BorderThickness="1" HorizontalAlignment="Left" Height="16" Margin="1058,317,0,0" VerticalAlignment="Top" Width="16"/>
+        <Border BorderThickness="1" HorizontalAlignment="Left" Height="16" Margin="1112,317,0,0" VerticalAlignment="Top" Width="16"/>
+        <Border BorderThickness="1" HorizontalAlignment="Left" Height="16" Margin="1166,317,0,0" VerticalAlignment="Top" Width="16"/>
+        <Border BorderThickness="1" HorizontalAlignment="Left" Height="16" Margin="1220,317,0,0" VerticalAlignment="Top" Width="16"/>
+        <Border BorderThickness="1" HorizontalAlignment="Left" Height="16" Margin="1274,317,0,0" VerticalAlignment="Top" Width="16"/>
+        <Border BorderThickness="1" BorderBrush="#FF0076FF" HorizontalAlignment="Left" Height="20" Margin="1056,348,0,0" VerticalAlignment="Top" Width="20"/>
+        <Border BorderThickness="1" BorderBrush="#FF0076FF" HorizontalAlignment="Left" Height="20" Margin="1164,348,0,0" VerticalAlignment="Top" Width="20"/>
+        <Border BorderThickness="1" BorderBrush="#FF0076FF" HorizontalAlignment="Left" Height="20" Margin="1110,348,0,0" VerticalAlignment="Top" Width="20"/>
+        <Border BorderThickness="1" BorderBrush="#FF0076FF" HorizontalAlignment="Left" Height="20" Margin="1218,348,0,0" VerticalAlignment="Top" Width="20"/>
+        <Border BorderThickness="1" BorderBrush="#FF0076FF" HorizontalAlignment="Left" Height="20" Margin="1272,348,0,0" VerticalAlignment="Top" Width="20"/>
+        <Border BorderThickness="1" HorizontalAlignment="Left" Height="16" Margin="1058,350,0,0" VerticalAlignment="Top" Width="16"/>
+        <Border BorderThickness="1" HorizontalAlignment="Left" Height="16" Margin="1112,350,0,0" VerticalAlignment="Top" Width="16"/>
+        <Border BorderThickness="1" HorizontalAlignment="Left" Height="16" Margin="1166,350,0,0" VerticalAlignment="Top" Width="16"/>
+        <Border BorderThickness="1" HorizontalAlignment="Left" Height="16" Margin="1220,350,0,0" VerticalAlignment="Top" Width="16"/>
+        <Border BorderThickness="1" HorizontalAlignment="Left" Height="16" Margin="1274,350,0,0" VerticalAlignment="Top" Width="16"/>
+        <Border BorderThickness="1" BorderBrush="#FF0076FF" HorizontalAlignment="Left" Height="20" Margin="1056,381,0,0" VerticalAlignment="Top" Width="20"/>
+        <Border BorderThickness="1" BorderBrush="#FF0076FF" HorizontalAlignment="Left" Height="20" Margin="1164,381,0,0" VerticalAlignment="Top" Width="20"/>
+        <Border BorderThickness="1" BorderBrush="#FF0076FF" HorizontalAlignment="Left" Height="20" Margin="1110,381,0,0" VerticalAlignment="Top" Width="20"/>
+        <Border BorderThickness="1" BorderBrush="#FF0076FF" HorizontalAlignment="Left" Height="20" Margin="1218,381,0,0" VerticalAlignment="Top" Width="20"/>
+        <Border BorderThickness="1" BorderBrush="#FF0076FF" HorizontalAlignment="Left" Height="20" Margin="1272,381,0,0" VerticalAlignment="Top" Width="20"/>
+        <Border BorderThickness="1" HorizontalAlignment="Left" Height="16" Margin="1058,383,0,0" VerticalAlignment="Top" Width="16"/>
+        <Border BorderThickness="1" HorizontalAlignment="Left" Height="16" Margin="1112,383,0,0" VerticalAlignment="Top" Width="16"/>
+        <Border BorderThickness="1" HorizontalAlignment="Left" Height="16" Margin="1166,383,0,0" VerticalAlignment="Top" Width="16"/>
+        <Border BorderThickness="1" HorizontalAlignment="Left" Height="16" Margin="1220,383,0,0" VerticalAlignment="Top" Width="16"/>
+        <Border BorderThickness="1" HorizontalAlignment="Left" Height="16" Margin="1274,383,0,0" VerticalAlignment="Top" Width="16"/>
+        <Border BorderThickness="1" BorderBrush="#FF0076FF" HorizontalAlignment="Left" Height="20" Margin="1056,414,0,0" VerticalAlignment="Top" Width="20"/>
+        <Border BorderThickness="1" BorderBrush="#FF0076FF" HorizontalAlignment="Left" Height="20" Margin="1164,414,0,0" VerticalAlignment="Top" Width="20"/>
+        <Border BorderThickness="1" BorderBrush="#FF0076FF" HorizontalAlignment="Left" Height="20" Margin="1110,414,0,0" VerticalAlignment="Top" Width="20"/>
+        <Border BorderThickness="1" BorderBrush="#FF0076FF" HorizontalAlignment="Left" Height="20" Margin="1218,414,0,0" VerticalAlignment="Top" Width="20"/>
+        <Border BorderThickness="1" BorderBrush="#FF0076FF" HorizontalAlignment="Left" Height="20" Margin="1272,414,0,0" VerticalAlignment="Top" Width="20"/>
+        <Border BorderThickness="1" HorizontalAlignment="Left" Height="16" Margin="1058,416,0,0" VerticalAlignment="Top" Width="16"/>
+        <Border BorderThickness="1" HorizontalAlignment="Left" Height="16" Margin="1112,416,0,0" VerticalAlignment="Top" Width="16"/>
+        <Border BorderThickness="1" HorizontalAlignment="Left" Height="16" Margin="1166,416,0,0" VerticalAlignment="Top" Width="16"/>
+        <Border BorderThickness="1" HorizontalAlignment="Left" Height="16" Margin="1220,416,0,0" VerticalAlignment="Top" Width="16"/>
+        <Border BorderThickness="1" HorizontalAlignment="Left" Height="16" Margin="1274,416,0,0" VerticalAlignment="Top" Width="16"/>
+        <Button Content="Amount" HorizontalAlignment="Left" Height="25" Margin="1176,444,0,0" VerticalAlignment="Top" Width="130" Background="#FF0076FF" Foreground="#FFFFF8E1" FontFamily="Fontin SmallCaps" Cursor="Hand"/>
+        <CheckBox Style="{DynamicResource PoECheckbox}" Content="" HorizontalAlignment="Left" Height="28" Margin="536,410,0,0" VerticalAlignment="Top" Width="20" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" OpacityMask="#FF5A3806" Padding="0,0,0,0" BorderThickness="2,2,2,2" RenderTransformOrigin="0.5,0.5" IsChecked="True">
+            <CheckBox.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </CheckBox.Background>
+            <CheckBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="0.9"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </CheckBox.RenderTransform>
+        </CheckBox>
+        <Button Style="{DynamicResource PoeButtonSimulation}" Content="Simulate" HorizontalAlignment="Left" Height="25" Margin="538,444,0,0" VerticalAlignment="Top" Width="476" Background="#FF5A3806" Foreground="#FFFFF8E1" FontFamily="Fontin SmallCaps" Cursor="Hand" FontSize="16" Click="Simulation_Button"/>
+        <CheckBox Style="{DynamicResource PoECheckbox}" Content="" HorizontalAlignment="Left" Height="28" Margin="536,377,0,0" VerticalAlignment="Top" Width="20" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" OpacityMask="#FF5A3806" Padding="0,0,0,0" BorderThickness="2,2,2,2" RenderTransformOrigin="0.5,0.5" IsChecked="True">
+            <CheckBox.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </CheckBox.Background>
+            <CheckBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="0.9"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </CheckBox.RenderTransform>
+        </CheckBox>
+        <CheckBox Style="{DynamicResource PoECheckbox}" Content="" HorizontalAlignment="Left" Height="28" Margin="536,344,0,0" VerticalAlignment="Top" Width="20" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" OpacityMask="#FF5A3806" Padding="0,0,0,0" BorderThickness="2,2,2,2" RenderTransformOrigin="0.5,0.5" IsChecked="True">
+            <CheckBox.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </CheckBox.Background>
+            <CheckBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="0.9"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </CheckBox.RenderTransform>
+        </CheckBox>
+        <CheckBox Style="{DynamicResource PoECheckbox}" Content="" HorizontalAlignment="Left" Height="28" Margin="536,311,0,0" VerticalAlignment="Top" Width="20" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" OpacityMask="#FF5A3806" Padding="0,0,0,0" BorderThickness="2,2,2,2" RenderTransformOrigin="0.5,0.5" IsChecked="True">
+            <CheckBox.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </CheckBox.Background>
+            <CheckBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="0.9"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </CheckBox.RenderTransform>
+        </CheckBox>
+        <CheckBox Style="{DynamicResource PoECheckbox}" Content="" HorizontalAlignment="Left" Height="28" Margin="536,278,0,0" VerticalAlignment="Top" Width="20" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" OpacityMask="#FF5A3806" Padding="0,0,0,0" BorderThickness="2,2,2,2" RenderTransformOrigin="0.5,0.5" IsChecked="True">
+            <CheckBox.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </CheckBox.Background>
+            <CheckBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="0.9"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </CheckBox.RenderTransform>
+        </CheckBox>
+        <CheckBox Style="{DynamicResource PoECheckbox}" Content="" HorizontalAlignment="Left" Height="28" Margin="536,245,0,0" VerticalAlignment="Top" Width="20" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" OpacityMask="#FF5A3806" Padding="0,0,0,0" BorderThickness="2,2,2,2" RenderTransformOrigin="0.5,0.5" IsChecked="True">
+            <CheckBox.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </CheckBox.Background>
+            <CheckBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="0.9"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </CheckBox.RenderTransform>
+        </CheckBox>
+        <CheckBox Style="{DynamicResource PoECheckbox}" Content="" HorizontalAlignment="Left" Height="28" Margin="536,211,0,0" VerticalAlignment="Top" Width="20" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" OpacityMask="#FF5A3806" Padding="0,0,0,0" BorderThickness="2,2,2,2" RenderTransformOrigin="0.5,0.5" IsChecked="True">
+            <CheckBox.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </CheckBox.Background>
+            <CheckBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="0.9"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </CheckBox.RenderTransform>
+        </CheckBox>
+        <TextBox HorizontalAlignment="Left" Height="28" Margin="1041,474,0,0" Text="Minimum Sellers" TextWrapping="Wrap" VerticalAlignment="Top" Width="189" BorderBrush="#FF0E0F10" Foreground="#FFFFF8E1" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="#FF0E0F10" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="18" Cursor="Arrow" Padding="4,0,0,0" Focusable="False" IsHitTestVisible="False" TextChanged="TextBox_TextChanged_1"/>
+        <Rectangle HorizontalAlignment="Left" Height="2" Margin="1028,487,0,0" Stroke="#FF5A3806" VerticalAlignment="Top" Width="28" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF5A3806" Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <TextBox x:Name="SellersTextBox" HorizontalAlignment="Left" Height="28" Margin="1235,474,0,0" Text="0" TextWrapping="Wrap" VerticalAlignment="Top" Width="71" BorderBrush="#FF1E2124" Foreground="#FFE2E2E2" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="#FF1E2124" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="16" Cursor="Hand" PreviewTextInput="NumberValidationTextBox" KeyDown="TextBox_KeyDown"/>
+        <TextBox x:Name="ResultTextBox" HorizontalAlignment="Left" Margin="537,515,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="745" Height="177" TextChanged="TextBox_TextChanged_2"/>
+        <Button Content="Value" HorizontalAlignment="Left" Height="25" Margin="1041,445,0,0" VerticalAlignment="Top" Width="130" Background="#FF0076FF" Foreground="#FFFFF8E1" FontFamily="Fontin SmallCaps" Cursor="Hand"/>
         <Label Content="PoE Trade Planner" Margin="0,0,0,0" Width="700" FontWeight="Normal" FontFamily="Segoe UI Semibold" HorizontalContentAlignment="Center" VerticalContentAlignment="Top" FontSize="72" Height="106" HorizontalAlignment="Center" VerticalAlignment="Top">
             <Label.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -451,12 +881,12 @@
                     <GradientStop Color="Black" Offset="1"/>
                 </LinearGradientBrush>
             </Border.Background>
-            <Border Name="StashWindow" BorderThickness="1" BorderBrush="Black" HorizontalAlignment="Center" Height="420" VerticalAlignment="Top" Width="420" Margin="0,9,0,0">
+            <Border x:Name="StashWindow" BorderThickness="1" BorderBrush="Black" HorizontalAlignment="Center" Height="420" VerticalAlignment="Top" Width="420" Margin="0,9,0,0">
                 <Border.Background>
                     <ImageBrush ImageSource="/StashPanelGrid.png"/>
                 </Border.Background>
                 <Canvas x:Name="StashCanvas" Margin="-1,-1,-1,-1">
-                    <Grid x:Name="HighlightGrid" Height="420" Width="420">
+                    <Grid x:Name="HighlightGrid" Height="420" Width="420" Panel.ZIndex="5">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="35"/>
                             <RowDefinition Height="35"/>
@@ -641,6 +1071,25 @@
                         <Rectangle x:Name="Cellx10y11" Fill="#000076FF" Grid.Column="10" Grid.Row="11" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
                         <Rectangle x:Name="Cellx11y11" Fill="#000076FF" Grid.Column="11" Grid.Row="11" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
                     </Grid>
+                    <Viewbox x:Name="TooltipWindow" Height="128" Margin="0,0,0,0" Stretch="Fill" Width="206" RenderTransformOrigin="0,0" Canvas.Left="35" Canvas.Top="0" Panel.ZIndex="10" IsHitTestVisible="False" Visibility="Hidden">
+                        <Grid Height="128" Width="206">
+                            <TextBlock HorizontalAlignment="Center" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Height="34" Width="152" FontFamily="Fontin SmallCaps" Foreground="#FFFFFF77" Padding="0,3,0,0" IsHitTestVisible="False">
+                                <TextBlock.Background>
+                                    <ImageBrush ImageSource="/header-double-rare-middle.png" ViewportUnits="Absolute" Viewport="0,0,28,34" TileMode="Tile"/>
+                                </TextBlock.Background><Run Text="Dusk Bane"/><LineBreak/><Run Language="pl-pl" Text="Twin Claw"/><LineBreak/><Run Language="pl-pl"/></TextBlock>
+                            <Rectangle HorizontalAlignment="Left" Height="34" Margin="179,0,0,0" VerticalAlignment="Top" Width="27" IsHitTestVisible="False">
+                                <Rectangle.Fill>
+                                    <ImageBrush ImageSource="/header-double-rare-right.png" Stretch="UniformToFill" TileMode="Tile"/>
+                                </Rectangle.Fill>
+                            </Rectangle>
+                            <Rectangle HorizontalAlignment="Left" Height="34" VerticalAlignment="Top" Width="27" IsHitTestVisible="False">
+                                <Rectangle.Fill>
+                                    <ImageBrush ImageSource="/header-double-rare-left.png" Stretch="UniformToFill" TileMode="Tile"/>
+                                </Rectangle.Fill>
+                            </Rectangle>
+                            <Rectangle HorizontalAlignment="Right" Height="94" Margin="0,34,0,0" VerticalAlignment="Top" Width="206" Fill="#BF000000" IsHitTestVisible="False"/>
+                        </Grid>
+                    </Viewbox>
                 </Canvas>
             </Border>
         </Border>
@@ -653,28 +1102,7 @@
             </Rectangle.Fill>
         </Rectangle>
         <Button Content="Tab1" HorizontalAlignment="Left" Height="21" Margin="-31,143,0,0" VerticalAlignment="Top" Width="114" Background="#FF5A3806" BorderBrush="#FF5A3806" Foreground="#FFE9CF9F" FontFamily="Fontin"/>
-        <Border BorderThickness="1" BorderBrush="Black" HorizontalAlignment="Left" Height="560" Margin="514,164,0,0" VerticalAlignment="Top" Width="813">
-            <Border.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="Black"/>
-                    <GradientStop Color="Black" Offset="1"/>
-                </LinearGradientBrush>
-            </Border.Background>
-        </Border>
-        <Border BorderThickness="1" BorderBrush="#FF0E0F10" HorizontalAlignment="Left" Height="197" Margin="1257,241,0,0" VerticalAlignment="Top" Width="49" Background="#FF0E0F10"/>
-        <Border BorderThickness="1" BorderBrush="#FF0E0F10" HorizontalAlignment="Left" Height="197" Margin="1203,241,0,0" VerticalAlignment="Top" Width="49" Background="#FF0E0F10"/>
-        <Border BorderThickness="1" BorderBrush="#FF0E0F10" HorizontalAlignment="Left" Height="197" Margin="1149,241,0,0" VerticalAlignment="Top" Width="49" Background="#FF0E0F10"/>
-        <Border BorderThickness="1" BorderBrush="#FF0E0F10" HorizontalAlignment="Left" Height="197" Margin="1095,241,0,0" VerticalAlignment="Top" Width="49" Background="#FF0E0F10"/>
-        <Border BorderThickness="1" BorderBrush="#FF0E0F10" HorizontalAlignment="Left" Height="197" Margin="1041,241,0,0" VerticalAlignment="Top" Width="49" Background="#FF0E0F10"/>
-        <Rectangle HorizontalAlignment="Left" Height="1" Margin="514,164,0,0" Stroke="#FF5A3806" VerticalAlignment="Top" Width="813">
-            <Rectangle.Fill>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="Black"/>
-                    <GradientStop Color="#FF5A3806" Offset="1"/>
-                </LinearGradientBrush>
-            </Rectangle.Fill>
-        </Rectangle>
-        <TextBox Name="SessionIDTextBox" HorizontalAlignment="Left" Height="28" Margin="179,602,0,0" Text="Enter Your SessionID..." TextWrapping="Wrap" VerticalAlignment="Top" Width="219" BorderBrush="#FF1E2124" Foreground="#FF8A9999" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="#FF1E2124" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" Cursor="Hand" KeyDown="TextBox_KeyDown" LostFocus="TextBox_LostFocus" GotFocus="TextBox_GotFocus"/>
+        <TextBox x:Name="SessionIDTextBox" HorizontalAlignment="Left" Height="28" Margin="179,602,0,0" Text="Enter Your SessionID..." TextWrapping="Wrap" VerticalAlignment="Top" Width="219" BorderBrush="#FF1E2124" Foreground="#FF8A9999" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="#FF1E2124" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" Cursor="Hand" KeyDown="TextBox_KeyDown" LostFocus="TextBox_LostFocus" GotFocus="TextBox_GotFocus"/>
         <TextBox HorizontalAlignment="Left" Height="28" Margin="-18,602,0,0" Text="SessionID" TextWrapping="Wrap" VerticalAlignment="Top" Width="192" BorderBrush="#FF0E0F10" Foreground="#FFFFF8E1" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="#FF0E0F10" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="18" Cursor="Arrow" Padding="4,0,0,0" Focusable="False" IsHitTestVisible="False" TextChanged="TextBox_TextChanged_3"/>
         <Rectangle HorizontalAlignment="Left" Height="2" Margin="-33,616,0,0" Stroke="#FF5A3806" VerticalAlignment="Top" Width="28" RenderTransformOrigin="0.5,0.5">
             <Rectangle.RenderTransform>
@@ -692,395 +1120,6 @@
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
-        <TextBox Name="CategoryTextBox" HorizontalAlignment="Left" Height="28" Margin="624,211,0,0" Text="Category Name" TextWrapping="Wrap" VerticalAlignment="Top" Width="412" BorderBrush="#FF1E2124" Foreground="#FF8A9999" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="#FF1E2124" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="16" Cursor="Hand" KeyDown="TextBox_KeyDown" LostFocus="TextBox_LostFocus" GotFocus="TextBox_GotFocus"/>
-        <TextBox HorizontalAlignment="Left" Height="28" Margin="564,211,0,0" Text="Base" TextWrapping="Wrap" VerticalAlignment="Top" Width="55" BorderBrush="#FF0E0F10" Foreground="#FFFFF8E1" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="#FF0E0F10" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="18" Cursor="Arrow" Padding="4,0,0,0" Focusable="False" IsHitTestVisible="False"/>
-        <Rectangle HorizontalAlignment="Left" Height="2" Margin="550,224,0,0" Stroke="#FF5A3806" VerticalAlignment="Top" Width="28" RenderTransformOrigin="0.5,0.5">
-            <Rectangle.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="90"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Rectangle.RenderTransform>
-            <Rectangle.Fill>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="Black"/>
-                    <GradientStop Color="#FF5A3806" Offset="1"/>
-                </LinearGradientBrush>
-            </Rectangle.Fill>
-        </Rectangle>
-        <TextBox HorizontalAlignment="Left" Height="28" Margin="530,178,0,0" Text="Stat Filters" TextWrapping="Wrap" VerticalAlignment="Top" Width="192" BorderBrush="Black" Foreground="#FFFFF8E1" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="Black" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="18" Cursor="Arrow" Padding="4,0,0,0" Focusable="False" IsHitTestVisible="False"/>
-        <Rectangle HorizontalAlignment="Left" Height="2" Margin="530,206,0,0" Stroke="#FF465260" VerticalAlignment="Top" Width="506" RenderTransformOrigin="0.5,0.5" Fill="#FF465260">
-            <Rectangle.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="0"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Rectangle.RenderTransform>
-        </Rectangle>
-        <TextBox HorizontalAlignment="Left" Height="28" Margin="1041,178,0,0" Text="Best Combinations" TextWrapping="Wrap" VerticalAlignment="Top" Width="201" BorderBrush="Black" Foreground="#FFFFF8E1" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="Black" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="18" Cursor="Arrow" Padding="4,0,0,0" Focusable="False" IsHitTestVisible="False"/>
-        <Rectangle HorizontalAlignment="Left" Height="2" Margin="1041,206,0,0" Stroke="#FF0076FF" VerticalAlignment="Top" Width="265" RenderTransformOrigin="0.5,0.5" Fill="#FF0076FF">
-            <Rectangle.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="0"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Rectangle.RenderTransform>
-        </Rectangle>
-        <TextBox HorizontalAlignment="Left" Height="28" Margin="1041,211,0,0" Text="Top1" TextWrapping="Wrap" VerticalAlignment="Top" Width="49" BorderBrush="Black" Foreground="#FFFFF8E1" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="Black" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="18" Cursor="Arrow" Padding="4,0,0,0" Focusable="False" IsHitTestVisible="False" TextChanged="TextBox_TextChanged"/>
-        <Rectangle HorizontalAlignment="Left" Height="2" Margin="1041,239,0,0" Stroke="#FF0076FF" VerticalAlignment="Top" Width="49" RenderTransformOrigin="0.5,0.5" Fill="#FF0076FF">
-            <Rectangle.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="0"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Rectangle.RenderTransform>
-        </Rectangle>
-        <TextBox HorizontalAlignment="Left" Height="28" Margin="1095,211,0,0" Text="Top2" TextWrapping="Wrap" VerticalAlignment="Top" Width="49" BorderBrush="Black" Foreground="#FFFFF8E1" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="Black" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="18" Cursor="Arrow" Padding="4,0,0,0" Focusable="False" IsHitTestVisible="False" TextChanged="TextBox_TextChanged"/>
-        <Rectangle HorizontalAlignment="Left" Height="2" Margin="1095,239,0,0" Stroke="#FF0076FF" VerticalAlignment="Top" Width="49" RenderTransformOrigin="0.5,0.5" Fill="#FF0076FF">
-            <Rectangle.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="0"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Rectangle.RenderTransform>
-        </Rectangle>
-        <TextBox HorizontalAlignment="Left" Height="28" Margin="1149,211,0,0" Text="Top3" TextWrapping="Wrap" VerticalAlignment="Top" Width="49" BorderBrush="Black" Foreground="#FFFFF8E1" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="Black" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="18" Cursor="Arrow" Padding="4,0,0,0" Focusable="False" IsHitTestVisible="False" TextChanged="TextBox_TextChanged"/>
-        <Rectangle HorizontalAlignment="Left" Height="2" Margin="1149,239,0,0" Stroke="#FF0076FF" VerticalAlignment="Top" Width="49" RenderTransformOrigin="0.5,0.5" Fill="#FF0076FF">
-            <Rectangle.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="0"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Rectangle.RenderTransform>
-        </Rectangle>
-        <TextBox HorizontalAlignment="Left" Height="28" Margin="1203,211,0,0" Text="Top4" TextWrapping="Wrap" VerticalAlignment="Top" Width="49" BorderBrush="Black" Foreground="#FFFFF8E1" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="Black" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="18" Cursor="Arrow" Padding="4,0,0,0" Focusable="False" IsHitTestVisible="False" TextChanged="TextBox_TextChanged"/>
-        <Rectangle HorizontalAlignment="Left" Height="2" Margin="1203,239,0,0" Stroke="#FF0076FF" VerticalAlignment="Top" Width="49" RenderTransformOrigin="0.5,0.5" Fill="#FF0076FF">
-            <Rectangle.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="0"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Rectangle.RenderTransform>
-        </Rectangle>
-        <TextBox HorizontalAlignment="Left" Height="28" Margin="1257,211,0,0" Text="Top5" TextWrapping="Wrap" VerticalAlignment="Top" Width="49" BorderBrush="Black" Foreground="#FFFFF8E1" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="Black" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="18" Cursor="Arrow" Padding="4,0,0,0" Focusable="False" IsHitTestVisible="False" TextChanged="TextBox_TextChanged"/>
-        <Rectangle HorizontalAlignment="Left" Height="2" Margin="1257,239,0,0" Stroke="#FF0076FF" VerticalAlignment="Top" Width="49" RenderTransformOrigin="0.5,0.5" Fill="#FF0076FF">
-            <Rectangle.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="0"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Rectangle.RenderTransform>
-        </Rectangle>
-        <TextBox Name="Prefix1MaxTextBox" HorizontalAlignment="Left" Height="28" Margin="944,245,0,0" Text="Max" TextWrapping="Wrap" VerticalAlignment="Top" Width="71" BorderBrush="#FF1E2124" Foreground="#FF8A9999" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="#FF1E2124" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="16" Cursor="Hand"  KeyDown="TextBox_KeyDown" LostFocus="TextBox_LostFocus" GotFocus="TextBox_GotFocus" PreviewTextInput="NumberValidationTextBox"/>
-        <TextBox HorizontalAlignment="Left" Height="28" Margin="564,245,0,0" Text="Prefix1" TextWrapping="Wrap" VerticalAlignment="Top" Width="299" BorderBrush="#FF0E0F10" Foreground="#FFFFF8E1" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="#FF0E0F10" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="18" Cursor="Arrow" Padding="4,0,0,0" Focusable="False" IsHitTestVisible="False"/>
-        <Rectangle HorizontalAlignment="Left" Height="2" Margin="550,258,0,0" Stroke="#FF5A3806" VerticalAlignment="Top" Width="28" RenderTransformOrigin="0.5,0.5">
-            <Rectangle.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="90"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Rectangle.RenderTransform>
-            <Rectangle.Fill>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="Black"/>
-                    <GradientStop Color="#FF5A3806" Offset="1"/>
-                </LinearGradientBrush>
-            </Rectangle.Fill>
-        </Rectangle>
-        <TextBox Name="Prefix1MinTextBox" HorizontalAlignment="Left" Height="28" Margin="868,245,0,0" Text="Min" TextWrapping="Wrap" VerticalAlignment="Top" Width="71" BorderBrush="#FF1E2124" Foreground="#FF8A9999" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="#FF1E2124" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="16" Cursor="Hand" KeyDown="TextBox_KeyDown" LostFocus="TextBox_LostFocus" GotFocus="TextBox_GotFocus" PreviewTextInput="NumberValidationTextBox"/>
-        <TextBox HorizontalAlignment="Left" Height="28" Margin="1020,244,0,0" Text="P" TextWrapping="Wrap" VerticalAlignment="Top" Width="16" BorderBrush="Black" Foreground="Red" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="Black" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="18" Cursor="Arrow" Padding="0,0,0,0" Focusable="False" IsHitTestVisible="False"/>
-        <TextBox Name="Prefix2MaxTextBox" HorizontalAlignment="Left" Height="28" Margin="944,278,0,0" Text="Max" TextWrapping="Wrap" VerticalAlignment="Top" Width="71" BorderBrush="#FF1E2124" Foreground="#FF8A9999" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="#FF1E2124" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="16" Cursor="Hand"  KeyDown="TextBox_KeyDown" LostFocus="TextBox_LostFocus" GotFocus="TextBox_GotFocus" PreviewTextInput="NumberValidationTextBox" />
-        <TextBox HorizontalAlignment="Left" Height="28" Margin="564,278,0,0" Text="Prefix2" TextWrapping="Wrap" VerticalAlignment="Top" Width="299" BorderBrush="#FF0E0F10" Foreground="#FFFFF8E1" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="#FF0E0F10" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="18" Cursor="Arrow" Padding="4,0,0,0" Focusable="False" IsHitTestVisible="False"/>
-        <Rectangle HorizontalAlignment="Left" Height="2" Margin="550,291,0,0" Stroke="#FF5A3806" VerticalAlignment="Top" Width="28" RenderTransformOrigin="0.5,0.5">
-            <Rectangle.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="90"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Rectangle.RenderTransform>
-            <Rectangle.Fill>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="Black"/>
-                    <GradientStop Color="#FF5A3806" Offset="1"/>
-                </LinearGradientBrush>
-            </Rectangle.Fill>
-        </Rectangle>
-        <TextBox Name="Prefix2MinTextBox" HorizontalAlignment="Left" Height="28" Margin="868,278,0,0" Text="Min" TextWrapping="Wrap" VerticalAlignment="Top" Width="71" BorderBrush="#FF1E2124" Foreground="#FF8A9999" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="#FF1E2124" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="16" Cursor="Hand" KeyDown="TextBox_KeyDown" LostFocus="TextBox_LostFocus" GotFocus="TextBox_GotFocus" PreviewTextInput="NumberValidationTextBox"/>
-        <TextBox HorizontalAlignment="Left" Height="28" Margin="1020,277,0,0" Text="P" TextWrapping="Wrap" VerticalAlignment="Top" Width="16" BorderBrush="Black" Foreground="Red" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="Black" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="18" Cursor="Arrow" Padding="0,0,0,0" Focusable="False" IsHitTestVisible="False"/>
-        <TextBox Name="Prefix3MaxTextBox" HorizontalAlignment="Left" Height="28" Margin="944,311,0,0" Text="Max" TextWrapping="Wrap" VerticalAlignment="Top" Width="71" BorderBrush="#FF1E2124" Foreground="#FF8A9999" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="#FF1E2124" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="16" Cursor="Hand" KeyDown="TextBox_KeyDown" LostFocus="TextBox_LostFocus" GotFocus="TextBox_GotFocus" PreviewTextInput="NumberValidationTextBox"/>
-        <TextBox HorizontalAlignment="Left" Height="28" Margin="564,311,0,0" Text="Prefix3" TextWrapping="Wrap" VerticalAlignment="Top" Width="299" BorderBrush="#FF0E0F10" Foreground="#FFFFF8E1" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="#FF0E0F10" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="18" Cursor="Arrow" Padding="4,0,0,0" Focusable="False" IsHitTestVisible="False"/>
-        <Rectangle HorizontalAlignment="Left" Height="2" Margin="550,324,0,0" Stroke="#FF5A3806" VerticalAlignment="Top" Width="28" RenderTransformOrigin="0.5,0.5">
-            <Rectangle.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="90"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Rectangle.RenderTransform>
-            <Rectangle.Fill>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="Black"/>
-                    <GradientStop Color="#FF5A3806" Offset="1"/>
-                </LinearGradientBrush>
-            </Rectangle.Fill>
-        </Rectangle>
-        <TextBox Name="Prefix3MinTextBox" HorizontalAlignment="Left" Height="28" Margin="868,311,0,0" Text="Min" TextWrapping="Wrap" VerticalAlignment="Top" Width="71" BorderBrush="#FF1E2124" Foreground="#FF8A9999" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="#FF1E2124" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="16" Cursor="Hand" KeyDown="TextBox_KeyDown" LostFocus="TextBox_LostFocus" GotFocus="TextBox_GotFocus" PreviewTextInput="NumberValidationTextBox"/>
-        <TextBox HorizontalAlignment="Left" Height="28" Margin="1020,310,0,0" Text="P" TextWrapping="Wrap" VerticalAlignment="Top" Width="16" BorderBrush="Black" Foreground="Red" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="Black" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="18" Cursor="Arrow" Padding="0,0,0,0" Focusable="False" IsHitTestVisible="False"/>
-        <TextBox Name="Sufix1MaxTextBox" HorizontalAlignment="Left" Height="28" Margin="944,344,0,0" Text="Max" TextWrapping="Wrap" VerticalAlignment="Top" Width="71" BorderBrush="#FF1E2124" Foreground="#FF8A9999" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="#FF1E2124" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="16" Cursor="Hand" KeyDown="TextBox_KeyDown" LostFocus="TextBox_LostFocus" GotFocus="TextBox_GotFocus" PreviewTextInput="NumberValidationTextBox"/>
-        <TextBox HorizontalAlignment="Left" Height="28" Margin="564,344,0,0" Text="Sufix1" TextWrapping="Wrap" VerticalAlignment="Top" Width="299" BorderBrush="#FF0E0F10" Foreground="#FFFFF8E1" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="#FF0E0F10" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="18" Cursor="Arrow" Padding="4,0,0,0" Focusable="False" IsHitTestVisible="False"/>
-        <Rectangle HorizontalAlignment="Left" Height="2" Margin="550,357,0,0" Stroke="#FF5A3806" VerticalAlignment="Top" Width="28" RenderTransformOrigin="0.5,0.5">
-            <Rectangle.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="90"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Rectangle.RenderTransform>
-            <Rectangle.Fill>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="Black"/>
-                    <GradientStop Color="#FF5A3806" Offset="1"/>
-                </LinearGradientBrush>
-            </Rectangle.Fill>
-        </Rectangle>
-        <TextBox Name="Sufix1MinTextBox" HorizontalAlignment="Left" Height="28" Margin="868,344,0,0" Text="Min" TextWrapping="Wrap" VerticalAlignment="Top" Width="71" BorderBrush="#FF1E2124" Foreground="#FF8A9999" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="#FF1E2124" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="16" Cursor="Hand" KeyDown="TextBox_KeyDown" LostFocus="TextBox_LostFocus" GotFocus="TextBox_GotFocus" PreviewTextInput="NumberValidationTextBox"/>
-        <TextBox HorizontalAlignment="Left" Height="28" Margin="1020,343,0,0" Text="S" TextWrapping="Wrap" VerticalAlignment="Top" Width="16" BorderBrush="Black" Foreground="#FF008CFF" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="Black" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="18" Cursor="Arrow" Padding="0,0,0,0" Focusable="False" IsHitTestVisible="False"/>
-        <TextBox Name="Sufix2MaxTextBox" HorizontalAlignment="Left" Height="28" Margin="944,377,0,0" Text="Max" TextWrapping="Wrap" VerticalAlignment="Top" Width="71" BorderBrush="#FF1E2124" Foreground="#FF8A9999" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="#FF1E2124" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="16" Cursor="Hand" KeyDown="TextBox_KeyDown" LostFocus="TextBox_LostFocus" GotFocus="TextBox_GotFocus" PreviewTextInput="NumberValidationTextBox"/>
-        <TextBox HorizontalAlignment="Left" Height="28" Margin="564,377,0,0" Text="Sufix2" TextWrapping="Wrap" VerticalAlignment="Top" Width="299" BorderBrush="#FF0E0F10" Foreground="#FFFFF8E1" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="#FF0E0F10" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="18" Cursor="Arrow" Padding="4,0,0,0" Focusable="False" IsHitTestVisible="False"/>
-        <Rectangle HorizontalAlignment="Left" Height="2" Margin="550,390,0,0" Stroke="#FF5A3806" VerticalAlignment="Top" Width="28" RenderTransformOrigin="0.5,0.5">
-            <Rectangle.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="90"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Rectangle.RenderTransform>
-            <Rectangle.Fill>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="Black"/>
-                    <GradientStop Color="#FF5A3806" Offset="1"/>
-                </LinearGradientBrush>
-            </Rectangle.Fill>
-        </Rectangle>
-        <TextBox Name="Sufix2MinTextBox" HorizontalAlignment="Left" Height="28" Margin="868,377,0,0" Text="Min" TextWrapping="Wrap" VerticalAlignment="Top" Width="71" BorderBrush="#FF1E2124" Foreground="#FF8A9999" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="#FF1E2124" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="16" Cursor="Hand" KeyDown="TextBox_KeyDown" LostFocus="TextBox_LostFocus" GotFocus="TextBox_GotFocus" PreviewTextInput="NumberValidationTextBox"/>
-        <TextBox HorizontalAlignment="Left" Height="28" Margin="1020,376,0,0" Text="S" TextWrapping="Wrap" VerticalAlignment="Top" Width="16" BorderBrush="Black" Foreground="#FF008CFF" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="Black" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="18" Cursor="Arrow" Padding="0,0,0,0" Focusable="False" IsHitTestVisible="False"/>
-        <TextBox Name="Sufix3MaxTextBox" HorizontalAlignment="Left" Height="28" Margin="944,410,0,0" Text="Max" TextWrapping="Wrap" VerticalAlignment="Top" Width="71" BorderBrush="#FF1E2124" Foreground="#FF8A9999" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="#FF1E2124" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="16" Cursor="Hand" KeyDown="TextBox_KeyDown" LostFocus="TextBox_LostFocus" GotFocus="TextBox_GotFocus" PreviewTextInput="NumberValidationTextBox"/>
-        <TextBox HorizontalAlignment="Left" Height="28" Margin="564,410,0,0" Text="Sufix3" TextWrapping="Wrap" VerticalAlignment="Top" Width="299" BorderBrush="#FF0E0F10" Foreground="#FFFFF8E1" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="#FF0E0F10" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="18" Cursor="Arrow" Padding="4,0,0,0" Focusable="False" IsHitTestVisible="False"/>
-        <Rectangle HorizontalAlignment="Left" Height="2" Margin="550,423,0,0" Stroke="#FF5A3806" VerticalAlignment="Top" Width="28" RenderTransformOrigin="0.5,0.5">
-            <Rectangle.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="90"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Rectangle.RenderTransform>
-            <Rectangle.Fill>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="Black"/>
-                    <GradientStop Color="#FF5A3806" Offset="1"/>
-                </LinearGradientBrush>
-            </Rectangle.Fill>
-        </Rectangle>
-        <TextBox Name="Sufix3MinTextBox" HorizontalAlignment="Left" Height="28" Margin="868,410,0,0" Text="Min" TextWrapping="Wrap" VerticalAlignment="Top" Width="71" BorderBrush="#FF1E2124" Foreground="#FF8A9999" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="#FF1E2124" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="16" Cursor="Hand" KeyDown="TextBox_KeyDown" LostFocus="TextBox_LostFocus" GotFocus="TextBox_GotFocus" PreviewTextInput="NumberValidationTextBox"/>
-        <TextBox HorizontalAlignment="Left" Height="28" Margin="1020,409,0,0" Text="S" TextWrapping="Wrap" VerticalAlignment="Top" Width="16" BorderBrush="Black" Foreground="#FF008CFF" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="Black" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="18" Cursor="Arrow" Padding="0,0,0,0" Focusable="False" IsHitTestVisible="False"/>
-        <Border BorderThickness="1" BorderBrush="#FF0076FF" HorizontalAlignment="Left" Height="20" Margin="1056,249,0,0" VerticalAlignment="Top" Width="20"/>
-        <Border BorderThickness="1" BorderBrush="#FF0076FF" HorizontalAlignment="Left" Height="20" Margin="1164,249,0,0" VerticalAlignment="Top" Width="20"/>
-        <Border BorderThickness="1" BorderBrush="#FF0076FF" HorizontalAlignment="Left" Height="20" Margin="1110,249,0,0" VerticalAlignment="Top" Width="20"/>
-        <Border BorderThickness="1" BorderBrush="#FF0076FF" HorizontalAlignment="Left" Height="20" Margin="1218,249,0,0" VerticalAlignment="Top" Width="20"/>
-        <Border BorderThickness="1" BorderBrush="#FF0076FF" HorizontalAlignment="Left" Height="20" Margin="1272,249,0,0" VerticalAlignment="Top" Width="20"/>
-        <Border BorderThickness="1" HorizontalAlignment="Left" Height="16" Margin="1058,251,0,0" VerticalAlignment="Top" Width="16"/>
-        <Border BorderThickness="1" HorizontalAlignment="Left" Height="16" Margin="1112,251,0,0" VerticalAlignment="Top" Width="16"/>
-        <Border BorderThickness="1" HorizontalAlignment="Left" Height="16" Margin="1166,251,0,0" VerticalAlignment="Top" Width="16"/>
-        <Border BorderThickness="1" HorizontalAlignment="Left" Height="16" Margin="1220,251,0,0" VerticalAlignment="Top" Width="16"/>
-        <Border BorderThickness="1" HorizontalAlignment="Left" Height="16" Margin="1274,251,0,0" VerticalAlignment="Top" Width="16"/>
-        <Border BorderThickness="1" BorderBrush="#FF0076FF" HorizontalAlignment="Left" Height="20" Margin="1056,282,0,0" VerticalAlignment="Top" Width="20"/>
-        <Border BorderThickness="1" BorderBrush="#FF0076FF" HorizontalAlignment="Left" Height="20" Margin="1164,282,0,0" VerticalAlignment="Top" Width="20"/>
-        <Border BorderThickness="1" BorderBrush="#FF0076FF" HorizontalAlignment="Left" Height="20" Margin="1110,282,0,0" VerticalAlignment="Top" Width="20"/>
-        <Border BorderThickness="1" BorderBrush="#FF0076FF" HorizontalAlignment="Left" Height="20" Margin="1218,282,0,0" VerticalAlignment="Top" Width="20"/>
-        <Border BorderThickness="1" BorderBrush="#FF0076FF" HorizontalAlignment="Left" Height="20" Margin="1272,282,0,0" VerticalAlignment="Top" Width="20"/>
-        <Border BorderThickness="1" HorizontalAlignment="Left" Height="16" Margin="1058,284,0,0" VerticalAlignment="Top" Width="16"/>
-        <Border BorderThickness="1" HorizontalAlignment="Left" Height="16" Margin="1112,284,0,0" VerticalAlignment="Top" Width="16"/>
-        <Border BorderThickness="1" HorizontalAlignment="Left" Height="16" Margin="1166,284,0,0" VerticalAlignment="Top" Width="16"/>
-        <Border BorderThickness="1" HorizontalAlignment="Left" Height="16" Margin="1220,284,0,0" VerticalAlignment="Top" Width="16"/>
-        <Border BorderThickness="1" HorizontalAlignment="Left" Height="16" Margin="1274,284,0,0" VerticalAlignment="Top" Width="16"/>
-        <Border BorderThickness="1" BorderBrush="#FF0076FF" HorizontalAlignment="Left" Height="20" Margin="1056,315,0,0" VerticalAlignment="Top" Width="20"/>
-        <Border BorderThickness="1" BorderBrush="#FF0076FF" HorizontalAlignment="Left" Height="20" Margin="1164,315,0,0" VerticalAlignment="Top" Width="20"/>
-        <Border BorderThickness="1" BorderBrush="#FF0076FF" HorizontalAlignment="Left" Height="20" Margin="1110,315,0,0" VerticalAlignment="Top" Width="20"/>
-        <Border BorderThickness="1" BorderBrush="#FF0076FF" HorizontalAlignment="Left" Height="20" Margin="1218,315,0,0" VerticalAlignment="Top" Width="20"/>
-        <Border BorderThickness="1" BorderBrush="#FF0076FF" HorizontalAlignment="Left" Height="20" Margin="1272,315,0,0" VerticalAlignment="Top" Width="20"/>
-        <Border BorderThickness="1" HorizontalAlignment="Left" Height="16" Margin="1058,317,0,0" VerticalAlignment="Top" Width="16"/>
-        <Border BorderThickness="1" HorizontalAlignment="Left" Height="16" Margin="1112,317,0,0" VerticalAlignment="Top" Width="16"/>
-        <Border BorderThickness="1" HorizontalAlignment="Left" Height="16" Margin="1166,317,0,0" VerticalAlignment="Top" Width="16"/>
-        <Border BorderThickness="1" HorizontalAlignment="Left" Height="16" Margin="1220,317,0,0" VerticalAlignment="Top" Width="16"/>
-        <Border BorderThickness="1" HorizontalAlignment="Left" Height="16" Margin="1274,317,0,0" VerticalAlignment="Top" Width="16"/>
-        <Border BorderThickness="1" BorderBrush="#FF0076FF" HorizontalAlignment="Left" Height="20" Margin="1056,348,0,0" VerticalAlignment="Top" Width="20"/>
-        <Border BorderThickness="1" BorderBrush="#FF0076FF" HorizontalAlignment="Left" Height="20" Margin="1164,348,0,0" VerticalAlignment="Top" Width="20"/>
-        <Border BorderThickness="1" BorderBrush="#FF0076FF" HorizontalAlignment="Left" Height="20" Margin="1110,348,0,0" VerticalAlignment="Top" Width="20"/>
-        <Border BorderThickness="1" BorderBrush="#FF0076FF" HorizontalAlignment="Left" Height="20" Margin="1218,348,0,0" VerticalAlignment="Top" Width="20"/>
-        <Border BorderThickness="1" BorderBrush="#FF0076FF" HorizontalAlignment="Left" Height="20" Margin="1272,348,0,0" VerticalAlignment="Top" Width="20"/>
-        <Border BorderThickness="1" HorizontalAlignment="Left" Height="16" Margin="1058,350,0,0" VerticalAlignment="Top" Width="16"/>
-        <Border BorderThickness="1" HorizontalAlignment="Left" Height="16" Margin="1112,350,0,0" VerticalAlignment="Top" Width="16"/>
-        <Border BorderThickness="1" HorizontalAlignment="Left" Height="16" Margin="1166,350,0,0" VerticalAlignment="Top" Width="16"/>
-        <Border BorderThickness="1" HorizontalAlignment="Left" Height="16" Margin="1220,350,0,0" VerticalAlignment="Top" Width="16"/>
-        <Border BorderThickness="1" HorizontalAlignment="Left" Height="16" Margin="1274,350,0,0" VerticalAlignment="Top" Width="16"/>
-        <Border BorderThickness="1" BorderBrush="#FF0076FF" HorizontalAlignment="Left" Height="20" Margin="1056,381,0,0" VerticalAlignment="Top" Width="20"/>
-        <Border BorderThickness="1" BorderBrush="#FF0076FF" HorizontalAlignment="Left" Height="20" Margin="1164,381,0,0" VerticalAlignment="Top" Width="20"/>
-        <Border BorderThickness="1" BorderBrush="#FF0076FF" HorizontalAlignment="Left" Height="20" Margin="1110,381,0,0" VerticalAlignment="Top" Width="20"/>
-        <Border BorderThickness="1" BorderBrush="#FF0076FF" HorizontalAlignment="Left" Height="20" Margin="1218,381,0,0" VerticalAlignment="Top" Width="20"/>
-        <Border BorderThickness="1" BorderBrush="#FF0076FF" HorizontalAlignment="Left" Height="20" Margin="1272,381,0,0" VerticalAlignment="Top" Width="20"/>
-        <Border BorderThickness="1" HorizontalAlignment="Left" Height="16" Margin="1058,383,0,0" VerticalAlignment="Top" Width="16"/>
-        <Border BorderThickness="1" HorizontalAlignment="Left" Height="16" Margin="1112,383,0,0" VerticalAlignment="Top" Width="16"/>
-        <Border BorderThickness="1" HorizontalAlignment="Left" Height="16" Margin="1166,383,0,0" VerticalAlignment="Top" Width="16"/>
-        <Border BorderThickness="1" HorizontalAlignment="Left" Height="16" Margin="1220,383,0,0" VerticalAlignment="Top" Width="16"/>
-        <Border BorderThickness="1" HorizontalAlignment="Left" Height="16" Margin="1274,383,0,0" VerticalAlignment="Top" Width="16"/>
-        <Border BorderThickness="1" BorderBrush="#FF0076FF" HorizontalAlignment="Left" Height="20" Margin="1056,414,0,0" VerticalAlignment="Top" Width="20"/>
-        <Border BorderThickness="1" BorderBrush="#FF0076FF" HorizontalAlignment="Left" Height="20" Margin="1164,414,0,0" VerticalAlignment="Top" Width="20"/>
-        <Border BorderThickness="1" BorderBrush="#FF0076FF" HorizontalAlignment="Left" Height="20" Margin="1110,414,0,0" VerticalAlignment="Top" Width="20"/>
-        <Border BorderThickness="1" BorderBrush="#FF0076FF" HorizontalAlignment="Left" Height="20" Margin="1218,414,0,0" VerticalAlignment="Top" Width="20"/>
-        <Border BorderThickness="1" BorderBrush="#FF0076FF" HorizontalAlignment="Left" Height="20" Margin="1272,414,0,0" VerticalAlignment="Top" Width="20"/>
-        <Border BorderThickness="1" HorizontalAlignment="Left" Height="16" Margin="1058,416,0,0" VerticalAlignment="Top" Width="16"/>
-        <Border BorderThickness="1" HorizontalAlignment="Left" Height="16" Margin="1112,416,0,0" VerticalAlignment="Top" Width="16"/>
-        <Border BorderThickness="1" HorizontalAlignment="Left" Height="16" Margin="1166,416,0,0" VerticalAlignment="Top" Width="16"/>
-        <Border BorderThickness="1" HorizontalAlignment="Left" Height="16" Margin="1220,416,0,0" VerticalAlignment="Top" Width="16"/>
-        <Border BorderThickness="1" HorizontalAlignment="Left" Height="16" Margin="1274,416,0,0" VerticalAlignment="Top" Width="16"/>
-        <Button Content="Amount" HorizontalAlignment="Left" Height="25" Margin="1176,444,0,0" VerticalAlignment="Top" Width="130" Background="#FF0076FF" Foreground="#FFFFF8E1" FontFamily="Fontin SmallCaps" Cursor="Hand"/>
-        <CheckBox Style="{DynamicResource PoECheckbox}" Content="" HorizontalAlignment="Left" Height="28" Margin="536,410,0,0" VerticalAlignment="Top" Width="20" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" OpacityMask="#FF5A3806" Padding="0,0,0,0" BorderThickness="2,2,2,2" RenderTransformOrigin="0.5,0.5" IsChecked="True">
-            <CheckBox.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="Black"/>
-                    <GradientStop Color="White" Offset="1"/>
-                </LinearGradientBrush>
-            </CheckBox.Background>
-            <CheckBox.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform ScaleX="0.9"/>
-                    <SkewTransform/>
-                    <RotateTransform/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </CheckBox.RenderTransform>
-        </CheckBox>
-        <Button Style="{DynamicResource PoeButtonSimulation}" Content="Simulate" HorizontalAlignment="Left" Height="25" Margin="538,444,0,0" VerticalAlignment="Top" Width="476" Background="#FF5A3806" Foreground="#FFFFF8E1" FontFamily="Fontin SmallCaps" Cursor="Hand" FontSize="16" Click="Simulation_Button"/>
-        <CheckBox Style="{DynamicResource PoECheckbox}" Content="" HorizontalAlignment="Left" Height="28" Margin="536,377,0,0" VerticalAlignment="Top" Width="20" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" OpacityMask="#FF5A3806" Padding="0,0,0,0" BorderThickness="2,2,2,2" RenderTransformOrigin="0.5,0.5" IsChecked="True">
-            <CheckBox.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="Black"/>
-                    <GradientStop Color="White" Offset="1"/>
-                </LinearGradientBrush>
-            </CheckBox.Background>
-            <CheckBox.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform ScaleX="0.9"/>
-                    <SkewTransform/>
-                    <RotateTransform/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </CheckBox.RenderTransform>
-        </CheckBox>
-        <CheckBox Style="{DynamicResource PoECheckbox}" Content="" HorizontalAlignment="Left" Height="28" Margin="536,344,0,0" VerticalAlignment="Top" Width="20" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" OpacityMask="#FF5A3806" Padding="0,0,0,0" BorderThickness="2,2,2,2" RenderTransformOrigin="0.5,0.5" IsChecked="True">
-            <CheckBox.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="Black"/>
-                    <GradientStop Color="White" Offset="1"/>
-                </LinearGradientBrush>
-            </CheckBox.Background>
-            <CheckBox.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform ScaleX="0.9"/>
-                    <SkewTransform/>
-                    <RotateTransform/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </CheckBox.RenderTransform>
-        </CheckBox>
-        <CheckBox Style="{DynamicResource PoECheckbox}" Content="" HorizontalAlignment="Left" Height="28" Margin="536,311,0,0" VerticalAlignment="Top" Width="20" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" OpacityMask="#FF5A3806" Padding="0,0,0,0" BorderThickness="2,2,2,2" RenderTransformOrigin="0.5,0.5" IsChecked="True">
-            <CheckBox.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="Black"/>
-                    <GradientStop Color="White" Offset="1"/>
-                </LinearGradientBrush>
-            </CheckBox.Background>
-            <CheckBox.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform ScaleX="0.9"/>
-                    <SkewTransform/>
-                    <RotateTransform/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </CheckBox.RenderTransform>
-        </CheckBox>
-        <CheckBox Style="{DynamicResource PoECheckbox}" Content="" HorizontalAlignment="Left" Height="28" Margin="536,278,0,0" VerticalAlignment="Top" Width="20" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" OpacityMask="#FF5A3806" Padding="0,0,0,0" BorderThickness="2,2,2,2" RenderTransformOrigin="0.5,0.5" IsChecked="True">
-            <CheckBox.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="Black"/>
-                    <GradientStop Color="White" Offset="1"/>
-                </LinearGradientBrush>
-            </CheckBox.Background>
-            <CheckBox.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform ScaleX="0.9"/>
-                    <SkewTransform/>
-                    <RotateTransform/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </CheckBox.RenderTransform>
-        </CheckBox>
-        <CheckBox Style="{DynamicResource PoECheckbox}" Content="" HorizontalAlignment="Left" Height="28" Margin="536,245,0,0" VerticalAlignment="Top" Width="20" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" OpacityMask="#FF5A3806" Padding="0,0,0,0" BorderThickness="2,2,2,2" RenderTransformOrigin="0.5,0.5" IsChecked="True">
-            <CheckBox.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="Black"/>
-                    <GradientStop Color="White" Offset="1"/>
-                </LinearGradientBrush>
-            </CheckBox.Background>
-            <CheckBox.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform ScaleX="0.9"/>
-                    <SkewTransform/>
-                    <RotateTransform/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </CheckBox.RenderTransform>
-        </CheckBox>
-        <CheckBox Style="{DynamicResource PoECheckbox}" Content="" HorizontalAlignment="Left" Height="28" Margin="536,211,0,0" VerticalAlignment="Top" Width="20" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" OpacityMask="#FF5A3806" Padding="0,0,0,0" BorderThickness="2,2,2,2" RenderTransformOrigin="0.5,0.5" IsChecked="True">
-            <CheckBox.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="Black"/>
-                    <GradientStop Color="White" Offset="1"/>
-                </LinearGradientBrush>
-            </CheckBox.Background>
-            <CheckBox.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform ScaleX="0.9"/>
-                    <SkewTransform/>
-                    <RotateTransform/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </CheckBox.RenderTransform>
-        </CheckBox>
         <TextBox HorizontalAlignment="Left" Height="28" Margin="-18,635,0,0" Text="Account" TextWrapping="Wrap" VerticalAlignment="Top" Width="192" BorderBrush="#FF0E0F10" Foreground="#FFFFF8E1" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="#FF0E0F10" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="18" Cursor="Arrow" Padding="4,0,0,0" Focusable="False" IsHitTestVisible="False"/>
         <Rectangle HorizontalAlignment="Left" Height="2" Margin="-34,648,0,0" Stroke="#FF5A3806" VerticalAlignment="Top" Width="28" RenderTransformOrigin="0.5,0.5">
             <Rectangle.RenderTransform>
@@ -1098,33 +1137,13 @@
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
-        <ComboBox Name="LeagueComboBox" Style="{DynamicResource PoEComboBox}" HorizontalAlignment="Left" Height="28" Margin="179,668,0,0" VerticalAlignment="Top" Width="219" SelectionChanged="ComboBox_SelectionChanged" FontFamily="Fontin SmallCaps" Background="#FF1E2124" BorderBrush="#FF1E2124" SelectedIndex="0" Foreground="#FFE2E2E2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="18" IsSynchronizedWithCurrentItem="True">
-            <ComboBoxItem Content="Expedition" Background="#FF1E2124" BorderBrush="#FF1E2124"/>
-            <ComboBoxItem Content="Hardcore Expedition" Background="#FF1E2124" BorderBrush="#FF1E2124"/>
+        <ComboBox x:Name="LeagueComboBox" Style="{DynamicResource PoEComboBox}" HorizontalAlignment="Left" Height="28" Margin="179,668,0,0" VerticalAlignment="Top" Width="219" SelectionChanged="ComboBox_SelectionChanged" FontFamily="Fontin SmallCaps" Background="#FF1E2124" BorderBrush="#FF1E2124" SelectedIndex="0" Foreground="#FFE2E2E2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="18" IsSynchronizedWithCurrentItem="True">
+            <ComboBoxItem Content="Scourge" Background="#FF1E2124" BorderBrush="#FF1E2124"/>
+            <ComboBoxItem Content="Hardcore Scourge" Background="#FF1E2124" BorderBrush="#FF1E2124"/>
             <ComboBoxItem Content="Standard" Background="#FF1E2124" BorderBrush="#FF1E2124"/>
             <ComboBoxItem Content="Hardcore" Background="#FF1E2124" BorderBrush="#FF1E2124"/>
         </ComboBox>
-        <TextBox HorizontalAlignment="Left" Height="28" Margin="1041,474,0,0" Text="Minimum Sellers" TextWrapping="Wrap" VerticalAlignment="Top" Width="189" BorderBrush="#FF0E0F10" Foreground="#FFFFF8E1" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="#FF0E0F10" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="18" Cursor="Arrow" Padding="4,0,0,0" Focusable="False" IsHitTestVisible="False" TextChanged="TextBox_TextChanged_1"/>
-        <Rectangle HorizontalAlignment="Left" Height="2" Margin="1028,487,0,0" Stroke="#FF5A3806" VerticalAlignment="Top" Width="28" RenderTransformOrigin="0.5,0.5">
-            <Rectangle.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="90"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Rectangle.RenderTransform>
-            <Rectangle.Fill>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="Black"/>
-                    <GradientStop Color="#FF5A3806" Offset="1"/>
-                </LinearGradientBrush>
-            </Rectangle.Fill>
-        </Rectangle>
-        <TextBox Name="SellersTextBox" HorizontalAlignment="Left" Height="28" Margin="1235,474,0,0" Text="0" TextWrapping="Wrap" VerticalAlignment="Top" Width="71" BorderBrush="#FF1E2124" Foreground="#FFE2E2E2" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="#FF1E2124" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="16" Cursor="Hand" PreviewTextInput="NumberValidationTextBox" KeyDown="TextBox_KeyDown"/>
-        <TextBox Name="ResultTextBox" HorizontalAlignment="Left" Margin="537,515,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="745" Height="177" TextChanged="TextBox_TextChanged_2"/>
-        <Button Content="Value" HorizontalAlignment="Left" Height="25" Margin="1041,445,0,0" VerticalAlignment="Top" Width="130" Background="#FF0076FF" Foreground="#FFFFF8E1" FontFamily="Fontin SmallCaps" Cursor="Hand"/>
-        <Button Name="ConnectButton" Style="{DynamicResource PoeButtonSimulation}" Content="Connect" HorizontalAlignment="Left" Margin="179,701,0,36" Width="219" Background="#FF5A3806" Foreground="#FFFFF8E1" FontFamily="Fontin SmallCaps" Cursor="Hand" FontSize="16" Click="Connect_Button"/>
+        <Button x:Name="ConnectButton" Style="{DynamicResource PoeButtonSimulation}" Content="Connect" HorizontalAlignment="Left" Margin="179,701,0,36" Width="219" Background="#FF5A3806" Foreground="#FFFFF8E1" FontFamily="Fontin SmallCaps" Cursor="Hand" FontSize="16" Click="Connect_Button"/>
         <TextBox HorizontalAlignment="Left" Height="28" Margin="-18,668,0,0" Text="League" TextWrapping="Wrap" VerticalAlignment="Top" Width="192" BorderBrush="#FF0E0F10" Foreground="#FFFFF8E1" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="#FF0E0F10" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="18" Cursor="Arrow" Padding="4,0,0,0" Focusable="False" IsHitTestVisible="False"/>
         <Rectangle HorizontalAlignment="Left" Height="2" Margin="-33,681,0,0" Stroke="#FF5A3806" VerticalAlignment="Top" Width="28" RenderTransformOrigin="0.5,0.5">
             <Rectangle.RenderTransform>
@@ -1143,20 +1162,5 @@
             </Rectangle.Fill>
         </Rectangle>
         <TextBox x:Name="AccountTextBox" HorizontalAlignment="Left" Height="28" Margin="179,635,0,0" Text="Enter Your Account..." TextWrapping="Wrap" VerticalAlignment="Top" Width="219" BorderBrush="#FF1E2124" Foreground="#FF8A9999" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="#FF1E2124" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="16" Cursor="Hand"  KeyDown="TextBox_KeyDown" LostFocus="TextBox_LostFocus" GotFocus="TextBox_GotFocus"/>
-        <TextBlock HorizontalAlignment="Left" Margin="41,174,0,0" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Height="34" Width="152" FontFamily="Fontin SmallCaps" Foreground="#FFFFFF77" Padding="0,3,0,0">
-            <TextBlock.Background>
-                <ImageBrush ImageSource="/header-double-rare-middle.png" ViewportUnits="Absolute" Viewport="0,0,28,34" TileMode="Tile"/>
-            </TextBlock.Background><Run Text="Dusk Bane"/><LineBreak/><Run Language="pl-pl" Text="Twin Claw"/><LineBreak/><Run Language="pl-pl"/></TextBlock>
-        <Rectangle HorizontalAlignment="Left" Height="34" Margin="193,174,0,0" VerticalAlignment="Top" Width="27">
-            <Rectangle.Fill>
-                <ImageBrush ImageSource="/header-double-rare-right.png" Stretch="UniformToFill" TileMode="Tile"/>
-            </Rectangle.Fill>
-        </Rectangle>
-        <Rectangle HorizontalAlignment="Left" Height="34" Margin="14,174,0,0" VerticalAlignment="Top" Width="27">
-            <Rectangle.Fill>
-                <ImageBrush ImageSource="/header-double-rare-left.png" Stretch="UniformToFill" TileMode="Tile"/>
-            </Rectangle.Fill>
-        </Rectangle>
-        <Rectangle HorizontalAlignment="Left" Height="94" Margin="14,208,0,0" VerticalAlignment="Top" Width="206" Fill="#BF000000"/>
     </Grid>
 </Window>
