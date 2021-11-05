@@ -8,10 +8,10 @@ using Newtonsoft.Json;
 namespace PoE_Planner
 {
     public class ValueType
-    {
+    {/*
         [JsonProperty("0")]
         public string Value { get; set; }
         [JsonProperty("1")]
-        public int Type { get; set; }
+        public int Type { get; set; }*/
     }
 }

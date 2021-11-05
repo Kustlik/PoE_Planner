@@ -732,7 +732,7 @@
         <Border BorderThickness="1" HorizontalAlignment="Left" Height="16" Margin="1166,416,0,0" VerticalAlignment="Top" Width="16"/>
         <Border BorderThickness="1" HorizontalAlignment="Left" Height="16" Margin="1220,416,0,0" VerticalAlignment="Top" Width="16"/>
         <Border BorderThickness="1" HorizontalAlignment="Left" Height="16" Margin="1274,416,0,0" VerticalAlignment="Top" Width="16"/>
-        <Button Content="Amount" HorizontalAlignment="Left" Height="25" Margin="1176,444,0,0" VerticalAlignment="Top" Width="130" Background="#FF0076FF" Foreground="#FFFFF8E1" FontFamily="Fontin SmallCaps" Cursor="Hand"/>
+        <Button Content="Amount" HorizontalAlignment="Left" Height="25" Margin="1176,445,0,0" VerticalAlignment="Top" Width="130" Background="#FF0076FF" Foreground="#FFFFF8E1" FontFamily="Fontin SmallCaps" Cursor="Hand"/>
         <CheckBox Style="{DynamicResource PoECheckbox}" Content="" HorizontalAlignment="Left" Height="28" Margin="536,410,0,0" VerticalAlignment="Top" Width="20" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" OpacityMask="#FF5A3806" Padding="0,0,0,0" BorderThickness="2,2,2,2" RenderTransformOrigin="0.5,0.5" IsChecked="True">
             <CheckBox.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -1071,7 +1071,7 @@
                         <Rectangle x:Name="Cellx10y11" Fill="#000076FF" Grid.Column="10" Grid.Row="11" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
                         <Rectangle x:Name="Cellx11y11" Fill="#000076FF" Grid.Column="11" Grid.Row="11" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
                     </Grid>
-                    <Viewbox x:Name="TooltipWindow" Height="128" Margin="0,0,0,0" Stretch="Fill" Width="206" RenderTransformOrigin="0,0" Canvas.Left="35" Canvas.Top="0" Panel.ZIndex="10" IsHitTestVisible="False" Visibility="Hidden">
+                    <Viewbox x:Name="TooltipWindow" Height="128" Margin="0,0,0,0" Stretch="Fill" Width="206" RenderTransformOrigin="0,0" Canvas.Left="35" Canvas.Top="0" Panel.ZIndex="10" IsHitTestVisible="False" Visibility="Visible">
                         <Grid Height="128" Width="206">
                             <TextBlock HorizontalAlignment="Center" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Height="34" Width="152" FontFamily="Fontin SmallCaps" Foreground="#FFFFFF77" Padding="0,3,0,0" IsHitTestVisible="False">
                                 <TextBlock.Background>
@@ -1088,6 +1088,11 @@
                                 </Rectangle.Fill>
                             </Rectangle>
                             <Rectangle HorizontalAlignment="Right" Height="94" Margin="0,34,0,0" VerticalAlignment="Top" Width="206" Fill="#BF000000" IsHitTestVisible="False"/>
+                            <Rectangle HorizontalAlignment="Center" Height="11" Margin="0,47,0,0" VerticalAlignment="Top" Width="168" IsHitTestVisible="False">
+                                <Rectangle.Fill>
+                                    <ImageBrush ImageSource="/ItemAssets/separators/seperator-rare.png" Stretch="Uniform" TileMode="Tile"/>
+                                </Rectangle.Fill>
+                            </Rectangle>
                         </Grid>
                     </Viewbox>
                 </Canvas>
@@ -1162,5 +1167,6 @@
             </Rectangle.Fill>
         </Rectangle>
         <TextBox x:Name="AccountTextBox" HorizontalAlignment="Left" Height="28" Margin="179,635,0,0" Text="Enter Your Account..." TextWrapping="Wrap" VerticalAlignment="Top" Width="219" BorderBrush="#FF1E2124" Foreground="#FF8A9999" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="#FF1E2124" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="16" Cursor="Hand"  KeyDown="TextBox_KeyDown" LostFocus="TextBox_LostFocus" GotFocus="TextBox_GotFocus"/>
+        <Image HorizontalAlignment="Left" Height="100" Margin="143,258,0,0" VerticalAlignment="Top" Width="100"/>
     </Grid>
 </Window>

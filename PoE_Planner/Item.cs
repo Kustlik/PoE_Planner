@@ -23,7 +23,7 @@ namespace PoE_Planner
         public string TypeLine { get; set; }
 
         //Not Always Present Below
-        /*
+       
         public bool AbyssJewel { get; set; }
         public Property[] AdditionalProperties { get; set; }
         public string ArtFilename { get; set; } //Divination Card 
@@ -55,6 +55,5 @@ namespace PoE_Planner
         public bool Support { get; set; }
         public int TalismanTier { get; set; }
         public string[] UtilityMods { get; set; }
-        */
     }
 }
