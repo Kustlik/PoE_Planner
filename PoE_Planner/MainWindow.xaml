@@ -874,7 +874,64 @@
                 </LinearGradientBrush>
             </Label.Foreground>
         </Label>
-        <Border BorderThickness="1" BorderBrush="Black" HorizontalAlignment="Left" Height="574" Margin="-31,164,0,0" VerticalAlignment="Top" Width="440">
+        <Rectangle HorizontalAlignment="Left" Height="1" Margin="-31,164,0,0" Stroke="#FF5A3806" VerticalAlignment="Top" Width="440">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF5A3806" Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Button Content="Tab1" HorizontalAlignment="Left" Height="21" Margin="-31,143,0,0" VerticalAlignment="Top" Width="114" Background="#FF5A3806" BorderBrush="#FF5A3806" Foreground="#FFE9CF9F" FontFamily="Fontin"/>
+        <Rectangle HorizontalAlignment="Left" Height="2" Margin="-33,616,0,0" Stroke="#FF5A3806" VerticalAlignment="Top" Width="28" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF5A3806" Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle HorizontalAlignment="Left" Height="2" Margin="-34,648,0,0" Stroke="#FF5A3806" VerticalAlignment="Top" Width="28" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF5A3806" Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle HorizontalAlignment="Left" Height="2" Margin="-33,681,0,0" Stroke="#FF5A3806" VerticalAlignment="Top" Width="28" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF5A3806" Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Border BorderThickness="1" BorderBrush="Black" HorizontalAlignment="Left" Height="581" Margin="-31,164,0,0" VerticalAlignment="Top" Width="440">
             <Border.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black"/>
@@ -886,6 +943,66 @@
                     <ImageBrush ImageSource="/StashPanelGrid.png"/>
                 </Border.Background>
                 <Canvas x:Name="StashCanvas" Margin="-1,-1,-1,-1">
+                    <TextBox HorizontalAlignment="Left" Height="28" Margin="2,501,0,0" Text="League" TextWrapping="Wrap" VerticalAlignment="Top" Width="192" BorderBrush="#FF0E0F10" Foreground="#FFFFF8E1" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="#FF0E0F10" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="18" Cursor="Arrow" Padding="4,0,0,0" Focusable="False" IsHitTestVisible="False"/>
+                    <TextBox x:Name="SessionIDTextBox" HorizontalAlignment="Left" Height="28" Margin="199,435,0,0" Text="Enter Your SessionID..." TextWrapping="Wrap" VerticalAlignment="Top" Width="219" BorderBrush="#FF1E2124" Foreground="#FF8A9999" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="#FF1E2124" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" Cursor="Hand" KeyDown="TextBox_KeyDown" LostFocus="TextBox_LostFocus" GotFocus="TextBox_GotFocus"/>
+                    <TextBox HorizontalAlignment="Left" Height="28" Margin="2,435,0,0" Text="SessionID" TextWrapping="Wrap" VerticalAlignment="Top" Width="192" BorderBrush="#FF0E0F10" Foreground="#FFFFF8E1" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="#FF0E0F10" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="18" Cursor="Arrow" Padding="4,0,0,0" Focusable="False" IsHitTestVisible="False" TextChanged="TextBox_TextChanged_3"/>
+                    <TextBox HorizontalAlignment="Left" Height="28" Margin="2,468,0,0" Text="Account" TextWrapping="Wrap" VerticalAlignment="Top" Width="192" BorderBrush="#FF0E0F10" Foreground="#FFFFF8E1" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="#FF0E0F10" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="18" Cursor="Arrow" Padding="4,0,0,0" Focusable="False" IsHitTestVisible="False"/>
+                    <ComboBox x:Name="LeagueComboBox" Style="{DynamicResource PoEComboBox}" HorizontalAlignment="Left" Height="28" Margin="199,501,0,0" VerticalAlignment="Top" Width="219" SelectionChanged="ComboBox_SelectionChanged" FontFamily="Fontin SmallCaps" Background="#FF1E2124" BorderBrush="#FF1E2124" SelectedIndex="0" Foreground="#FFE2E2E2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="18" IsSynchronizedWithCurrentItem="True">
+                        <ComboBoxItem Content="Scourge" Background="#FF1E2124" BorderBrush="#FF1E2124"/>
+                        <ComboBoxItem Content="Hardcore Scourge" Background="#FF1E2124" BorderBrush="#FF1E2124"/>
+                        <ComboBoxItem Content="Standard" Background="#FF1E2124" BorderBrush="#FF1E2124"/>
+                        <ComboBoxItem Content="Hardcore" Background="#FF1E2124" BorderBrush="#FF1E2124"/>
+                    </ComboBox>
+                    <Button x:Name="ConnectButton" Style="{DynamicResource PoeButtonSimulation}" Content="Connect" HorizontalAlignment="Left" Margin="199,534,0,36" Width="219" Background="#FF5A3806" Foreground="#FFFFF8E1" FontFamily="Fontin SmallCaps" Cursor="Hand" FontSize="16" Click="Connect_Button"/>
+                    <TextBox x:Name="AccountTextBox" HorizontalAlignment="Left" Height="28" Margin="199,468,0,0" Text="Enter Your Account..." TextWrapping="Wrap" VerticalAlignment="Top" Width="219" BorderBrush="#FF1E2124" Foreground="#FF8A9999" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="#FF1E2124" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="16" Cursor="Hand"  KeyDown="TextBox_KeyDown" LostFocus="TextBox_LostFocus" GotFocus="TextBox_GotFocus"/>
+                    <Rectangle HorizontalAlignment="Left" Height="2" Margin="-11,448,0,0" Stroke="#FF5A3806" VerticalAlignment="Top" Width="28" RenderTransformOrigin="0.5,0.5">
+                        <Rectangle.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="90"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Rectangle.RenderTransform>
+                        <Rectangle.Fill>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="Black"/>
+                                <GradientStop Color="#FF5A3806" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Rectangle.Fill>
+                    </Rectangle>
+                    <Rectangle HorizontalAlignment="Left" Height="2" Margin="-11,481,0,0" Stroke="#FF5A3806" VerticalAlignment="Top" Width="28" RenderTransformOrigin="0.5,0.5">
+                        <Rectangle.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="90"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Rectangle.RenderTransform>
+                        <Rectangle.Fill>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="Black"/>
+                                <GradientStop Color="#FF5A3806" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Rectangle.Fill>
+                    </Rectangle>
+                    <Rectangle HorizontalAlignment="Left" Height="2" Margin="-11,514,0,0" Stroke="#FF5A3806" VerticalAlignment="Top" Width="28" RenderTransformOrigin="0.5,0.5">
+                        <Rectangle.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="90"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Rectangle.RenderTransform>
+                        <Rectangle.Fill>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="Black"/>
+                                <GradientStop Color="#FF5A3806" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Rectangle.Fill>
+                    </Rectangle>
                     <Grid x:Name="HighlightGrid" Height="420" Width="420" Panel.ZIndex="5">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="35"/>
@@ -1071,7 +1188,7 @@
                         <Rectangle x:Name="Cellx10y11" Fill="#000076FF" Grid.Column="10" Grid.Row="11" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
                         <Rectangle x:Name="Cellx11y11" Fill="#000076FF" Grid.Column="11" Grid.Row="11" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave"/>
                     </Grid>
-                    <Viewbox x:Name="TooltipWindow" Height="128" Margin="0,0,0,0" Stretch="Fill" Width="206" RenderTransformOrigin="0,0" Canvas.Left="35" Canvas.Top="0" Panel.ZIndex="10" IsHitTestVisible="False" Visibility="Visible">
+                    <Viewbox x:Name="TooltipWindow" Height="128" Margin="0,0,0,0" Stretch="Fill" Width="206" RenderTransformOrigin="0,0" Canvas.Left="35" Canvas.Top="-185" Panel.ZIndex="10" IsHitTestVisible="False" Visibility="Visible">
                         <Grid Height="128" Width="206">
                             <TextBlock HorizontalAlignment="Center" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Height="34" Width="152" FontFamily="Fontin SmallCaps" Foreground="#FFFFFF77" Padding="0,3,0,0" IsHitTestVisible="False">
                                 <TextBlock.Background>
@@ -1088,85 +1205,29 @@
                                 </Rectangle.Fill>
                             </Rectangle>
                             <Rectangle HorizontalAlignment="Right" Height="94" Margin="0,34,0,0" VerticalAlignment="Top" Width="206" Fill="#BF000000" IsHitTestVisible="False"/>
-                            <Rectangle HorizontalAlignment="Center" Height="11" Margin="0,47,0,0" VerticalAlignment="Top" Width="168" IsHitTestVisible="False">
-                                <Rectangle.Fill>
-                                    <ImageBrush ImageSource="/ItemAssets/separators/seperator-rare.png" Stretch="Uniform" TileMode="Tile"/>
-                                </Rectangle.Fill>
-                            </Rectangle>
                         </Grid>
                     </Viewbox>
+                    <StackPanel x:Name="TooltipStackPanel" Height="417" Margin="0,0,0,0" Background="#BF000000" Canvas.Left="368" Panel.ZIndex="10" IsHitTestVisible="False" Canvas.Top="237">
+                        <StackPanel x:Name="TooltipTitleStackPanel" Height="35" Width="204" Orientation="Horizontal" Panel.ZIndex="5" >
+                            <Rectangle Height="34" Width="26" IsHitTestVisible="False" Panel.ZIndex="10">
+                                <Rectangle.Fill>
+                                    <ImageBrush ImageSource="/header-double-rare-left.png" Stretch="UniformToFill" TileMode="Tile"/>
+                                </Rectangle.Fill>
+                            </Rectangle>
+                            <TextBlock TextAlignment="Center" TextWrapping="Wrap" Height="34" Width="152" FontFamily="Fontin SmallCaps" Foreground="#FFFFFF77" Padding="0,3,0,0" IsHitTestVisible="False" Panel.ZIndex="10">
+                                <TextBlock.Background>
+                                    <ImageBrush ImageSource="/header-double-rare-middle.png" ViewportUnits="Absolute" Viewport="0,0,28,34" TileMode="Tile"/>
+                                </TextBlock.Background><Run Text="Dusk Bane"/><LineBreak/><Run Language="pl-pl" Text="Twin Claw"/><LineBreak/><Run Language="pl-pl"/></TextBlock>
+                            <Rectangle Height="34" Width="26" IsHitTestVisible="False" Panel.ZIndex="10">
+                                <Rectangle.Fill>
+                                    <ImageBrush ImageSource="/header-double-rare-right.png" Stretch="UniformToFill" TileMode="Tile"/>
+                                </Rectangle.Fill>
+                            </Rectangle>
+                        </StackPanel>
+                        <StackPanel Height="382" x:Name="TooltipAffixStackPanel"/>
+                    </StackPanel>
                 </Canvas>
             </Border>
         </Border>
-        <Rectangle HorizontalAlignment="Left" Height="1" Margin="-31,164,0,0" Stroke="#FF5A3806" VerticalAlignment="Top" Width="440">
-            <Rectangle.Fill>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="Black"/>
-                    <GradientStop Color="#FF5A3806" Offset="1"/>
-                </LinearGradientBrush>
-            </Rectangle.Fill>
-        </Rectangle>
-        <Button Content="Tab1" HorizontalAlignment="Left" Height="21" Margin="-31,143,0,0" VerticalAlignment="Top" Width="114" Background="#FF5A3806" BorderBrush="#FF5A3806" Foreground="#FFE9CF9F" FontFamily="Fontin"/>
-        <TextBox x:Name="SessionIDTextBox" HorizontalAlignment="Left" Height="28" Margin="179,602,0,0" Text="Enter Your SessionID..." TextWrapping="Wrap" VerticalAlignment="Top" Width="219" BorderBrush="#FF1E2124" Foreground="#FF8A9999" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="#FF1E2124" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" Cursor="Hand" KeyDown="TextBox_KeyDown" LostFocus="TextBox_LostFocus" GotFocus="TextBox_GotFocus"/>
-        <TextBox HorizontalAlignment="Left" Height="28" Margin="-18,602,0,0" Text="SessionID" TextWrapping="Wrap" VerticalAlignment="Top" Width="192" BorderBrush="#FF0E0F10" Foreground="#FFFFF8E1" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="#FF0E0F10" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="18" Cursor="Arrow" Padding="4,0,0,0" Focusable="False" IsHitTestVisible="False" TextChanged="TextBox_TextChanged_3"/>
-        <Rectangle HorizontalAlignment="Left" Height="2" Margin="-33,616,0,0" Stroke="#FF5A3806" VerticalAlignment="Top" Width="28" RenderTransformOrigin="0.5,0.5">
-            <Rectangle.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="90"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Rectangle.RenderTransform>
-            <Rectangle.Fill>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="Black"/>
-                    <GradientStop Color="#FF5A3806" Offset="1"/>
-                </LinearGradientBrush>
-            </Rectangle.Fill>
-        </Rectangle>
-        <TextBox HorizontalAlignment="Left" Height="28" Margin="-18,635,0,0" Text="Account" TextWrapping="Wrap" VerticalAlignment="Top" Width="192" BorderBrush="#FF0E0F10" Foreground="#FFFFF8E1" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="#FF0E0F10" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="18" Cursor="Arrow" Padding="4,0,0,0" Focusable="False" IsHitTestVisible="False"/>
-        <Rectangle HorizontalAlignment="Left" Height="2" Margin="-34,648,0,0" Stroke="#FF5A3806" VerticalAlignment="Top" Width="28" RenderTransformOrigin="0.5,0.5">
-            <Rectangle.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="90"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Rectangle.RenderTransform>
-            <Rectangle.Fill>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="Black"/>
-                    <GradientStop Color="#FF5A3806" Offset="1"/>
-                </LinearGradientBrush>
-            </Rectangle.Fill>
-        </Rectangle>
-        <ComboBox x:Name="LeagueComboBox" Style="{DynamicResource PoEComboBox}" HorizontalAlignment="Left" Height="28" Margin="179,668,0,0" VerticalAlignment="Top" Width="219" SelectionChanged="ComboBox_SelectionChanged" FontFamily="Fontin SmallCaps" Background="#FF1E2124" BorderBrush="#FF1E2124" SelectedIndex="0" Foreground="#FFE2E2E2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="18" IsSynchronizedWithCurrentItem="True">
-            <ComboBoxItem Content="Scourge" Background="#FF1E2124" BorderBrush="#FF1E2124"/>
-            <ComboBoxItem Content="Hardcore Scourge" Background="#FF1E2124" BorderBrush="#FF1E2124"/>
-            <ComboBoxItem Content="Standard" Background="#FF1E2124" BorderBrush="#FF1E2124"/>
-            <ComboBoxItem Content="Hardcore" Background="#FF1E2124" BorderBrush="#FF1E2124"/>
-        </ComboBox>
-        <Button x:Name="ConnectButton" Style="{DynamicResource PoeButtonSimulation}" Content="Connect" HorizontalAlignment="Left" Margin="179,701,0,36" Width="219" Background="#FF5A3806" Foreground="#FFFFF8E1" FontFamily="Fontin SmallCaps" Cursor="Hand" FontSize="16" Click="Connect_Button"/>
-        <TextBox HorizontalAlignment="Left" Height="28" Margin="-18,668,0,0" Text="League" TextWrapping="Wrap" VerticalAlignment="Top" Width="192" BorderBrush="#FF0E0F10" Foreground="#FFFFF8E1" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="#FF0E0F10" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="18" Cursor="Arrow" Padding="4,0,0,0" Focusable="False" IsHitTestVisible="False"/>
-        <Rectangle HorizontalAlignment="Left" Height="2" Margin="-33,681,0,0" Stroke="#FF5A3806" VerticalAlignment="Top" Width="28" RenderTransformOrigin="0.5,0.5">
-            <Rectangle.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="90"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Rectangle.RenderTransform>
-            <Rectangle.Fill>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="Black"/>
-                    <GradientStop Color="#FF5A3806" Offset="1"/>
-                </LinearGradientBrush>
-            </Rectangle.Fill>
-        </Rectangle>
-        <TextBox x:Name="AccountTextBox" HorizontalAlignment="Left" Height="28" Margin="179,635,0,0" Text="Enter Your Account..." TextWrapping="Wrap" VerticalAlignment="Top" Width="219" BorderBrush="#FF1E2124" Foreground="#FF8A9999" SelectionBrush="#FF1E2124" SelectionTextBrush="#FF8A8A8B" Background="#FF1E2124" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Fontin SmallCaps" FontSize="16" Cursor="Hand"  KeyDown="TextBox_KeyDown" LostFocus="TextBox_LostFocus" GotFocus="TextBox_GotFocus"/>
-        <Image HorizontalAlignment="Left" Height="100" Margin="143,258,0,0" VerticalAlignment="Top" Width="100"/>
     </Grid>
 </Window>

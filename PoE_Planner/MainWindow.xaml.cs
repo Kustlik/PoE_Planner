@@ -143,7 +143,7 @@ namespace PoE_Planner
             if (item != null)
             {
                 HighlightAllItemCells(item, highlight);
-                Tooltip.ShowTooltip(item, TooltipWindow);
+                Tooltip.ShowTooltip(item, TooltipStackPanel);
             }
         }
 
